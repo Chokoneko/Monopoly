@@ -39,6 +39,15 @@ public class IHM {
             
         }
         
+        
+        public void messageTropDeJoueurs(){
+            System.out.println("Vous ne pouvez pas ajouter plus de 6 joueurs");                        
+        }
+         
+        public void messageAfficherLancerDesJoueur(Joueur joueur, Integer score){
+            System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() );                        
+        }
+         
 	/**
 	 * 
 	 * @param nom
