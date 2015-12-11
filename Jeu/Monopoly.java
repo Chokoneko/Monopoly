@@ -32,6 +32,7 @@ public class Monopoly {
 	private void buildGamePlateau(String dataFilename)  // pour le moment les groupes sont crées chaque fois, il faudrait juste add la case si le groupe existe 
 	{
 		try{
+                        HashMap<CouleurPropriete,Groupe> listeGroupes = new HashMap() ;
 			ArrayList<String[]> data = readDataFile("src/Data/"+dataFilename, ",");                       
 			
 			//TODO: create cases instead of displaying
@@ -39,14 +40,21 @@ public class Monopoly {
 				String caseType = data.get(i)[0];       // type : P propriété, G gare, C Compagnie, CT case tirage, CA case Argent, CM case mouvement
 				if(caseType.compareTo("P") == 0){
 					System.out.println("Proopriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
-                                        
+                                        Groupe g ; 
+                                        if(listeGroupes.get(CouleurPropriete.valueOf(data.get(i)[3]))==null){
+                                            g=new Groupe(CouleurPropriete.valueOf(data.get(i)[3]),Integer.parseInt(data.get(i)[10]),Integer.parseInt(data.get(i)[11]));
+                                            listeGroupes.put(CouleurPropriete.valueOf(data.get(i)[3]),g);
+                                         }
+                                        else{
+                                            g=listeGroupes.get(CouleurPropriete.valueOf(data.get(i)[3]));
+                                        }
                                         int tabLoyer[] = {Integer.parseInt(data.get(i)[4]),Integer.parseInt(data.get(i)[5]),Integer.parseInt(data.get(i)[6]),Integer.parseInt(data.get(i)[7]),Integer.parseInt(data.get(i)[8]),Integer.parseInt(data.get(i)[9])};
                                         ProprieteAConstruire pAC = new ProprieteAConstruire (this,//monop
                                                                                             Integer.parseInt(data.get(i)[1]),//num
                                                                                             data.get(i)[2],//nom
                                                                                             Integer.parseInt(data.get(i)[4]), //prix achat
                                                                                             tabLoyer,//tableau loyer
-                                                                                            new Groupe(CouleurPropriete.valueOf(data.get(i)[3]),Integer.parseInt(data.get(i)[10]),Integer.parseInt(data.get(i)[11])));//groupe
+                                                                                            g);//groupe
                                        this.addCarreau(pAC);
                                 }
 				else if(caseType.compareTo("G") == 0){
