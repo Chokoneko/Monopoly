@@ -152,6 +152,11 @@ public class Monopoly {
                        
         }
         
+//        public void ordreJoueur() {
+//            for (int i=0 ; i < this.getJoueurs().size() ; i++){
+//                this.getIhm().
+//            }
+//        }
         
 	/**
 	 * 
