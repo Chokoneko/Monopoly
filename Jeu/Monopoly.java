@@ -38,7 +38,7 @@ public class Monopoly {
 			for(int i=0; i<data.size(); ++i){
 				String caseType = data.get(i)[0];       // type : P propriété, G gare, C Compagnie, CT case tirage, CA case Argent, CM case mouvement
 				if(caseType.compareTo("P") == 0){
-					System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+					System.out.println("Proopriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         
                                         int tabLoyer[] = {Integer.parseInt(data.get(i)[4]),Integer.parseInt(data.get(i)[5]),Integer.parseInt(data.get(i)[6]),Integer.parseInt(data.get(i)[7]),Integer.parseInt(data.get(i)[8]),Integer.parseInt(data.get(i)[9])};
                                         ProprieteAConstruire pAC = new ProprieteAConstruire (this,//monop
