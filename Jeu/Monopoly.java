@@ -146,7 +146,14 @@ public class Monopoly {
             while (continuer && this.getJoueurs().size()<6) {
                 String nom = this.getIhm().messageDemanderNom() ;
                 this.getJoueurs().add(new Joueur(this,nom));
-                continuer = this.getIhm().messageAjouterJoueur() ;
+                if(this.getJoueurs().size()<6){
+                    continuer = this.getIhm().messageAjouterJoueur() ;
+                }
+                else
+                {
+                    //this.getIhm().messageTropDeJoueur();
+                }
+                
             }
             
                        
