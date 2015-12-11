@@ -112,8 +112,6 @@ public class Monopoly {
 			System.err.println("[buildGamePlateau()] : Error while reading file!");
 		}
                 
-                de1 = this.jetDe();
-                de2 = this.jetDe();
         
 	}
 	
@@ -151,7 +149,7 @@ public class Monopoly {
                 }
                 else
                 {
-                    //this.getIhm().messageTropDeJoueur();
+                    this.getIhm().messageTropDeJoueurs();
                 }
                 
             }
@@ -159,11 +157,19 @@ public class Monopoly {
                        
         }
         
-//        public void ordreJoueur() {
-//            for (int i=0 ; i < this.getJoueurs().size() ; i++){
-//                this.getIhm().
-//            }
-//        }
+        public Joueur premierJoueur() {
+            int score, scoreMax = 0;
+            Joueur joueurMax=this.getJoueurs().get(0);
+            for (int i=0 ; i < this.getJoueurs().size() ; i++){
+                score = this.jetDe() + this.jetDe();
+                this.getIhm().messageAfficherLancerDesJoueur(this.getJoueurs().get(i),score);
+                if (score > scoreMax){
+                    scoreMax = score;
+                    joueurMax = this.getJoueurs().get(i);
+                }               
+            }
+            return joueurMax;
+        }
         
 	/**
 	 * 
