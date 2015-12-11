@@ -1,8 +1,9 @@
 package Jeu;
 
 public class CarreauMouvement extends CarreauAction {
-     public CarreauMouvement(Monopoly m,int num,String nom){
-        super(m,num,nom);
+     public CarreauMouvement(Monopoly newMonopoly,int newNumero, String newNomCarreau){
+        super(newMonopoly,newNumero,newNomCarreau);
+
     
     }
 }

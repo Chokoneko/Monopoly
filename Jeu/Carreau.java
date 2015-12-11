@@ -6,10 +6,10 @@ public abstract class Carreau {
 	private int numero;
 	private String nomCarreau;
 
-        public Carreau (Monopoly m,int num,String nom){
-            this.setMonopoly(m);
-            this.setNumero(num);
-            this.setNomCarreau(nom);
+        public Carreau (Monopoly newMonopoly,int newNumero, String newNomCarreau){
+            this.setMonopoly(newMonopoly);
+            this.setNumero(newNumero);
+            this.setNomCarreau(newNomCarreau);
         }
 	public int getNumero() {
 		return this.numero;
@@ -29,22 +29,22 @@ public abstract class Carreau {
     /**
      * @param monopoly the monopoly to set
      */
-    private void setMonopoly(Monopoly monopoly) {
-        this.monopoly = monopoly;
+    private void setMonopoly(Monopoly newMonopoly) {
+        this.monopoly = newMonopoly;
     }
 
     /**
      * @param numero the numero to set
      */
-    private void setNumero(int numero) {
-        this.numero = numero;
+    private void setNumero(int newNumero) {
+        this.numero = newNumero;
     }
 
     /**
      * @param nomCarreau the nomCarreau to set
      */
-    private void setNomCarreau(String nomCarreau) {
-        this.nomCarreau = nomCarreau;
+    private void setNomCarreau(String newNomCarreau) {
+        this.nomCarreau = newNomCarreau;
     }
 
 }

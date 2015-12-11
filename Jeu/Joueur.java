@@ -19,13 +19,13 @@ public class Joueur {
 	private int nbDouble;
 	private int nbTourPrison;
 
-        public Joueur(Monopoly m,String nomJ){
-            this.setMonopoly(m);
+        public Joueur(Monopoly newMonopoly,String newNomJoueur){
+            this.setMonopoly(newMonopoly);
             compagnies = new Compagnie[2];
             gares = new Gare[4];
-            positionCourante = m.getCarreau(1);
+            positionCourante = newMonopoly.getCarreau(1);
             proprietesAConstruire = new ProprieteAConstruire[22];
-            this.setNomJoueur(nomJ);
+            this.setNomJoueur(newNomJoueur);
             this.setCash(1500);
             this.setNbDouble(0);
             this.setNbTourPrison(0);
@@ -35,7 +35,7 @@ public class Joueur {
 	 * 
 	 * @param l
 	 */
-	public void payerLoyer(int l) {
+	public void payerLoyer(int newLoyer) {
 		// TODO - implement Joueur.payerLoyer
 		throw new UnsupportedOperationException();
 	}
@@ -44,7 +44,7 @@ public class Joueur {
 	 * 
 	 * @param l
 	 */
-	public void recevoirLoyer(int l) {
+	public void recevoirLoyer(int newLoyer) {
 		// TODO - implement Joueur.recevoirLoyer
 		throw new UnsupportedOperationException();
 	}
@@ -67,7 +67,7 @@ public class Joueur {
 	 * 
 	 * @param g
 	 */
-	public void addGare(Gare g) {
+	public void addGare(Gare newGare) {
 		// TODO - implement Joueur.addGare
 		throw new UnsupportedOperationException();
 	}
@@ -116,7 +116,7 @@ public class Joueur {
 	 * 
 	 * @param c
 	 */
-	public void addCompagnie(Compagnie c) {
+	public void addCompagnie(Compagnie newCompagnie) {
 		// TODO - implement Joueur.addCompagnie
 		throw new UnsupportedOperationException();
 	}
@@ -125,7 +125,7 @@ public class Joueur {
 	 * 
 	 * @param pAC
 	 */
-	public void addProprieteAConstruire(ProprieteAConstruire pAC) {
+	public void addProprieteAConstruire(ProprieteAConstruire newProprieteAConstruire) {
 		// TODO - implement Joueur.addPropri�t�AConstruire
 		throw new UnsupportedOperationException();
 	}
@@ -142,10 +142,10 @@ public class Joueur {
 
 	/**
 	 * 
-	 * @param argentDep
+	 * @param argentDepart
 	 * @param argentSoustrait
 	 */
-	public int calculCashRestant(int argentDep, int argentSoustrait) {
+	public int calculCashRestant(int argentDepart, int argentSoustrait) {
 		// TODO - implement Joueur.calculCashRestant
 		throw new UnsupportedOperationException();
 	}
@@ -160,8 +160,8 @@ public class Joueur {
     /**
      * @param monopoly the monopoly to set
      */
-    private void setMonopoly(Monopoly monopoly) {
-        this.monopoly = monopoly;
+    private void setMonopoly(Monopoly newMonopoly) {
+        this.monopoly = newMonopoly;
     }
 
     /**
@@ -174,8 +174,8 @@ public class Joueur {
     /**
      * @param compagnies the compagnies to set
      */
-    private void setCompagnies(Compagnie[] compagnies) {
-        this.compagnies = compagnies;
+    private void setCompagnies(Compagnie[] newCompagnies) {
+        this.compagnies = newCompagnies;
     }
 
     /**
@@ -188,8 +188,8 @@ public class Joueur {
     /**
      * @param gares the gares to set
      */
-    private void setGares(Gare[] gares) {
-        this.gares = gares;
+    private void setGares(Gare[] newGares) {
+        this.gares = newGares;
     }
 
     /**
@@ -202,15 +202,15 @@ public class Joueur {
     /**
      * @param proprietesAConstruire the proprietesAConstruire to set
      */
-    private void setProprietesAConstruire(ProprieteAConstruire[] proprietesAConstruire) {
-        this.proprietesAConstruire = proprietesAConstruire;
+    private void setProprietesAConstruire(ProprieteAConstruire[] newProprietesAConstruire) {
+        this.proprietesAConstruire = newProprietesAConstruire;
     }
 
     /**
      * @param nomJoueur the nomJoueur to set
      */
-    private void setNomJoueur(String nomJoueur) {
-        this.nomJoueur = nomJoueur;
+    private void setNomJoueur(String newNomJoueur) {
+        this.nomJoueur = newNomJoueur;
     }
 
     /**
@@ -223,8 +223,8 @@ public class Joueur {
     /**
      * @param nbDouble the nbDouble to set
      */
-    private void setNbDouble(int nbDouble) {
-        this.nbDouble = nbDouble;
+    private void setNbDouble(int newNbDouble) {
+        this.nbDouble = newNbDouble;
     }
 
     /**
@@ -237,8 +237,8 @@ public class Joueur {
     /**
      * @param nbTourPrison the nbTourPrison to set
      */
-    private void setNbTourPrison(int nbTourPrison) {
-        this.nbTourPrison = nbTourPrison;
+    private void setNbTourPrison(int newNbTourPrison) {
+        this.nbTourPrison = newNbTourPrison;
     }
 
 }

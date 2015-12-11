@@ -4,9 +4,9 @@ public class CarreauArgent extends CarreauAction {
 
 	private int montant;
 
-        public CarreauArgent(Monopoly m,int num,String nom,int mt){
-            super(m,num,nom);
-            this.setMontant(mt);
+        public CarreauArgent(Monopoly newMonopoly,int newNumero, String newNomCarreau,int newMontant){
+            super(newMonopoly,newNumero,newNomCarreau);
+            this.setMontant(newMontant);
         }
 
     /**
@@ -19,7 +19,7 @@ public class CarreauArgent extends CarreauAction {
     /**
      * @param montant the montant to set
      */
-    private void setMontant(int montant) {
-        this.montant = montant;
+    private void setMontant(int newMontant) {
+        this.montant = newMontant;
     }
 }

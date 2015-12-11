@@ -10,11 +10,11 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	private int nbMaisons;
 	private int[] loyerMaison;
 
-        public ProprieteAConstruire (Monopoly m,int num, String nom, int pA,int[] tabL,Groupe g){
-            super(m,num,nom,pA);
+        public ProprieteAConstruire (Monopoly newMonopoly,int newNumero, String newNomCarreau, int newPrixAchat,int[] tableLoyer,Groupe newGroupe){
+            super(newMonopoly,newNumero,newNomCarreau,newPrixAchat);
             this.setNbMaisons(0);
-            this.setLoyerMaison(tabL);
-            this.setGroupePropriete(g);
+            this.setLoyerMaison(tableLoyer);
+            this.setGroupePropriete(newGroupe);
            
             
         }
@@ -37,7 +37,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	 * 
 	 * @param nbM
 	 */
-	public int caculLoyerEffectif(int nbM) {
+	public int caculLoyerEffectif(int nbMaisons) {
 		// TODO - implement ProprieteAConstruire.caculLoyerEffectif
 		throw new UnsupportedOperationException();
 	}
@@ -52,8 +52,8 @@ public class ProprieteAConstruire extends CarreauPropriete {
     /**
      * @param groupePropriete the groupePropriete to set
      */
-    private void setGroupePropriete(Groupe groupePropriete) {
-        this.groupePropriete = groupePropriete;
+    private void setGroupePropriete(Groupe newGroupePropriete) {
+        this.groupePropriete = newGroupePropriete;
     }
 
     /**
@@ -66,8 +66,8 @@ public class ProprieteAConstruire extends CarreauPropriete {
     /**
      * @param nbMaisons the nbMaisons to set
      */
-    private void setNbMaisons(int nbMaisons) {
-        this.nbMaisons = nbMaisons;
+    private void setNbMaisons(int newNbMaisons) {
+        this.nbMaisons = newNbMaisons;
     }
 
     /**
@@ -80,8 +80,8 @@ public class ProprieteAConstruire extends CarreauPropriete {
     /**
      * @param loyerMaison the loyerMaison to set
      */
-    private void setLoyerMaison(int[] loyerMaison) {
-        this.loyerMaison = loyerMaison;
+    private void setLoyerMaison(int[] newLoyerMaison) {
+        this.loyerMaison = newLoyerMaison;
     }
 
 }

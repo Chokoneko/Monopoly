@@ -11,11 +11,11 @@ public class Groupe {
 	private int prixAchatMaison;
 	private int prixAchatHotel;
         
-        public Groupe(CouleurPropriete c,int pAM,int pAH){
+        public Groupe(CouleurPropriete couleur,int prixAchatMaison,int prixAchatHotel){
             proprietes = new ArrayList();
-            this.setCouleur(c);
-            this.setPrixAchatHotel(pAH);
-            this.setPrixAchatMaison(pAM);
+            this.setCouleur(couleur);
+            this.setPrixAchatHotel(prixAchatHotel);
+            this.setPrixAchatMaison(prixAchatMaison);
         }
 
     /**
@@ -28,8 +28,8 @@ public class Groupe {
     /**
      * @param proprietes the proprietes to set
      */
-    private void addPropriete(ProprieteAConstruire p) {     
-        this.getProprietes().add(p);
+    private void addPropriete(ProprieteAConstruire newProprieteAConstruire) {     
+        this.getProprietes().add(newProprieteAConstruire);
     }
 
     /**
@@ -42,8 +42,8 @@ public class Groupe {
     /**
      * @param couleur the couleur to set
      */
-    private void setCouleur(CouleurPropriete couleur) {
-        this.couleur = couleur;
+    private void setCouleur(CouleurPropriete newCouleur) {
+        this.couleur = newCouleur;
     }
 
     /**
@@ -56,8 +56,8 @@ public class Groupe {
     /**
      * @param prixAchatMaison the prixAchatMaison to set
      */
-    private void setPrixAchatMaison(int prixAchatMaison) {
-        this.prixAchatMaison = prixAchatMaison;
+    private void setPrixAchatMaison(int newPrixAchatMaison) {
+        this.prixAchatMaison = newPrixAchatMaison;
     }
 
     /**
@@ -70,8 +70,8 @@ public class Groupe {
     /**
      * @param prixAchatHotel the prixAchatHotel to set
      */
-    private void setPrixAchatHotel(int prixAchatHotel) {
-        this.prixAchatHotel = prixAchatHotel;
+    private void setPrixAchatHotel(int newPrixAchatHotel) {
+        this.prixAchatHotel = newPrixAchatHotel;
     }
 
 }

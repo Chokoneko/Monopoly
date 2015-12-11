@@ -10,9 +10,9 @@ public abstract class CarreauPropriete extends Carreau {
 	private int prixAchat;
 	private int loyer;
 
-        public CarreauPropriete(Monopoly m,int num, String nom, int pA){
-            super(m,num,nom);
-            this.setPrixAchat(pA);
+        public CarreauPropriete(Monopoly newMonopoly,int newNumero, String newNomCarreau, int newPrixAchat){
+            super(newMonopoly,newNumero,newNomCarreau);
+            this.setPrixAchat(newPrixAchat);
             this.setLoyer(0);
             this.setProprietaire(null);
             
@@ -40,8 +40,8 @@ public abstract class CarreauPropriete extends Carreau {
 	 * 
 	 * @param j
 	 */
-	public void setProprietaire(Joueur j) {
-		this.proprietaire = j;
+	public void setProprietaire(Joueur newJoueur) {
+		this.proprietaire = newJoueur;
 	}
 
 	public Joueur getProprietaire() {
@@ -57,7 +57,7 @@ public abstract class CarreauPropriete extends Carreau {
 	 * 
 	 * @param j
 	 */
-	public void action(Joueur j) {
+	public void action(Joueur newJoueur) {
 		// TODO - implement CarreauPropriete.action
 		throw new UnsupportedOperationException();
 	}
@@ -84,8 +84,8 @@ public abstract class CarreauPropriete extends Carreau {
     /**
      * @param loyer the loyer to set
      */
-    private void setLoyer(int loyer) {
-        this.loyer = loyer;
+    private void setLoyer(int newLoyer) {
+        this.loyer = newLoyer;
     }
 
 }

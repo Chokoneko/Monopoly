@@ -7,15 +7,15 @@ import Jeu.Monopoly;
 public class Gare extends CarreauPropriete {
 
     
-        public Gare (Monopoly m,int num, String nom, int pA){
-            super(m,num,nom,pA);
+        public Gare (Monopoly newMonopoly,int newNumero, String newNomCarreau, int newPrixAchat){
+             super(newMonopoly,newNumero,newNomCarreau,newPrixAchat);
             
         }
 	/**
 	 * m�thode/ retourne 25 * n
 	 * @param n
 	 */
-	public int CalculLoyerEffectif(int n) {
+	public int CalculLoyerEffectif(int nombreGarePossedees) {
 		// TODO - implement Gare.CalculLoyerEffectif
 		throw new UnsupportedOperationException();
 	}
