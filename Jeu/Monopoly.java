@@ -40,7 +40,7 @@ public class Monopoly {
 			for(int i=0; i<data.size(); ++i){
 				String caseType = data.get(i)[0];       // type : P propriété, G gare, C Compagnie, CT case tirage, CA case Argent, CM case mouvement
 				if(caseType.compareTo("P") == 0){
-					System.out.println("Proopriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+					System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         Groupe g ; 
                                         if(listeGroupes.get(CouleurPropriete.valueOf(data.get(i)[3]))==null){
                                             g=new Groupe(CouleurPropriete.valueOf(data.get(i)[3]),Integer.parseInt(data.get(i)[10]),Integer.parseInt(data.get(i)[11]));
@@ -111,6 +111,10 @@ public class Monopoly {
 		catch(IOException e){
 			System.err.println("[buildGamePlateau()] : Error while reading file!");
 		}
+                
+                de1 = this.jetDe();
+                de2 = this.jetDe();
+        
 	}
 	
 	private ArrayList<String[]> readDataFile(String filename, String token) throws FileNotFoundException, IOException
