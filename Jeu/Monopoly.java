@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Monopoly {
@@ -163,8 +164,8 @@ public class Monopoly {
 	}
 
 	public int jetDe() {
-		// TODO - implement Monopoly.jetD�
-		throw new UnsupportedOperationException();
+            Random randomJD = new Random();
+            return randomJD.nextInt(6)+1;
 	}
 
 	/**
