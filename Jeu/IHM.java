@@ -48,8 +48,8 @@ public class IHM {
             System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() );                        
         }
          
-        public void messageAfficherInfoLancerDes(){
-            System.out.println("Joueur : "+ this.getMonopoly().getNumeroJoueurCourant() +" Dé 1 : " + this.getMonopoly().getDe1() +" Dé 1 : " + this.getMonopoly().getDe1());                       
+        public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,){
+            System.out.println("Joueur : "+ this.getMonopoly().getNumeroJoueurCourant() +" Dé 1 : " + this.getMonopoly().getDe1() +" Dé 1 : " + this.getMonopoly().getDe1() +" Position : "+ this.getMonopoly());                       
         }
 	/**
 	 * 
