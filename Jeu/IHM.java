@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class IHM {
 
-	Monopoly monopoly;
+	private Monopoly monopoly;
 
         
 	/**
@@ -48,8 +48,8 @@ public class IHM {
             System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() );                        
         }
          
-        public void messageafficherDesAvancer (){
-            //System.out.println("Joueur : "/*+ this.getMonopoly().getJoueurCourant.getNom()*/ +" Dé 1 : " + this.getMonopoly().getDe1());                       
+        public void messageAfficherInfoLancerDes(){
+            System.out.println("Joueur : "+ this.getMonopoly().getNumeroJoueurCourant() +" Dé 1 : " + this.getMonopoly().getDe1() +" Dé 1 : " + this.getMonopoly().getDe1());                       
         }
 	/**
 	 * 
@@ -60,5 +60,12 @@ public class IHM {
 		// TODO - implement IHM.messageDemandeAchat
 		throw new UnsupportedOperationException();
 	}
+
+    /**
+     * @return the monopoly
+     */
+    public Monopoly getMonopoly() {
+        return monopoly;
+    }
 
 }
