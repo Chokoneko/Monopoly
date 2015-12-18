@@ -31,23 +31,6 @@ public class Joueur {
             this.setNbTourPrison(0);
             
         }
-	/**
-	 * 
-	 * @param l
-	 */
-	public void payerLoyer(int newLoyer) {
-		// TODO - implement Joueur.payerLoyer
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param l
-	 */
-	public void recevoirLoyer(int newLoyer) {
-		// TODO - implement Joueur.recevoirLoyer
-		throw new UnsupportedOperationException();
-	}
 
 	public void incrementerNbDouble() {
             this.setNbDouble(this.getNbDouble()+1);
@@ -60,7 +43,15 @@ public class Joueur {
 	public int getCash() {
 		return this.cash;
 	}
-
+        
+        /**
+	 * 
+	 * @param newCash
+	 */
+	public void setCash(int newCash) {
+		this.cash = newCash;
+	}
+        
 	/**
 	 * 
 	 * @param g
@@ -68,14 +59,6 @@ public class Joueur {
 	public void addGare(Gare newGare) {
 		// TODO - implement Joueur.addGare
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param newCash
-	 */
-	public void setCash(int newCash) {
-		this.cash = newCash;
 	}
 
 	/**
@@ -95,18 +78,17 @@ public class Joueur {
 		// TODO - implement Joueur.getNum�roPositionCourante
 		throw new UnsupportedOperationException();
 	}
-
+        
+        public String getNomPositionCourante() {
+		// TODO - implement Joueur.getNomPositionCourante
+		throw new UnsupportedOperationException();
+	}
 	public String getNomJoueur() {
 		return this.nomJoueur;
 	}
 
-	public String getNomPositionCourante() {
-		// TODO - implement Joueur.getNomPositionCourante
-		throw new UnsupportedOperationException();
-	}
-
 //	public Collection<ProprieteAConstruire> getProprietesAConstruire() {
-//		// TODO - implement Joueur.getProprietesAConstruire
+//		// TODO - implement Joueur.getProprietesAConstruire / modifier "collection"
 //		throw new UnsupportedOperationException();
 //	}
 
@@ -238,5 +220,12 @@ public class Joueur {
     private void setNbTourPrison(int newNbTourPrison) {
         this.nbTourPrison = newNbTourPrison;
     }
-
+    
+    /* TODO
+    public groupePossédéEntier(){
+    }
+    
+    public addCarteLibereDePrison(){
+    }
+    */
 }
