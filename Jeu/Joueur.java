@@ -104,6 +104,8 @@ public class Joueur {
                 //TODO - implement Joueur.addPropriete
                 throw new UnsupportedOperationException();
         }
+        
+      
 	/**
 	 * 
 	 * @param pAC
@@ -228,4 +230,11 @@ public class Joueur {
     public addCarteLibereDePrison(){
     }
     */
+
+    /**
+     * @return the proprietes
+     */
+    public CarreauPropriete[] getProprietes() {
+        return proprietes;
+    }
 }
