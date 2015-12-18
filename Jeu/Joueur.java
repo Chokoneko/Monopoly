@@ -14,6 +14,7 @@ public class Joueur {
 	private Gare[] gares;
 	private Carreau positionCourante;
 	private ProprieteAConstruire[] proprietesAConstruire;
+        private CarreauPropriete[] proprietes;
 	private String nomJoueur;
 	private int cash;
 	private int nbDouble;
@@ -98,7 +99,10 @@ public class Joueur {
 		// TODO - implement Joueur.addCompagnie
 		throw new UnsupportedOperationException();
 	}
-
+        
+        public void addPropriete(CarreauPropriete newCarreauPropriete){
+                //TODO - 
+        }
 	/**
 	 * 
 	 * @param pAC
