@@ -63,7 +63,10 @@ public class IHM {
 	}
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
             
-            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash()));
+            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
+            if (joueur.getProprietes().){
+                System.out.println("Ce joueur ne possède aucunes terres");
+            }
             
         }
 
