@@ -50,8 +50,7 @@ public class Joueur {
 	}
 
 	public int incrementerNbDouble() {
-		// TODO - implement Joueur.incr�menterNbDouble
-		throw new UnsupportedOperationException();
+		return (this.getNbDouble());
 	}
 
 	public int reinitialiserNbDouble() {
@@ -216,7 +215,7 @@ public class Joueur {
     /**
      * @return the nbDouble
      */
-    private int getNbDouble() {
+    public int getNbDouble() {
         return nbDouble;
     }
 
