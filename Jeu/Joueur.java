@@ -1,20 +1,21 @@
 package Jeu;
 
 
-import Jeu.Gare;
-import Jeu.ProprieteAConstruire;
-import Jeu.Compagnie;
-import Jeu.Monopoly;
 import Jeu.Carreau;
+import Jeu.Compagnie;
+import Jeu.Gare;
+import Jeu.Monopoly;
+import Jeu.ProprieteAConstruire;
+import java.util.HashSet;
 
 public class Joueur {
-
+//TODO choisir type collec (hashSet par default)
 	private Monopoly monopoly;
-	private Compagnie[] compagnies;
-	private Gare[] gares;
+	private HashSet <Compagnie> compagnies;
+	private HashSet<Gare> gares;
 	private Carreau positionCourante;
-	private ProprieteAConstruire[] proprietesAConstruire;
-        private CarreauPropriete[] proprietes;
+	private HashSet <ProprieteAConstruire> proprietesAConstruire;
+        private HashSet <CarreauPropriete> proprietes;
 	private String nomJoueur;
 	private int cash;
 	private int nbDouble;
