@@ -49,13 +49,12 @@ public class Joueur {
 		throw new UnsupportedOperationException();
 	}
 
-	public int incrementerNbDouble() {
-		return (this.getNbDouble());
+	public void incrementerNbDouble() {
+            this.setNbDouble(this.getNbDouble()+1);
 	}
 
-	public int reinitialiserNbDouble() {
-		// TODO - implement Joueur.reinitialiserNbDouble
-		throw new UnsupportedOperationException();
+	public void reinitialiserNbDouble() {
+		this.setNbDouble(0);
 	}
 
 	public int getCash() {
