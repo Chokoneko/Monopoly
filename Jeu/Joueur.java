@@ -101,7 +101,8 @@ public class Joueur {
 	}
         
         public void addPropriete(CarreauPropriete newCarreauPropriete){
-                //TODO - 
+                //TODO - implement Joueur.addPropriete
+                throw new UnsupportedOperationException();
         }
 	/**
 	 * 
