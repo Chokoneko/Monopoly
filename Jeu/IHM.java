@@ -48,6 +48,9 @@ public class IHM {
             System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() );                        
         }
          
+        public void messageafficherDesAvancer (){
+            //System.out.println("Joueur : "/*+ this.getMonopoly().getJoueurCourant.getNom()*/ +" Dé 1 : " + this.getMonopoly().getDe1());                       
+        }
 	/**
 	 * 
 	 * @param nom
