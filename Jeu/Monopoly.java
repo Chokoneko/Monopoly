@@ -20,6 +20,7 @@ public class Monopoly {
 	private int nbHotels = 12;
 	private int de1;
 	private int de2;
+        private int numeroJoueurCourant ;
 
         public Monopoly(String dataFilename){
             carreaux = new HashMap();
@@ -176,13 +177,20 @@ public class Monopoly {
 	 * @param j
 	 */
 	public void jouerUnCoup(Joueur j) {
-		// TODO - implement Monopoly.jouerUnCoup
-		throw new UnsupportedOperationException();
 	}
 
 	private void lancerDesAvancer() {
-		// TODO - implement Monopoly.lancerD�sAvancer
-		throw new UnsupportedOperationException();
+            int jetDouble = 0;
+            de1 = this.jetDe();
+            de2 = this.jetDe();
+            
+            if (de1 == de2) {
+                jetDouble++ ; 
+                
+            } 
+            else {
+                jetDouble = 0;
+            }
 	}
 
 	public int jetDe() {
@@ -288,6 +296,26 @@ public class Monopoly {
      */
     public int getNbHotels() {
         return nbHotels;
+    }
+
+    /**
+     * @return the numeroJoueurCourant
+     */
+    public int getNumeroJoueurCourant() {
+        return numeroJoueurCourant;
+    }
+     /**
+     * @return the JoueurCourant
+     */
+    public Joueur getJoueurCourant() {
+        return this.getJoueurs().get(this.getNumeroJoueurCourant());
+    }
+
+    /**
+     * @param numeroJoueurCourant the numeroJoueurCourant to set
+     */
+    public void setNumeroJoueurCourant(int numeroJoueurCourant) {
+        this.numeroJoueurCourant = numeroJoueurCourant;
     }
 
 }
