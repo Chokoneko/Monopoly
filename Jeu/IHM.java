@@ -67,6 +67,9 @@ public class IHM {
             if (joueur.getProprietes().){
                 System.out.println("Ce joueur ne possède aucunes terres");
             }
+            else{
+                System.out.println("Ce joueur ne possède les terres suivantes");
+            }
             
         }
 
