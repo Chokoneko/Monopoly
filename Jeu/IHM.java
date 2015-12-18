@@ -61,11 +61,16 @@ public class IHM {
 		// TODO - implement IHM.messageDemandeAchat
 		throw new UnsupportedOperationException();
 	}
+        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
+            
+            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash()));
+            
+        }
 
     /**
      * @return the monopoly
      */
-    public Monopoly getMonopoly() {
+    private Monopoly getMonopoly() {
         return monopoly;
     }
 
