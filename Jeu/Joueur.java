@@ -9,7 +9,7 @@ import Jeu.ProprieteAConstruire;
 import java.util.HashSet;
 
 public class Joueur {
-//TODO choisir type collec (hashSet par default)
+//TODO choisir type collec (hashSet par default - corps des methode a modifier)
 	private Monopoly monopoly;
 	private HashSet <Compagnie> compagnies;
 	private HashSet<Gare> gares;
