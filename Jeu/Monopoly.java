@@ -205,7 +205,7 @@ public class Monopoly {
             
             nomJ = this.getJoueurCourant().getNomJoueur();
             nomC = this.getJoueurCourant().getNomPositionCourante();
-            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getJoueurCourant().getNumeroPositionCourante(),de1+de2);
+            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(this.getJoueurCourant().getNumeroPositionCourante()),de1+de2);
             
             
             
