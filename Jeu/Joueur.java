@@ -70,19 +70,17 @@ public class Joueur {
 	}
 
 	public void incrementerNbTourPrison() {
-		// TODO - implement Joueur.incrementerNbTourPrison
-		throw new UnsupportedOperationException();
+            nbTourPrison = nbTourPrison + 1;
 	}
 
 	public int getNumeroPositionCourante() {
-		// TODO - implement Joueur.getNum�roPositionCourante
-		throw new UnsupportedOperationException();
-	}
+		return positionCourante.getNumero();
+        }
         
         public String getNomPositionCourante() {
-		// TODO - implement Joueur.getNomPositionCourante
-		throw new UnsupportedOperationException();
+		return positionCourante.getNomCarreau();
 	}
+        
 	public String getNomJoueur() {
 		return this.nomJoueur;
 	}
@@ -111,13 +109,11 @@ public class Joueur {
 	}
 
 	public int getNbGare() {
-		// TODO - implement Joueur.getNbGare
-		throw new UnsupportedOperationException();
+            return gares.length;
 	}
 
 	public int getNbCompagnie() {
-		// TODO - implement Joueur.getNbCompagnie
-		throw new UnsupportedOperationException();
+            return compagnies.length;
 	}
 
 	/**
@@ -126,8 +122,7 @@ public class Joueur {
 	 * @param argentSoustrait
 	 */
 	public int calculCashRestant(int argentDepart, int argentSoustrait) {
-		// TODO - implement Joueur.calculCashRestant
-		throw new UnsupportedOperationException();
+		return argentDepart - argentSoustrait;
 	}
 
     /**
