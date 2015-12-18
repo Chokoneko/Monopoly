@@ -61,18 +61,18 @@ public class IHM {
 		// TODO - implement IHM.messageDemandeAchat
 		throw new UnsupportedOperationException();
 	}
-        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
-            //TODO
-            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
-            if (joueur.getProprietes().){
-                System.out.println("Ce joueur ne possède aucunes terres");
-            }
-            else{
-                System.out.println("Ce joueur ne possède les terres suivantes :");
-                for (CarreauPropriete carreauPropriete : joueur.)
-            }
-            
-        }
+//        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
+//            //TODO terminer fonction (voir si getProprietes est ok) en affichant la liste des ppte de chaque joueur
+//            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
+//            if (joueur.getProprietes().){
+//                System.out.println("Ce joueur ne possède aucunes terres");
+//            }
+//            else{
+//                System.out.println("Ce joueur ne possède les terres suivantes :");
+//                for (CarreauPropriete carreauPropriete : joueur.)
+//            }
+//            
+//        }
 
     /**
      * @return the monopoly
