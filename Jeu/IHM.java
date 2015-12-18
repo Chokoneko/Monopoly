@@ -68,7 +68,8 @@ public class IHM {
                 System.out.println("Ce joueur ne possède aucunes terres");
             }
             else{
-                System.out.println("Ce joueur ne possède les terres suivantes");
+                System.out.println("Ce joueur ne possède les terres suivantes :");
+                for (CarreauPropriete carreauPropriete : joueur.)
             }
             
         }
