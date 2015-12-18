@@ -182,7 +182,6 @@ public class Monopoly {
 	private void lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
-            int numPosCourante;
             String nomJ, nomC;
             //TODO est ce que il vaut mieux declarer un joueur en local
             
@@ -200,14 +199,18 @@ public class Monopoly {
                 this.getJoueurCourant().incrementerNbTourPrison();
             }
             else {
-                numPosCourante = this.getJoueurCourant().getNumeroPositionCourante();
-                this.getJoueurCourant().setPositionCourante(getCarreau(numPosCourante+de1+de2));           
+                this.getJoueurCourant().setPositionCourante(getCarreau(this.getJoueurCourant().getNumeroPositionCourante()+de1+de2));           
             }
             
             
             nomJ = this.getJoueurCourant().getNomJoueur();
             nomC = this.getJoueurCourant().getNomPositionCourante();
-            this.getIhm().messageAfficheInfoLancerDes();
+            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getJoueurCourant().getNumeroPositionCourante());
+            
+            
+            
+//            for ()
+            
 	}
 
 	public int jetDe() {
