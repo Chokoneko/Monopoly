@@ -61,11 +61,22 @@ public class IHM {
 		// TODO - implement IHM.messageDemandeAchat
 		throw new UnsupportedOperationException();
 	}
+        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
+            
+            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
+            if (joueur.getProprietes().){
+                System.out.println("Ce joueur ne possède aucunes terres");
+            }
+            else{
+                System.out.println("Ce joueur ne possède les terres suivantes");
+            }
+            
+        }
 
     /**
      * @return the monopoly
      */
-    public Monopoly getMonopoly() {
+    private Monopoly getMonopoly() {
         return monopoly;
     }
 
