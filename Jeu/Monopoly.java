@@ -180,16 +180,19 @@ public class Monopoly {
 	}
 
 	private void lancerDesAvancer() {
-            int jetDouble = 0;
             de1 = this.jetDe();
             de2 = this.jetDe();
             
             if (de1 == de2) {
-                jetDouble++ ; 
+                this.getJoueurCourant().incrementerNbDouble();
                 
             } 
             else {
-                jetDouble = 0;
+                this.getJoueurCourant().reinitialiserNbDouble();
+            }
+            
+            if (this.getJoueurCourant().getNbDouble() == 3) {
+                
             }
 	}
 
