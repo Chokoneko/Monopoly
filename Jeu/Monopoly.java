@@ -236,10 +236,10 @@ public class Monopoly {
 	 * @param loyer
 	 * @param cashRestant
 	 */
-//	public void messageApresLoyer(Joueur jProprio, int loyer, int cashRestant) {
-//		// TODO - créer la méthode dans l'ihm
-//		throw new UnsupportedOperationException();
-//	}
+	public void messageApresLoyer(Joueur jProprio, int loyer, int cashRestant) {
+		// TODO - créer la méthode dans l'ihm
+		throw new UnsupportedOperationException();
+	}
 
 	public int getDe1() {
 		return this.de1;
