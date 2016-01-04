@@ -23,10 +23,10 @@ public class Joueur {
 
         public Joueur(Monopoly newMonopoly,String newNomJoueur){
             this.setMonopoly(newMonopoly);
-            compagnies = new Compagnie[2];
-            gares = new Gare[4];
+            compagnies = new HashSet<>();
+            gares = new HashSet<>();
             positionCourante = newMonopoly.getCarreau(1);
-            proprietesAConstruire = new ProprieteAConstruire[22];
+            proprietesAConstruire = new HashSet<>();
             this.setNomJoueur(newNomJoueur);
             this.setCash(1500);
             this.setNbDouble(0);
@@ -117,11 +117,11 @@ public class Joueur {
 	}
 
 	public int getNbGare() {
-            return gares.length;
+            return this.gares.size();
 	}
 
 	public int getNbCompagnie() {
-            return compagnies.length;
+            return this.compagnies.size();
 	}
 
 	/**
@@ -150,29 +150,29 @@ public class Joueur {
     /**
      * @return the compagnies
      */
-    private Compagnie[] getCompagnies() {
+    private HashSet<Compagnie> getCompagnies() {
         return compagnies;
     }
 
     /**
      * @param compagnies the compagnies to set
      */
-    private void setCompagnies(Compagnie[] newCompagnies) {
-        this.compagnies = newCompagnies;
+    private void setCompagnies(Compagnie newCompagnies) {
+        this.compagnies.add(newCompagnies);
     }
 
     /**
      * @return the gares
      */
-    private Gare[] getGares() {
+    private HashSet<Gare> getGares() {
         return gares;
     }
 
     /**
      * @param gares the gares to set
      */
-    private void setGares(Gare[] newGares) {
-        this.gares = newGares;
+    private void setGares(Gare newGares) {
+        this.gares.add(newGares);
     }
 
     /**
@@ -185,8 +185,8 @@ public class Joueur {
     /**
      * @param proprietesAConstruire the proprietesAConstruire to set
      */
-    private void setProprietesAConstruire(ProprieteAConstruire[] newProprietesAConstruire) {
-        this.proprietesAConstruire = newProprietesAConstruire;
+    private void setProprietesAConstruire(ProprieteAConstruire newProprietesAConstruire) {
+        this.proprietesAConstruire.add(newProprietesAConstruire);
     }
 
     /**
@@ -235,7 +235,7 @@ public class Joueur {
     /**
      * @return the proprietes
      */
-    public CarreauPropriete[] getProprietes() {
+    public HashSet<CarreauPropriete> getProprietes() {
         return proprietes;
     }
 }
