@@ -32,7 +32,7 @@ public class IHM {
         }
          public boolean messageAjouterJoueur (){
             System.out.println("Voulez vous ajouter un autre joueur ? (Y/N)");
-             // TODO il faudrait ajouter une sécurité pour ne pas répondre n'importe quoi
+             // TODO il faudrait ajouter une sécurité pour ne pas répondre n'importe quoi ?
             Scanner sc = new Scanner(System.in);               
             return (sc.nextLine().equals("Y")) ;
             
@@ -56,8 +56,9 @@ public class IHM {
 	 * @param nom
 	 * @param prixAchat
 	 */
-	public boolean messageDemandeAchat(String nom, int prixAchat) {
-		// TODO - implement IHM.messageDemandeAchat
+	public boolean messageDemandeAchat(String nom, int prixAchat) { // TODO le groupe/gare/compagnie
+//		System.out.println("La propriété "+nom+" appartient au groupe "+ +"et vaut"+"gils.");
+//                System.out.println("Voulez vous l'acheter ?");
 		throw new UnsupportedOperationException();
 	}
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
