@@ -177,12 +177,12 @@ public class Monopoly {
 	 * @param j
 	 */
 	public void jouerUnCoup(Joueur j) {
-	}
+            this.lancerDesAvancer();
+        }
 
 	private void lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
-            String nomJ, nomC;
             //TODO est ce que il vaut mieux declarer un joueur en local  //Question
             
             if (de1 == de2) {
