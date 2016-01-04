@@ -58,8 +58,14 @@ public abstract class CarreauPropriete extends Carreau {
 	 * @param j
 	 */
 	public void action(Joueur newJoueur) {
-		// TODO - implement CarreauPropriete.action
-		throw new UnsupportedOperationException();
+		Joueur proprietaire = this.getProprietaire();
+                
+                if (proprietaire != null){
+                    
+                }
+                else {
+                    
+                }
 	}
 
 	public void calculLoyer() {
@@ -87,5 +93,7 @@ public abstract class CarreauPropriete extends Carreau {
     private void setLoyer(int newLoyer) {
         this.loyer = newLoyer;
     }
+    
+    public abstract void 
 
 }

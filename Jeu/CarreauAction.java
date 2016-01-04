@@ -8,4 +8,6 @@ public abstract class CarreauAction extends Carreau {
     
     }
     
+    public abstract void action(Joueur j);
+    
 }

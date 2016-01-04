@@ -30,7 +30,7 @@ public class Monopoly {
 		buildGamePlateau(dataFilename);
                 this.inscrireJoueurs();
 	}
-        //blabla
+        
 	
 	private void buildGamePlateau(String dataFilename)  
 	{
@@ -178,10 +178,13 @@ public class Monopoly {
 	 * @param j
 	 */
 	public void jouerUnCoup(Joueur j) {
-            this.lancerDesAvancer();
+            Carreau positionJoueur;
+            positionJoueur = this.lancerDesAvancer();
+            
+            positionJoueur.action();
         }
 
-	private void lancerDesAvancer() {
+	private Carreau lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
             //TODO est ce que il vaut mieux declarer un joueur en local  //Question

@@ -46,5 +46,7 @@ public abstract class Carreau {
     private void setNomCarreau(String newNomCarreau) {
         this.nomCarreau = newNomCarreau;
     }
+    
+    public abstract void action(Joueur j);
 
 }
