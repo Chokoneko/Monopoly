@@ -18,10 +18,6 @@ public class ProprieteAConstruire extends CarreauPropriete {
            
             
         }
-	public int getNbMaison() {
-		// TODO - implement ProprieteAConstruire.getNbMaison
-		throw new UnsupportedOperationException();
-	}
 
 	public int getNbHotel() {
 		// TODO - implement ProprieteAConstruire.getNbHotel
@@ -82,6 +78,19 @@ public class ProprieteAConstruire extends CarreauPropriete {
      */
     private void setLoyerMaison(int[] newLoyerMaison) {
         this.loyerMaison = newLoyerMaison;
+    }
+
+    @Override 
+    public void acheterPropriété() {
+        this.setProprietaire(this.getMonopoly().getJoueurCourant());
+        this.getMonopoly().getJoueurCourant().addProprieteAConstruire(this);
+    }
+
+    @Override
+    public int calculLoyer() {
+        int nombreMaison;
+        nombreMaison = this.getNbMaisons();
+        
     }
 
 }

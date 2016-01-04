@@ -181,7 +181,7 @@ public class Monopoly {
             Carreau positionJoueur;
             positionJoueur = this.lancerDesAvancer();
             
-            positionJoueur.action();
+            positionJoueur.action(j);
         }
 
 	private Carreau lancerDesAvancer() {

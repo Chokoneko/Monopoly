@@ -22,4 +22,14 @@ public class Compagnie extends CarreauPropriete {
 		throw new UnsupportedOperationException();
 	}
 
+    @Override //TODO  faire la fonction
+    public void acheterPropriété() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int calculLoyer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

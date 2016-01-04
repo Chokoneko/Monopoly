@@ -17,10 +17,6 @@ public abstract class CarreauPropriete extends Carreau {
             this.setProprietaire(null);
             
         }
-	public void acheterPropriete() {
-		// TODO - implement CarreauPropriete.acheterPropriete
-		throw new UnsupportedOperationException();
-	}
 
 	public int getPrixAchat() {
 		return this.prixAchat;
@@ -61,17 +57,16 @@ public abstract class CarreauPropriete extends Carreau {
 		Joueur proprietaire = this.getProprietaire();
                 
                 if (proprietaire != null){
+                    this.calculLoyer();
                     
                 }
                 else {
+                    this.acheterPropriété();
                     
                 }
 	}
 
-	public void calculLoyer() {
-		// TODO - implement CarreauPropriete.calculLoyer
-		throw new UnsupportedOperationException();
-	}
+	public abstract int calculLoyer();
 
     /**
      * @param prixAchat the prixAchat to set
@@ -94,6 +89,6 @@ public abstract class CarreauPropriete extends Carreau {
         this.loyer = newLoyer;
     }
     
-    public abstract void 
+    public abstract void acheterPropriété();
 
 }
