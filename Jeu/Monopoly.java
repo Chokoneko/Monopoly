@@ -30,6 +30,7 @@ public class Monopoly {
 		buildGamePlateau(dataFilename);
                 this.inscrireJoueurs();
 	}
+        //blabla
 	
 	private void buildGamePlateau(String dataFilename)  
 	{
