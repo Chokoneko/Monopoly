@@ -23,7 +23,7 @@ public class Compagnie extends CarreauPropriete {
 	}
 
     @Override //TODO  faire la fonction
-    public void acheterPropriété() {
+    public void acheterPropriété(Joueur j) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

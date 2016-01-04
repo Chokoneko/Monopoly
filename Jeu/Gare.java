@@ -31,7 +31,7 @@ public class Gare extends CarreauPropriete {
 	}
 
     @Override //TODO faire la prop
-    public void acheterPropriété() {
+    public void acheterPropriété(Joueur j) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

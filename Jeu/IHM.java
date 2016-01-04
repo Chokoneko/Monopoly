@@ -46,6 +46,10 @@ public class IHM {
         public void messageAfficherLancerDesJoueur(Joueur joueur, Integer score){
             System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() );                        
         }
+        
+        public void messageRefusAchat(Joueur joueur, CarreauPropriete carreau){
+            System.out.println("Vous avez essayer d'acheter le carreau " +carreau.getNomCarreau() + " cependant il vous manque " + String.valueOf(carreau.getPrixAchat()-joueur.getCash()) +" pour réaliser cet achat");
+        }
          
         public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,Integer score){
             this.messageAfficherLancerDesJoueur(joueurCourant, score);

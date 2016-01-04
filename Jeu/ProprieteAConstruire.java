@@ -81,7 +81,21 @@ public class ProprieteAConstruire extends CarreauPropriete {
     }
 
     @Override 
-    public void acheterPropriété() {
+    public void acheterPropriété(Joueur j) {
+        
+        int cashJoueur;
+        int prixProp;
+        
+        cashJoueur = j.getCash();
+        prixProp = this.getPrixAchat();
+        
+        if (cashJoueur > prixProp){
+            
+        }
+        else {
+            
+        }
+        
         this.setProprietaire(this.getMonopoly().getJoueurCourant());
         this.getMonopoly().getJoueurCourant().addProprieteAConstruire(this);
     }
@@ -92,7 +106,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
         nombreMaison = this.getNbMaisons();
         
         int loyerEffectif;
-        loyerEffectif = this.caculLoyerEffectif(nombreMaison);
+        loyerEffectif = this.getLoyerMaison()[nombreMaison-1];
         
         int cashJoueurCourant;
         cashJoueurCourant = this.getMonopoly().getJoueurCourant().getCash();

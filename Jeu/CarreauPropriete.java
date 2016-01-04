@@ -95,6 +95,6 @@ public abstract class CarreauPropriete extends Carreau {
         this.loyer = newLoyer;
     }
     
-    public abstract void acheterPropriété();
+    public abstract void acheterPropriété(Joueur j);
 
 }

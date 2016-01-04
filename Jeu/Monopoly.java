@@ -340,6 +340,10 @@ public class Monopoly {
         this.numeroJoueurCourant = numeroJoueurCourant;
     }
     
+    public void messageRefusAchat(Joueur joueur, CarreauPropriete carreau){
+        this.getIhm().messageRefusAchat(joueur, carreau);
+    }
+    
 
 
 }
