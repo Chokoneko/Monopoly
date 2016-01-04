@@ -32,4 +32,7 @@ public class IHMG {
         panPlateau.setLayout(new GridLayout(13,13)); // découpage des cases, les angles sont des carré de deux carreau, les autres des rectagles de 1 par 2
     }
     
+    public void CreationCases() {
+//        panPlateau.add(pan1);
+    }
 }
