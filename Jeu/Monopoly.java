@@ -31,13 +31,13 @@ public class Monopoly {
                 this.inscrireJoueurs();
 	}
 	
-	private void buildGamePlateau(String dataFilename)  // pour le moment les groupes sont crées chaque fois, il faudrait juste add la case si le groupe existe 
+	private void buildGamePlateau(String dataFilename)  
 	{
 		try{
                         HashMap<CouleurPropriete,Groupe> listeGroupes = new HashMap() ;
 			ArrayList<String[]> data = readDataFile("src/Data/"+dataFilename, ",");                       
 			
-			//TODO: create cases instead of displaying
+			
 			for(int i=0; i<data.size(); ++i){
 				String caseType = data.get(i)[0];       // type : P propriété, G gare, C Compagnie, CT case tirage, CA case Argent, CM case mouvement
 				if(caseType.compareTo("P") == 0){
@@ -183,7 +183,7 @@ public class Monopoly {
             de1 = this.jetDe();
             de2 = this.jetDe();
             String nomJ, nomC;
-            //TODO est ce que il vaut mieux declarer un joueur en local
+            //TODO est ce que il vaut mieux declarer un joueur en local  //Question
             
             if (de1 == de2) {
                 this.getJoueurCourant().incrementerNbDouble();
@@ -228,10 +228,7 @@ public class Monopoly {
 		//throw new UnsupportedOperationException();
 	}
 
-//	public Collection<Joueur> getJoueurs() {
-//		// TODO - implement Monopoly.getJoueurs
-//		throw new UnsupportedOperationException();
-//	}
+	
 
 	/**
 	 * 
@@ -239,10 +236,10 @@ public class Monopoly {
 	 * @param loyer
 	 * @param cashRestant
 	 */
-	public void messageApresLoyer(Joueur jProprio, int loyer, int cashRestant) {
-		// TODO - implement Monopoly.messageApresLoyer
-		throw new UnsupportedOperationException();
-	}
+//	public void messageApresLoyer(Joueur jProprio, int loyer, int cashRestant) {
+//		// TODO - créer la méthode dans l'ihm
+//		throw new UnsupportedOperationException();
+//	}
 
 	public int getDe1() {
 		return this.de1;
@@ -258,7 +255,7 @@ public class Monopoly {
 	 * @param prixA
 	 */
 	public boolean messageDemandeAchat(String nomC, int prixA) {
-		// TODO - implement Monopoly.messageDemandeAchat
+		// TODO - créer la méthode dans l'ihm
 		throw new UnsupportedOperationException();
 	}
 
@@ -298,7 +295,7 @@ public class Monopoly {
     }
 
     /**
-     * @param joueurs the joueurs to set // todo
+     * @param joueurs the joueurs to set // todo necesaire ? plutot un add nn ?
      */
     public void setJoueurs(ArrayList<Joueur> joueurs) {
         this.joueurs = joueurs;
