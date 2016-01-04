@@ -203,17 +203,19 @@ public class Monopoly {
                 this.getJoueurCourant().incrementerNbTourPrison();
             }
             else {
-                this.getJoueurCourant().setPositionCourante(getCarreau(this.getJoueurCourant().getNumeroPositionCourante()+de1+de2));           
+                this.getJoueurCourant().setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
             }
             
             
-            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getNumeroPositionCourante()),de1+de2);
+            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1+de2);
             
             
             
             for (Joueur joueur : this.getJoueurs()){
-               this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getNumeroPositionCourante()));
+               this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
             }
+            
+            return (this.getJoueurCourant().getPositionCourante());
             
 	}
 
@@ -337,5 +339,7 @@ public class Monopoly {
     public void setNumeroJoueurCourant(int numeroJoueurCourant) {
         this.numeroJoueurCourant = numeroJoueurCourant;
     }
+    
+
 
 }

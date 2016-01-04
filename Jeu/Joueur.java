@@ -75,12 +75,12 @@ public class Joueur {
             nbTourPrison = nbTourPrison + 1;
 	}
 
-	public int getNumeroPositionCourante() {
+	/*public int getNumeroPositionCourante() {
 		return positionCourante.getNumero();
-        }
+        }*/
         
-        public String getNomPositionCourante() {
-		return positionCourante.getNomCarreau();
+        public Carreau getPositionCourante() {
+		return positionCourante;
 	}
         
 	public String getNomJoueur() {
@@ -173,13 +173,6 @@ public class Joueur {
      */
     private void setGares(Gare newGares) {
         this.gares.add(newGares);
-    }
-
-    /**
-     * @return the positionCourante
-     */
-    private Carreau getPositionCourante() {
-        return positionCourante;
     }
 
     /**
