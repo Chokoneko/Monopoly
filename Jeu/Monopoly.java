@@ -203,13 +203,13 @@ public class Monopoly {
             }
             
             
-            nomJ = this.getJoueurCourant().getNomJoueur();
-            nomC = this.getJoueurCourant().getNomPositionCourante();
-            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(this.getJoueurCourant().getNumeroPositionCourante()),de1+de2);
+            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getNumeroPositionCourante()),de1+de2);
             
             
             
-//            for ()
+            for (Joueur joueur : this.getJoueurs()){
+               this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getNumeroPositionCourante()));
+            }
             
 	}
 
