@@ -8,7 +8,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
 
 	private Groupe groupePropriete;
 	private int nbMaisons;
-	private int[] loyerMaison;
+	private int[] loyerMaison = new int[5];
 
         public ProprieteAConstruire (Monopoly newMonopoly,int newNumero, String newNomCarreau, int newPrixAchat,int[] tableLoyer,Groupe newGroupe){
             super(newMonopoly,newNumero,newNomCarreau,newPrixAchat);
@@ -92,8 +92,23 @@ public class ProprieteAConstruire extends CarreauPropriete {
         nombreMaison = this.getNbMaisons();
         
         int loyerEffectif;
-        loyerEffectif = 
+        loyerEffectif = this.caculLoyerEffectif(nombreMaison);
         
+        int cashJoueurCourant;
+        cashJoueurCourant = this.getMonopoly().getJoueurCourant().getCash();
+        
+        int cashRestant;
+        cashRestant = cashJoueurCourant - loyerEffectif;
+        
+        Joueur proprio;
+        proprio = this.getProprietaire();
+        
+        this.getMonopoly().messageApresLoyer(proprio, loyerEffectif, cashRestant);
+        return loyerEffectif;
+    }
+    
+    public int calculLoyerEffectif(int nombreMaison){
+        return (this.getLoyerMaison()[nombreMaison-1]);
     }
 
 }

@@ -53,11 +53,17 @@ public abstract class CarreauPropriete extends Carreau {
 	 * 
 	 * @param j
 	 */
-	public void action(Joueur newJoueur) {
+	public void action(Joueur joueur) {
 		Joueur proprietaire = this.getProprietaire();
                 
                 if (proprietaire != null){
-                    this.calculLoyer();
+                    int loyer;
+                    loyer = this.calculLoyer();
+                    
+                    proprietaire.setCash(proprietaire.getCash()+loyer);
+                    joueur.setCash(joueur.getCash()-loyer);
+                    
+                    this.construire();
                     
                 }
                 else {
