@@ -91,6 +91,9 @@ public class ProprieteAConstruire extends CarreauPropriete {
         int nombreMaison;
         nombreMaison = this.getNbMaisons();
         
+        int loyerEffectif;
+        loyerEffectif = 
+        
     }
 
 }
