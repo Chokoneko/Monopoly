@@ -56,11 +56,16 @@ public class IHM {
 	 * @param nom
 	 * @param prixAchat
 	 */
-	public boolean messageDemandeAchat(String nom, int prixAchat) { // TODO le groupe/gare/compagnie
-//		System.out.println("La propriété "+nom+" appartient au groupe "+ +"et vaut"+"gils.");
+//	public boolean messageDemandeAchat(CarreauPropriete carreauP, int prixAchat) { // TODO le groupe/gare/compagnie
+//		System.out.print("La propriété "+carreauP.getNom()+" appartient au groupe ");
+//                if (carreauP){
+//                    
+//                }
+//                System.out.print();                
+//                System.out.println(" et vaut"+carreauP.getPrixAchat()+"gils.");//TODO Integer ou int ?
 //                System.out.println("Voulez vous l'acheter ?");
-		throw new UnsupportedOperationException();
-	}
+//		throw new UnsupportedOperationException();
+//	}
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
             
             System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
