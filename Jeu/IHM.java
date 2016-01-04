@@ -15,9 +15,8 @@ public class IHM {
 	 * @param prix
 	 * @param cashRestant
 	 */
-	public void messageApresLoyer(Joueur proprietaire, int prix, int cashRestant) {
-		// TODO - implement IHM.messageApresLoyer
-		throw new UnsupportedOperationException();
+	public void messageApresLoyer(Joueur proprietaire, Integer prix, Integer cashRestant) {
+		System.out.println("Vous devez payer "+prix.toString()+" gils au joueur "+ proprietaire.getNomJoueur()+". Il vous restera "+cashRestant.toString()+" gils." );
 	}
 
 	public boolean saisieRep() {
@@ -75,6 +74,7 @@ public class IHM {
             }            
         }
 
+        
     /**
      * @return the monopoly
      */

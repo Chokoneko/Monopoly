@@ -236,9 +236,8 @@ public class Monopoly {
 	 * @param loyer
 	 * @param cashRestant
 	 */
-	public void messageApresLoyer(Joueur jProprio, int loyer, int cashRestant) {
-		// TODO - créer la méthode dans l'ihm
-		throw new UnsupportedOperationException();
+	public void messageApresLoyer(Joueur jProprio, Integer loyer, Integer cashRestant) {
+		this.getIhm().messageApresLoyer(jProprio, loyer, cashRestant);
 	}
 
 	public int getDe1() {
