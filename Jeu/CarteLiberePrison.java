@@ -24,7 +24,7 @@ public class CarteLiberePrison extends Carte {
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+        this.setProprietaire(this.getMonopoly().getJoueurCourant());
     }
     
 }

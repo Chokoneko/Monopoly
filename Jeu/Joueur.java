@@ -1,11 +1,6 @@
 package Jeu;
 
 
-import Jeu.Carreau;
-import Jeu.Compagnie;
-import Jeu.Gare;
-import Jeu.Monopoly;
-import Jeu.ProprieteAConstruire;
 import java.util.HashSet;
 
 public class Joueur {
@@ -20,6 +15,7 @@ public class Joueur {
 	private int cash;
 	private int nbDouble;
 	private int nbTourPrison;
+        private HashSet<CarteLiberePrison> CartesLiberePrison ;
 
         public Joueur(Monopoly newMonopoly,String newNomJoueur){
             this.setMonopoly(newMonopoly);
@@ -87,10 +83,10 @@ public class Joueur {
 		return this.nomJoueur;
 	}
 
-//	public Collection<ProprieteAConstruire> getProprietesAConstruire() {
-//		// TODO - implement Joueur.getProprietesAConstruire / modifier "collection"
-//		throw new UnsupportedOperationException();
-//	}
+	public HashSet<ProprieteAConstruire> getProprietesAConstruire() {
+		// TODO - implement Joueur.getProprietesAConstruire / modifier "collection"
+		throw new UnsupportedOperationException();
+	}
 
 	/**
 	 * 
@@ -230,5 +226,19 @@ public class Joueur {
      */
     public HashSet<CarreauPropriete> getProprietes() {
         return proprietes;
+    }
+
+    /**
+     * @return the CartesLiberePrison
+     */
+    public HashSet<CarteLiberePrison> getCartesLiberePrison() {
+        return CartesLiberePrison;
+    }
+
+    /**
+     * @param CartesLiberePrison the CartesLiberePrison to set
+     */
+    public void addCartesLiberePrison(CarteLiberePrison CarteLiberePrison) {
+        this.getCartesLiberePrison().add(CarteLiberePrison);
     }
 }

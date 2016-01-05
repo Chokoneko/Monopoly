@@ -20,8 +20,12 @@ public class ProprieteAConstruire extends CarreauPropriete {
         }
 
 	public int getNbHotel() {
-		// TODO - implement ProprieteAConstruire.getNbHotel
-		throw new UnsupportedOperationException();
+	if (nbMaisons==5){
+            return 1;
+        }
+        else {
+            return 0;
+        }
 	}
 
 	public Groupe getGroupe() {
@@ -56,8 +60,14 @@ public class ProprieteAConstruire extends CarreauPropriete {
     /**
      * @return the nbMaisons
      */
-    private int getNbMaisons() {
-        return nbMaisons;
+    public int getNbMaisons() {
+        if (nbMaisons<5){
+            return nbMaisons;
+        }
+        else {
+            return 0;
+        }
+        
     }
 
     /**

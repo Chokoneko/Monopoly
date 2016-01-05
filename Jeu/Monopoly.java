@@ -131,34 +131,34 @@ public class Monopoly {
 				String carteType = data.get(i)[0];       
 				if(carteType.compareTo("CL") == 0){                                 // Carte liberer de prison
                                     System.out.println(data.get(i)[3]);
-                                    CarteLiberePrison CLP = new CarteLiberePrison();                                           
+                                    CarteLiberePrison CLP = new CarteLiberePrison(this,data.get(i)[2],Integer.valueOf(data.get(i)[1]));                                           
                                 }
 				else if(carteType.compareTo("CA") == 0){                            // Carte Argent
 					System.out.println(data.get(i)[3]);
-                                        CarteArgentAbsolu CA = new CarteArgentAbsolu();        
+                                        CarteArgentAbsolu CA = new CarteArgentAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));        
 				}
 				else if(carteType.compareTo("CAA") == 0){                           // Carte Argent Anniv
 					System.out.println(data.get(i)[3]);
-                                        CarteArgentAnniversaire CAA = new CarteArgentAnniversaire();
+                                        CarteArgentAnniversaire CAA = new CarteArgentAnniversaire(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         
 				}
 				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementAbsolu Prison = new CarteMouvementAbsolu();
+                                        CarteMouvementAbsolu Prison = new CarteMouvementAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),true);
                                         
 				}
-				else if(carteType.compareTo("DA") == 0){                            // Carte deplacement Absolu
+				else if(carteType.compareTo("MA") == 0){                            // Carte deplacement Absolu
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementAbsolu DA = new CarteMouvementAbsolu();
+                                        CarteMouvementAbsolu DA = new CarteMouvementAbsolu(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),data.get(i)[3].compareTo("->") == 0);
 				}
-				else if(carteType.compareTo("DR") == 0){                           // Carte deplacement Relatif
+				else if(carteType.compareTo("MR") == 0){                           // Carte deplacement Relatif
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementRelatif DR = new CarteMouvementRelatif();
+                                        CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         
 				}
                                 else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
 					System.out.println(data.get(i)[4]);
-                                        CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions();
+                                        CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]),Integer.valueOf(data.get(i)[3]));
        
 				}
 				else
@@ -321,7 +321,9 @@ public class Monopoly {
 	 * @param prixA
 	 */
 	public boolean messageDemandeAchat(CarreauPropriete carreau) {
-		this.getIhm()
+            boolean rep;
+            rep = this.getIhm().messageDemandeAchat(carreau);
+            return rep;
 	}
 
     /**
