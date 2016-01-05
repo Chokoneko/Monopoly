@@ -135,13 +135,21 @@ public class Joueur {
 //        }
         
         // precondition il y a au moins une case constructible
-//        public HashSet<ProprieteAConstruire> getCasesConstructibles(Groupe groupe) {
-//            HashSet<ProprieteAConstruire> casesConstructibles = new HashSet ();
-//            for (ProprieteAConstruire pAC : groupe.getProprietes()){
-//                if(pAC.getAttributNbMaison())
-//            }
-//            return casesConstructibles ;
-//        }
+        public HashSet<ProprieteAConstruire> getCasesConstructibles(Groupe groupe) {
+            HashSet<ProprieteAConstruire> casesConstructibles = new HashSet ();
+            int mini=5 ;
+            for (ProprieteAConstruire pAC : groupe.getProprietes()){
+                if(pAC.getAttributNbMaison()<mini){
+                    mini = pAC.getAttributNbMaison();
+                }
+            }
+            for (ProprieteAConstruire pAC : groupe.getProprietes()){
+                if(pAC.getAttributNbMaison()==mini){
+                    casesConstructibles.add(pAC);
+                }
+            }
+            return casesConstructibles ;
+        }
                 
 	/**
 	 * 
