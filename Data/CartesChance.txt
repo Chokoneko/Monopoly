@@ -1,6 +1,6 @@
 CL,1,Vous êtes libérés de prison. Cette carte peut être conservée jusqu'à qu'elle soit utilisée.
 MR,2,3,Reculer de trois cases
-CAA,3,-40,-115,Vous êtes imposés pour les réparations de voirie à raison de : 40 gils par maison et 115 gils par hotêl.
+ARP,3,-40,-115,Vous êtes imposés pour les réparations de voirie à raison de : 40 gils par maison et 115 gils par hotêl.
 CA,4,-15,Amende pour excès de vitesse : 15 gils
 ARP,5,-25,-100,Faites des réparations dans toutes vos maisons : versez pour chaque maison 25 gils et pour chaque hotêl 100 gils
 CA,6,-20,Amende pour ivresse : 20 gils
