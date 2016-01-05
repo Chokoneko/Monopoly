@@ -22,12 +22,14 @@ public class Monopoly {
 	private int de2;
         private int numeroJoueurCourant ;
 
-        public Monopoly(String dataFilename){
+        public Monopoly(String dataFilename, String dataCards1, String dataCards2){
             carreaux = new HashMap();
             joueurs = new ArrayList<>() ;
             ihm = new IHM();
             
 		buildGamePlateau(dataFilename);
+                buildGameCards(dataCards1);
+                buildGameCards(dataCards2);
                 this.inscrireJoueurs();
 	}
         
@@ -116,6 +118,66 @@ public class Monopoly {
                 
         
 	}
+        
+        
+        private void buildGameCards(String dataCards)  
+	{
+		try{
+                        
+			ArrayList<String[]> data = readDataFile("src/Data/"+dataCards, ",");                       
+			
+			
+			for(int i=0; i<data.size(); ++i){
+				String carteType = data.get(i)[0];       
+				if(carteType.compareTo("CL") == 0){                                 // Carte liberer de prison
+                                    System.out.println(data.get(i)[3]);
+                                    CarteLiberePrison CLP = new CarteLiberePrison();                                           
+                                }
+				else if(carteType.compareTo("CA") == 0){                            // Carte Argent
+					System.out.println(data.get(i)[3]);
+                                        CarteArgent CA = new CarteArgent();        
+				}
+				else if(carteType.compareTo("CAA") == 0){                           // Carte Argent Anniv
+					System.out.println(data.get(i)[3]);
+                                        //Carte CAA
+                                        // TODO
+                                        
+				}
+				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
+					System.out.println(data.get(i)[3]);
+                                        CarteMouvementAbsolu Prison = new CarteMouvementAbsolu();
+                                        
+				}
+				else if(carteType.compareTo("DA") == 0){                            // Carte deplacement Absolu
+					System.out.println(data.get(i)[3]);
+                                        CarteMouvementAbsolu DA = new CarteMouvementAbsolu();
+				}
+				else if(carteType.compareTo("DR") == 0){                           // Carte deplacement Relatif
+					System.out.println(data.get(i)[3]);
+                                        CarteMouvementRelatif DR = new CarteMouvementRelatif();
+                                        
+				}
+                                else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
+					System.out.println(data.get(i)[4]);
+                                        //Carte CARP = new Carte;
+       
+				}
+				else
+					System.err.println("[buildGameCards()] : Invalid Data type");
+			}
+			
+		} 
+		catch(FileNotFoundException e){
+			System.err.println("[buildGameCards()] : File is not found!");
+		}
+		catch(IOException e){
+			System.err.println("[buildGameCard()] : Error while reading file!");
+		}
+                
+        
+	}
+        
+        
 	
 	private ArrayList<String[]> readDataFile(String filename, String token) throws FileNotFoundException, IOException
 	{
