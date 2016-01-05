@@ -111,10 +111,38 @@ public class Joueur {
             return gPE;
            }
         
-        //précondition groupepossedeentier
+//        précondition groupepossedeentier
 //        public boolean groupeConstructible (Groupe groupe) {
-//    
+//             il y a hotel maison
+//            if
+//                    
+//            
+//            
+//            
+//            
+//            if(this.getMonopoly().getNbHotelsRestant() + this.getMonopoly().getNbMaisonsRestant()> 0){
+//                boolean placelibre = false ;
+//                for(ProprieteAConstruire pAC : groupe.getProprietes()){
+//                    pAC.getNbHotel()
+//                }
+//                if(){
+//                    
+//                }
+//            }
+//             il y a de la place
+//             il y a des sous
+//            return false ;
 //        }
+        
+        // precondition il y a au moins une case constructible
+//        public HashSet<ProprieteAConstruire> getCasesConstructibles(Groupe groupe) {
+//            HashSet<ProprieteAConstruire> casesConstructibles = new HashSet ();
+//            for (ProprieteAConstruire pAC : groupe.getProprietes()){
+//                if(pAC.getAttributNbMaison())
+//            }
+//            return casesConstructibles ;
+//        }
+                
 	/**
 	 * 
 	 * @param c

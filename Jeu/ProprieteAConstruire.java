@@ -19,6 +19,10 @@ public class ProprieteAConstruire extends CarreauPropriete {
             
         }
 
+        public int getAttributNbMaison (){
+            return nbMaisons ;
+        }
+        
 	public int getNbHotel() {
 	if (nbMaisons==5){
             return 1;
