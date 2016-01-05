@@ -16,7 +16,7 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
     private int montantHotel ;
 
     @Override
-    public void calculMontant(Joueur joueur) {
+    public void payerMontant(Joueur joueur) {
         throw new UnsupportedOperationException("Not supported yet."); //TODO.
     }
 

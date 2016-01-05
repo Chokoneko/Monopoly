@@ -12,6 +12,6 @@ package Jeu;
  */
 public abstract class CarteArgent extends Carte {
     
-    public abstract void calculMontant(Joueur joueur);
+    public abstract void payerMontant(Joueur joueur);
     
 }
