@@ -24,7 +24,10 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
     @Override
     public void payerMontant(Joueur joueur) {
         int montantTotal=0 ;
-        montantTotal=joueur.getProprietesAConstruire().
+        for (ProprieteAConstruire pAC : joueur.getProprietesAConstruire()){
+            montantTotal=montantTotal+(pAC.getNbHotel()*this.getMontantHotel())+(pAC.getNbMaisons()*this.getMontantMaison());
+        }
+        
         joueur.setCash(joueur.getCash()-montantTotal);
     }
 
