@@ -1,13 +1,13 @@
 package Jeu;
 
 
-import Jeu.Carreau;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,7 +15,9 @@ public class Monopoly {
 
 	private IHM ihm;
 	private HashMap<Integer,Carreau> carreaux;
-	private ArrayList<Joueur> joueurs;
+        private HashMap<Integer,Carte> carteCaisseCommunaute;
+        private HashMap<Integer,Carte> carteChance;
+        private ArrayList<Joueur> joueurs;
 	private int nbMaisons = 32;
 	private int nbHotels = 12;
 	private int de1;
@@ -28,8 +30,8 @@ public class Monopoly {
             ihm = new IHM();
             
 		buildGamePlateau(dataFilename);
-                buildGameCards(dataCards1);
-                buildGameCards(dataCards2);
+                buildGameCards(dataCards1, carteCaisseCommunaute);
+                buildGameCards(dataCards2, carteChance);
                 this.inscrireJoueurs();
 	}
         
@@ -120,7 +122,7 @@ public class Monopoly {
 	}
         
         
-        private void buildGameCards(String dataCards)  
+        private void buildGameCards(String dataCards, HashMap<Integer,Carte> paquetCarte)  
 	{
 		try{
                         
@@ -131,35 +133,38 @@ public class Monopoly {
 				String carteType = data.get(i)[0];       
 				if(carteType.compareTo("CL") == 0){                                 // Carte liberer de prison
                                     System.out.println(data.get(i)[3]);
-                                    CarteLiberePrison CLP = new CarteLiberePrison(this,data.get(i)[2],Integer.valueOf(data.get(i)[1]));                                           
+                                    CarteLiberePrison CLP = new CarteLiberePrison(this,data.get(i)[2],Integer.valueOf(data.get(i)[1]));
+                                    paquetCarte.put(Integer.valueOf(data.get(i)[1]), CLP);
                                 }
 				else if(carteType.compareTo("CA") == 0){                            // Carte Argent
 					System.out.println(data.get(i)[3]);
-                                        CarteArgentAbsolu CA = new CarteArgentAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));        
+                                        CarteArgentAbsolu CA = new CarteArgentAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
+                                        paquetCarte.put(Integer.valueOf(data.get(i)[1]), CA);
 				}
 				else if(carteType.compareTo("CAA") == 0){                           // Carte Argent Anniv
 					System.out.println(data.get(i)[3]);
                                         CarteArgentAnniversaire CAA = new CarteArgentAnniversaire(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
-                                        
+                                        paquetCarte.put(Integer.valueOf(data.get(i)[1]), CAA);
 				}
 				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
 					System.out.println(data.get(i)[3]);
                                         CarteMouvementAbsolu Prison = new CarteMouvementAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),true);
-                                        
+                                        paquetCarte.put(Integer.valueOf(data.get(i)[1]), Prison);
 				}
 				else if(carteType.compareTo("MA") == 0){                            // Carte deplacement Absolu
 					System.out.println(data.get(i)[3]);
                                         CarteMouvementAbsolu DA = new CarteMouvementAbsolu(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),data.get(i)[3].compareTo("->") == 0);
-				}
+                                        paquetCarte.put(Integer.valueOf(data.get(i)[1]), DA);
+                                }
 				else if(carteType.compareTo("MR") == 0){                           // Carte deplacement Relatif
 					System.out.println(data.get(i)[3]);
                                         CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
-                                        
+                                        paquetCarte.put(Integer.valueOf(data.get(i)[1]), DR);
 				}
                                 else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
 					System.out.println(data.get(i)[4]);
                                         CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]),Integer.valueOf(data.get(i)[3]));
-       
+                                        paquetCarte.put(Integer.valueOf(data.get(i)[1]), CARP);
 				}
 				else
 					System.err.println("[buildGameCards()] : Invalid Data type");
