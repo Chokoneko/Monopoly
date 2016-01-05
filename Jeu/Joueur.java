@@ -87,10 +87,10 @@ public class Joueur {
 		return this.nomJoueur;
 	}
 
-//	public Collection<ProprieteAConstruire> getProprietesAConstruire() {
-//		// TODO - implement Joueur.getProprietesAConstruire / modifier "collection"
-//		throw new UnsupportedOperationException();
-//	}
+	public HashSet<ProprieteAConstruire> getProprietesAConstruire() {
+		// TODO - implement Joueur.getProprietesAConstruire / modifier "collection"
+		throw new UnsupportedOperationException();
+	}
 
 	/**
 	 * 
