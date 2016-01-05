@@ -105,7 +105,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
             }
         }
         else {
-            this.getMonopoly().messageRefusAchat(j, this); 
+            this.getMonopoly().messageRefusAchat(joueur, this); 
         }
         
 
