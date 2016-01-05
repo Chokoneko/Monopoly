@@ -18,7 +18,9 @@ public class CarteAllerPrison extends CarteMouvementAbsolu{
     
     @Override
     public void actionCarte() {
-       
+        this.getMonopoly().getJoueurCourant().setPositionCourante(this.getMonopoly().getCarreau(11));
+        this.getMonopoly().getJoueurCourant().incrementerNbTourPrison();
     }
     
 }
+ 

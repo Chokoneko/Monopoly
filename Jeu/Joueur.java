@@ -1,6 +1,7 @@
 package Jeu;
 
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Joueur {
@@ -88,6 +89,32 @@ public class Joueur {
 		throw new UnsupportedOperationException();
 	}
 
+        public HashSet<Groupe> groupesPossedesEntiers(){
+            HashSet<Groupe> gPE = new HashSet(); 
+            HashMap<Groupe,Integer> liste = new HashMap () ;
+            for (ProprieteAConstruire pAC : this.getProprietesAConstruire()){
+                if(!liste.containsKey(pAC.getGroupe())){
+                    liste.put(pAC.getGroupe(), 1);
+                }
+                else {
+                    int nb = liste.get(pAC.getGroupe());
+                    liste.remove(pAC.getGroupe());
+                    liste.put(pAC.getGroupe(), nb+1);
+                }
+            }
+            for (Groupe groupe : liste.keySet()){
+                if (liste.get(groupe)==groupe.getProprietes().size()){
+                    gPE.add(groupe);
+                }
+            }
+            
+            return gPE;
+           }
+        
+        //précondition groupepossedeentier
+//        public boolean groupeConstructible (Groupe groupe) {
+//    
+//        }
 	/**
 	 * 
 	 * @param c

@@ -21,7 +21,7 @@ public class Groupe {
     /**
      * @return the proprietes
      */
-    private ArrayList <ProprieteAConstruire> getProprietes() {
+    public ArrayList <ProprieteAConstruire> getProprietes() {
         return proprietes;
     }
 
