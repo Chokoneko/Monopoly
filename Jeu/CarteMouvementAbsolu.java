@@ -12,6 +12,7 @@ package Jeu;
  */
 public class CarteMouvementAbsolu extends CarteMouvement {
     private Carreau destination ;
+    private boolean marcheAvant ; 
 
     public CarteMouvementAbsolu(Monopoly monopoly, String texte, int numero,Carreau destination) {
         super(monopoly, texte, numero);
