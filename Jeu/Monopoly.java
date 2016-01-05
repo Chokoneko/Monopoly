@@ -148,7 +148,7 @@ public class Monopoly {
 				}
 				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementAbsolu Prison = new CarteMouvementAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),true);
+                                        CarteAllerPrison Prison = new CarteAllerPrison(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])));
                                         paquetCarte.put(Integer.valueOf(data.get(i)[1]), Prison);
 				}
 				else if(carteType.compareTo("MA") == 0){                            // Carte deplacement Absolu
