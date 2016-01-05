@@ -250,10 +250,16 @@ public class Monopoly {
             positionJoueur.action(j);
         }
 
+        public void passerParDepart () {
+            this.getJoueurCourant().setCash(this.getJoueurCourant().getCash()+200);
+            //this.getIhm().messagePassageDepart(); //TODO le coder dans l'ihm
+        }
+        
+        
 	private Carreau lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
-            //TODO est ce que il vaut mieux declarer un joueur en local  //Question
+            //TODO  declarer un joueur en local 
             
             if (de1 == de2) {
                 this.getJoueurCourant().incrementerNbDouble();
