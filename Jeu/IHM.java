@@ -25,16 +25,24 @@ public class IHM {
 	}
 
         public String messageDemanderNom (){
-            System.out.println("Nom : ?");
+            System.out.print("Nom Joueur : ");
             Scanner sc = new Scanner(System.in);            
             return sc.nextLine() ;
             
         }
          public boolean messageAjouterJoueur (){
-            System.out.println("Voulez vous ajouter un autre joueur ? (Y/N)");
-             // TODO il faudrait ajouter une sécurité pour ne pas répondre n'importe quoi ?
-            Scanner sc = new Scanner(System.in);               
-            return (sc.nextLine().equals("Y")) ;
+            String rep ;
+            rep = "default";
+            while (!rep.equals("y") && !rep.equals("n")){
+                System.out.println("Voulez vous ajouter un autre joueur ? (y/n)");
+                Scanner sc = new Scanner(System.in);
+                rep = sc.nextLine();
+                if (!rep.equals("y") && !rep.equals("n")){
+                    System.out.println("Mauvaise saisie, veuiller recommencer..");
+                }
+            }
+            //rep = sc.toString();
+            return rep.equals("y");
             
         }
         
