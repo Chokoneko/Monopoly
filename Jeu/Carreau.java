@@ -24,7 +24,7 @@ public abstract class Carreau {
     /**
      * @return the monopoly
      */
-    private Monopoly getMonopoly() {
+    protected Monopoly getMonopoly() {
         return monopoly;
     }
 

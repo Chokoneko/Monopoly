@@ -25,6 +25,21 @@ public class CarreauArgent extends CarreauAction {
 
     @Override
     public void action(Joueur j) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int cash;
+        int position;
+        
+        position = this.getNumero();
+        
+        if (position == 5){
+            System.out.println("Vous êtes tombé sur la case Impôts sur le revenu ! Vous devez payer "+ montant +" gils.");
+            cash = j.getCash();
+            j.setCash(cash + montant);
+            j.setCash(cash + montant);
+        }else{
+            System.out.println("Vous êtes tombé sur la case Taxes de Luxe ! Vous devez payer "+ montant +" gils.");
+            cash = j.getCash();
+            j.setCash(cash + montant);
+            j.setCash(cash + montant);
+        }
     }
 }
