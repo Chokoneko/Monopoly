@@ -135,12 +135,11 @@ public class Monopoly {
                                 }
 				else if(carteType.compareTo("CA") == 0){                            // Carte Argent
 					System.out.println(data.get(i)[3]);
-                                        CarteArgent CA = new CarteArgent();        
+                                        CarteArgentAbsolu CA = new CarteArgentAbsolu();        
 				}
 				else if(carteType.compareTo("CAA") == 0){                           // Carte Argent Anniv
 					System.out.println(data.get(i)[3]);
-                                        //Carte CAA
-                                        // TODO
+                                        CarteArgentAnniversaire CAA = new CarteArgentAnniversaire();
                                         
 				}
 				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
@@ -159,7 +158,7 @@ public class Monopoly {
 				}
                                 else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
 					System.out.println(data.get(i)[4]);
-                                        //Carte CARP = new Carte;
+                                        CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions();
        
 				}
 				else
