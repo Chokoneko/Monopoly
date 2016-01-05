@@ -10,10 +10,8 @@ package Jeu;
  *
  * @author couillec
  */
-public class CarteArgent extends Carte {
+public abstract class CarteArgent extends Carte {
     
-    public void calculMontant(Joueur joueur){
-        
-    }
+    public abstract void calculMontant(Joueur joueur);
     
 }

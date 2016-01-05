@@ -17,5 +17,10 @@ public class CarteLiberePrison extends Carte {
     public void setProprietaire(Joueur joueur){
         proprietaire=joueur;
     }
+
+    @Override
+    public void actionCarte() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

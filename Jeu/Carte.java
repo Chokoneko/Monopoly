@@ -10,10 +10,12 @@ package Jeu;
  *
  * @author couillec
  */
-public class Carte {
+public abstract class Carte {
     
     protected Monopoly monopoly; 
     protected String texte ;
     protected int numero;
+    
+    public abstract void actionCarte() ;
     
 }

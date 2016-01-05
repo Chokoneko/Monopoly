@@ -17,5 +17,10 @@ public class CarteMouvementAbsolu extends CarteMouvement {
     public void deplacer(Joueur joueur) {
         throw new UnsupportedOperationException("Not supported yet."); //TODO
     }
+
+    @Override
+    public void actionCarte() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
