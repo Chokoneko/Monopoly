@@ -21,14 +21,7 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
         this.setMontantMaison(montantMaison);
     }
 
-    @Override
-    public void payerMontant(Joueur joueur) {
-        int montantTotal=0 ;
-        for (ProprieteAConstruire pAC : joueur.getProprietesAConstruire()){
-            montantTotal=montantTotal+(pAC.getNbHotel()*this.getMontantHotel())+(pAC.getNbMaisons()*this.getMontantMaison());
-        }        
-        joueur.setCash(joueur.getCash()-montantTotal);
-    }
+    
 
     /**
      * @return the montantMaison
@@ -46,7 +39,11 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int montantTotal=0 ;
+        for (ProprieteAConstruire pAC : this.getMonopoly().getJoueurCourant().getProprietesAConstruire()){
+            montantTotal=montantTotal+(pAC.getNbHotel()*this.getMontantHotel())+(pAC.getNbMaisons()*this.getMontantMaison());
+        }        
+        this.getMonopoly().getJoueurCourant().setCash(this.getMonopoly().getJoueurCourant().getCash()-montantTotal);
     }
 
     /**

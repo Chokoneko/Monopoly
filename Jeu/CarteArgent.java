@@ -16,6 +16,6 @@ public abstract class CarteArgent extends Carte {
         super(monopoly, texte, numero);
     }
     
-    public abstract void payerMontant(Joueur joueur);
+    
     
 }

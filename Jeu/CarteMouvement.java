@@ -16,6 +16,10 @@ public abstract class CarteMouvement extends Carte {
         super(monopoly, texte, numero);
     }
     
-    public abstract void  deplacer (Joueur joueur);
+    public boolean PasseParDepart (int numeroDepart, int numeroArrivee){
+        return numeroDepart>numeroArrivee ;
+    }
+    
+    
     
 }

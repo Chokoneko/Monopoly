@@ -25,6 +25,7 @@ public class CarteLiberePrison extends Carte {
     @Override
     public void actionCarte() {
         this.setProprietaire(this.getMonopoly().getJoueurCourant());
+        this.getMonopoly().getJoueurCourant().addCartesLiberePrison(this);
     }
     
 }

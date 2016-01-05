@@ -18,14 +18,16 @@ public class CarteArgentAnniversaire extends CarteArgent {
         this.setMontant(montant);
     }
 
-    @Override
-    public void payerMontant(Joueur joueur) {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
-    }
+   
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+        this.getMonopoly().getJoueurCourant().setCash(this.getMonopoly().getJoueurCourant().getCash()+this.getMonopoly().getJoueurs().size()*10);
+        for(Joueur joueur : this.getMonopoly().getJoueurs()){
+            joueur.setCash(joueur.getCash()-10);
+        }
+       
+         
     }
 
     /**

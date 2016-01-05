@@ -47,7 +47,7 @@ public class Joueur {
 	 * @param newCash
 	 */
 	public void setCash(int newCash) {
-		this.cash = newCash;
+		this.cash = newCash; // TODO  verifier l'argent du joueur et le mettre en game over
 	}
         
 	/**

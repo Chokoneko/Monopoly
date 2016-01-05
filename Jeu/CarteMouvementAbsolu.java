@@ -17,16 +17,17 @@ public class CarteMouvementAbsolu extends CarteMouvement {
     public CarteMouvementAbsolu(Monopoly monopoly, String texte, int numero,Carreau destination, boolean marcheAvant) {
         super(monopoly, texte, numero);
         this.setDestination(destination);
+        this.setMarcheAvant(marcheAvant);
     }
 
-    @Override
-    public void deplacer(Joueur joueur) {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
-    }
+    
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+        if (this.isMarcheAvant()&&this.PasseParDepart(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero(), this.getDestination().getNumero())){
+            //this.getMonopoly().passerParDepart(); //TODO reactiver quand fct creer
+        }
+        this.getMonopoly().getJoueurCourant().setPositionCourante(destination);
     }
 
     /**
@@ -41,6 +42,20 @@ public class CarteMouvementAbsolu extends CarteMouvement {
      */
     public void setDestination(Carreau destination) {
         this.destination = destination;
+    }
+
+    /**
+     * @return the marcheAvant
+     */
+    public boolean isMarcheAvant() {
+        return marcheAvant;
+    }
+
+    /**
+     * @param marcheAvant the marcheAvant to set
+     */
+    public void setMarcheAvant(boolean marcheAvant) {
+        this.marcheAvant = marcheAvant;
     }
     
 }

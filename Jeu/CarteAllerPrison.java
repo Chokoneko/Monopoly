@@ -13,12 +13,12 @@ package Jeu;
 public class CarteAllerPrison extends CarteMouvementAbsolu{
 
     public CarteAllerPrison(Monopoly monopoly, String texte, int numero, Carreau destination) {
-        super(monopoly, texte, numero, destination);
+        super(monopoly, texte, numero, destination,true);
     }
     
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+       
     }
     
 }

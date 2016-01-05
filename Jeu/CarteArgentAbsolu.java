@@ -19,14 +19,11 @@ public class CarteArgentAbsolu extends CarteArgent {
     }
 
     
-    @Override
-    public void payerMontant(Joueur joueur) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.getMonopoly().getJoueurCourant().setCash(this.getMonopoly().getJoueurCourant().getCash()+this.getMontant());
     }
 
     /**

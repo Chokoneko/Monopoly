@@ -19,14 +19,16 @@ public class CarteMouvementRelatif extends CarteMouvement{
         this.setNombre(nombre);
     }
     
-    @Override
-    public void deplacer(Joueur joueur) {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
-    }
+    
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+        if (this.PasseParDepart(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero(),this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero()+this.getNombre())){
+            //this.getMonopoly().passerParDepart(); //TODO implementer dans monopoly
+        }
+        
+        this.getMonopoly().getJoueurCourant().setPositionCourante(this.getMonopoly().getCarreau(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero()+this.getNombre()));
+        
     }
 
     /**
