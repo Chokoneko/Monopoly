@@ -1,16 +1,16 @@
-CL,Vous êtes libérés de prison. Cette carte peut être conservée jusqu'à qu'elle soit utilisée.
-CA,-10,Payez une amende de 10 gils
-CAA,10,C'est votre anniversaire. Chaque joueur doit vous donner 10 gils
-CA,+200,Erreur de la Banque en votre faveur. Recevez 200 gils
-DA,2,Retournez à Belleville
-CA,-50,Payez la note du médecin : 50 gils
-CA,+20,Les contributions vous remboursent la somme de 20 gils
-CA,-100,Payez à l'hôptial 100 gils
-CA,+100,Vous héritez : 100 gils
-Prison,11,Allez en prison. avancez tout droit en prison. Ne passez pas par la case Départ. Ne recevez pas 200 gils.
-CA,-50,Payez la Police d'Assurance : 50 gils
-CA,+50,La vente de votre stock vous rapporte : 50 gils
-DA,1,Avancez jusqu'à la case Départ
-CA,+25,Recevez votre intérêt sur l'emprunt à 7% : 25 gils
-CA,+100,Recevez votre revenu annuel : 100 gils
-CA,+10,Vous avez gagné le deuxième prix de beauté : recevez 10 gils
+CL,1,Vous êtes libérés de prison. Cette carte peut être conservée jusqu'à qu'elle soit utilisée.
+CA,2,-10,Payez une amende de 10 gils
+CAA,3,10,C'est votre anniversaire. Chaque joueur doit vous donner 10 gils
+CA,4,+200,Erreur de la Banque en votre faveur. Recevez 200 gils
+DA,5,2,Retournez à Belleville
+CA,6,-50,Payez la note du médecin : 50 gils
+CA,7,+20,Les contributions vous remboursent la somme de 20 gils
+CA,8,-100,Payez à l'hôptial 100 gils
+CA,9,+100,Vous héritez : 100 gils
+Prison,10,11,Allez en prison. avancez tout droit en prison. Ne passez pas par la case Départ. Ne recevez pas 200 gils.
+CA,11,-50,Payez la Police d'Assurance : 50 gils
+CA,12,+50,La vente de votre stock vous rapporte : 50 gils
+DA,13,1,Avancez jusqu'à la case Départ
+CA,14,+25,Recevez votre intérêt sur l'emprunt à 7% : 25 gils
+CA,15,+100,Recevez votre revenu annuel : 100 gils
+CA,16,+10,Vous avez gagné le deuxième prix de beauté : recevez 10 gils
