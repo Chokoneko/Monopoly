@@ -58,13 +58,26 @@ public abstract class Carreau {
         
         if (nbMaisonDispo + nbHotelDispo > 0){
             HashSet<Groupe> collecGroupeEntié;
-            collecGroupeEntié = 
+            collecGroupeEntié = this.getMonopoly().getNumeroJoueurCourant().groupePossedeEntie();
             
             if (collecGroupeEntié != null){
                 
                 for (Groupe g: collecGroupeEntié){
                     
+                    boolean groupeCons;
+                    groupeCons = g.groupeConstructible();
+                    
+                    HashSet<Groupe> listeGroupeConstructible = new HashSet<Groupe>();
+                    
+                    if (groupeCons){
+                        listeGroupeConstructible.add(g);
+                    }
                 }
+                
+                if (listeGroupeConstructible != null){
+                    
+                }
+                
                 
             }
             else {
