@@ -76,6 +76,19 @@ public abstract class Carreau {
                 
                 if (listeGroupeConstructible != null){
                     
+                    for (Groupe g: listeGroupeConstructible){
+                        this.getMonopoly().messageAfficherGroupe;
+                    }
+                    
+                    Groupe groupe;
+                    groupe = this.getMonopoly().messageSaisieGroupe;
+                    
+                    HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
+                    
+                    
+                }
+                else {
+                    this.getMonopoly().messagePasGroupeConstructible();
                 }
                 
                 
