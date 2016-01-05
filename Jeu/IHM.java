@@ -108,5 +108,9 @@ public class IHM {
     private Monopoly getMonopoly() {
         return monopoly;
     }
+    
+    public void messagePlusImmobilier(){
+        System.out.println(" Aucune possibilitée de construction ce tour-ci car il ne reste ni hotel ni maison à la banque.");
+    }
 
 }

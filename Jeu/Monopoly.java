@@ -410,6 +410,12 @@ public class Monopoly {
     public void messageRefusAchat(Joueur joueur, CarreauPropriete carreau){
         this.getIhm().messageRefusAchat(joueur, carreau);
     }
+        
+        
+    public void messagePlusImmobilier(){
+        this.getIhm().messagePlusImmobilier();
+    }
+    
     
 
 

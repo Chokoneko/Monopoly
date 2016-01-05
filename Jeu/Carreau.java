@@ -54,6 +54,14 @@ public abstract class Carreau {
         nbMaisonDispo = this.getMonopoly().getNbMaisonsRestant();
         nbHotelDispo = this.getMonopoly().getNbHotelsRestant();
         
+        if (nbMaisonDispo + nbHotelDispo > 0){
+            
+        }
+        else {
+            this.getMonopoly().messagePlusImmobilier();
+                    
+        }
+        
         
     }
 
