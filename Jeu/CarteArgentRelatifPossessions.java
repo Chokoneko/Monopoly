@@ -15,6 +15,12 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
     private int montantMaison ;
     private int montantHotel ;
 
+    public CarteArgentRelatifPossessions(Monopoly monopoly, String texte, int numero, int montantMaison, int montantHotel) {
+        super(monopoly, texte, numero);
+        this.setMontantHotel(montantHotel);
+        this.setMontantMaison(montantMaison);
+    }
+
     @Override
     public void payerMontant(Joueur joueur) {
         throw new UnsupportedOperationException("Not supported yet."); //TODO.
@@ -37,6 +43,20 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
     @Override
     public void actionCarte() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @param montantMaison the montantMaison to set
+     */
+    private void setMontantMaison(int montantMaison) {
+        this.montantMaison = montantMaison;
+    }
+
+    /**
+     * @param montantHotel the montantHotel to set
+     */
+    private void setMontantHotel(int montantHotel) {
+        this.montantHotel = montantHotel;
     }
 
 }

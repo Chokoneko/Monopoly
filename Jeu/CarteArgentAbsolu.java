@@ -10,22 +10,23 @@ package Jeu;
  *
  * @author couillec
  */
-public class CarteArgentAnniversaire extends CarteArgent {
-    private int montant ; 
+public class CarteArgentAbsolu extends CarteArgent {
+    private int montant;
 
-    public CarteArgentAnniversaire(Monopoly monopoly, String texte, int numero, int montant) {
+    public CarteArgentAbsolu(Monopoly monopoly, String texte, int numero,int montant) {
         super(monopoly, texte, numero);
         this.setMontant(montant);
     }
 
+    
     @Override
     public void payerMontant(Joueur joueur) {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //TODO
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

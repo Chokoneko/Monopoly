@@ -10,18 +10,12 @@ package Jeu;
  *
  * @author couillec
  */
-public class CarteLiberePrison extends Carte {
-    
-    private Joueur proprietaire;
+public class CarteAllerPrison extends CarteMouvementAbsolu{
 
-    public CarteLiberePrison(Monopoly monopoly, String texte, int numero) {
-        super(monopoly, texte, numero);
+    public CarteAllerPrison(Monopoly monopoly, String texte, int numero, Carreau destination) {
+        super(monopoly, texte, numero, destination);
     }
     
-    public void setProprietaire(Joueur joueur){
-        proprietaire=joueur;
-    }
-
     @Override
     public void actionCarte() {
         throw new UnsupportedOperationException("Not supported yet."); //TODO

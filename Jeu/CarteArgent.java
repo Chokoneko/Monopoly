@@ -11,6 +11,10 @@ package Jeu;
  * @author couillec
  */
 public abstract class CarteArgent extends Carte {
+
+    public CarteArgent(Monopoly monopoly, String texte, int numero) {
+        super(monopoly, texte, numero);
+    }
     
     public abstract void payerMontant(Joueur joueur);
     

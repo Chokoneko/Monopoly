@@ -11,6 +11,10 @@ package Jeu;
  * @author couillec
  */
 public abstract class CarteMouvement extends Carte {
+
+    public CarteMouvement(Monopoly monopoly, String texte, int numero) {
+        super(monopoly, texte, numero);
+    }
     
     public abstract void  deplacer (Joueur joueur);
     
