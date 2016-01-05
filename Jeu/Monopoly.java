@@ -153,7 +153,7 @@ public class Monopoly {
 				}
 				else if(carteType.compareTo("MR") == 0){                           // Carte deplacement Relatif
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2])));
+                                        CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         
 				}
                                 else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
