@@ -144,21 +144,21 @@ public class Monopoly {
 				}
 				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementAbsolu Prison = new CarteMouvementAbsolu(this,data.get(i)[3],data.get(i)[2],);
+                                        CarteMouvementAbsolu Prison = new CarteMouvementAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),true);
                                         
 				}
-				else if(carteType.compareTo("DA") == 0){                            // Carte deplacement Absolu
+				else if(carteType.compareTo("MA") == 0){                            // Carte deplacement Absolu
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementAbsolu DA = new CarteMouvementAbsolu();
+                                        CarteMouvementAbsolu DA = new CarteMouvementAbsolu(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),data.get(i)[3].compareTo("->") == 0);
 				}
-				else if(carteType.compareTo("DR") == 0){                           // Carte deplacement Relatif
+				else if(carteType.compareTo("MR") == 0){                           // Carte deplacement Relatif
 					System.out.println(data.get(i)[3]);
-                                        CarteMouvementRelatif DR = new CarteMouvementRelatif();
+                                        CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2])));
                                         
 				}
                                 else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
 					System.out.println(data.get(i)[4]);
-                                        CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions();
+                                        CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]),Integer.valueOf(data.get(i)[3]));
        
 				}
 				else
