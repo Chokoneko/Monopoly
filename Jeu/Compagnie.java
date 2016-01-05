@@ -19,14 +19,35 @@ public class Compagnie extends CarreauPropriete {
          *          --> c'est le modulo qui dépend du nombre de compagnie que le joueur possède. (1 compagnie -> mod=4 / 2 compagnies -> mod=10)
 	 */
 	public int calculPrixLoyerCompagnie(int d1, int d2, int mod) {
-		// TODO - implement Compagnie.calculPrixLoyerCompagnie
             return (d1 +d2) * mod;
-		//throw new UnsupportedOperationException();
 	}
-
+        
     @Override //TODO  faire la fonction
-    public void acheterPropriété(Joueur j) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void acheterPropriété(Joueur joueur) {
+           
+        int cashJoueur;
+        int prixProp;
+        
+        cashJoueur = joueur.getCash();
+        prixProp = this.getPrixAchat();
+        
+        if (cashJoueur > prixProp){
+            boolean rep;
+            rep = this.getMonopoly().messageDemandeAchat(this);
+            
+            if (rep) {
+                this.setProprietaire(joueur);
+                joueur.addCompagnie(this);
+                
+                int cashRestant;
+                cashRestant = joueur.calculCashRestant(cashJoueur, prixProp);
+                joueur.setCash(cashRestant);
+                        
+            }
+        }
+        else {
+            this.getMonopoly().messageRefusAchat(joueur, this); 
+        }
     }
 
     @Override
@@ -49,6 +70,7 @@ public class Compagnie extends CarreauPropriete {
         d2 = monopoly.getDe2();
         nbComp = jProprio.getNbCompagnie();
         ca = jCourant.getCash();
+        
         if (nbComp > 1){
             loyer = this.calculPrixLoyerCompagnie(d1, d2, 10);
         }else{
@@ -57,8 +79,8 @@ public class Compagnie extends CarreauPropriete {
         caRe = jCourant.calculCashRestant(ca, loyer);
         
         monopoly.messageApresLoyer(jProprio, loyer, caRe);
+        
         return loyer ;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
