@@ -14,7 +14,7 @@ public class CarteMouvementAbsolu extends CarteMouvement {
     private Carreau destination ;
     private boolean marcheAvant ; 
 
-    public CarteMouvementAbsolu(Monopoly monopoly, String texte, int numero,Carreau destination) {
+    public CarteMouvementAbsolu(Monopoly monopoly, String texte, int numero,Carreau destination, boolean marcheAvant) {
         super(monopoly, texte, numero);
         this.setDestination(destination);
     }
@@ -26,7 +26,7 @@ public class CarteMouvementAbsolu extends CarteMouvement {
 
     @Override
     public void actionCarte() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //TODO
     }
 
     /**
