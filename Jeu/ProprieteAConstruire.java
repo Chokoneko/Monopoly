@@ -60,7 +60,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
     /**
      * @return the nbMaisons
      */
-    private int getNbMaisons() {
+    public int getNbMaisons() {
         if (nbMaisons<5){
             return nbMaisons;
         }
