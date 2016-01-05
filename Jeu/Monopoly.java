@@ -18,8 +18,8 @@ public class Monopoly {
         private HashMap<Integer,Carte> carteCaisseCommunaute;
         private HashMap<Integer,Carte> carteChance;
         private ArrayList<Joueur> joueurs;
-	private int nbMaisons = 32;
-	private int nbHotels = 12;
+	private int nbMaisonsRestant = 32;
+	private int nbHotelsRestant = 12;
 	private int de1;
 	private int de2;
         private int numeroJoueurCourant ;
@@ -376,15 +376,15 @@ public class Monopoly {
     /**
      * @return the nbMaisons
      */
-    public int getNbMaisons() {
-        return nbMaisons;
+    public int getNbMaisonsRestant() {
+        return nbMaisonsRestant;
     }
 
     /**
      * @return the nbHotels
      */
-    public int getNbHotels() {
-        return nbHotels;
+    public int getNbHotelsRestant() {
+        return nbHotelsRestant;
     }
 
     /**

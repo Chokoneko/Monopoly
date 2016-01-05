@@ -48,5 +48,13 @@ public abstract class Carreau {
     }
     
     public abstract void action(Joueur j);
+    
+    public void construire(){
+        int nbMaisonDispo, nbHotelDispo;
+        nbMaisonDispo = this.getMonopoly().getNbMaisonsRestant();
+        nbHotelDispo = this.getMonopoly().getNbHotelsRestant();
+        
+        
+    }
 
 }

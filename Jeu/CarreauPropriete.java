@@ -44,11 +44,6 @@ public abstract class CarreauPropriete extends Carreau {
 		return this.proprietaire;
 	}
 
-	public void construire() {
-		// TODO - implement CarreauPropriete.construire
-		throw new UnsupportedOperationException();
-	}
-
 	/**
 	 * 
 	 * @param j
