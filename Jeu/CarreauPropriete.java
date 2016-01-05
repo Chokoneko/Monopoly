@@ -62,14 +62,13 @@ public abstract class CarreauPropriete extends Carreau {
                     
                     proprietaire.setCash(proprietaire.getCash()+loyer);
                     joueur.setCash(joueur.getCash()-loyer);
-                    
-                    this.construire();
-                    
+                                      
                 }
                 else {
-                    this.acheterPropriété();
+                    this.acheterPropriété(joueur);
                     
                 }
+                this.construire();
 	}
 
 	public abstract int calculLoyer();

@@ -321,7 +321,9 @@ public class Monopoly {
 	 * @param prixA
 	 */
 	public boolean messageDemandeAchat(CarreauPropriete carreau) {
-		this.getIhm()
+            boolean rep;
+            rep = this.getIhm().messageDemandeAchat(carreau);
+            return rep;
 	}
 
     /**
