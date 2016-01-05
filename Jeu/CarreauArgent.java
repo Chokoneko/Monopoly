@@ -34,7 +34,6 @@ public class CarreauArgent extends CarreauAction {
             System.out.println("Vous êtes tombé sur la case Impôts sur le revenu ! Vous devez payer "+ montant +" gils.");
             cash = j.getCash();
             j.setCash(cash + montant);
-            j.setCash(cash + montant);
         }else{
             System.out.println("Vous êtes tombé sur la case Taxes de Luxe ! Vous devez payer "+ montant +" gils.");
             cash = j.getCash();

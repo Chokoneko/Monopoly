@@ -10,13 +10,15 @@ public class CarreauTirage extends CarreauAction {
     public void action(Joueur j) {
         int position;
         
+        
         position = this.getNumero();
         if (this.getNumero() == 3 || this.getNumero() == 18 || this.getNumero() == 34){
-                System.out.println("Vous êtes tombé sur la case Impôts sur le revenu ! Vous devez payer "+ montant +" gils.");
-            
-        
+                System.out.println("Vous êtes tombé sur la case Caisse Communautaire ! Vous tirez une carte communautaire !");
+                this.getMonopoly().tirerUneCarte(carteCaisseCommunautaire);
+                 
         }else{
-            
+                System.out.println("Vous êtes tombé sur la case Chance ! Vous tirez une carte Chance !");
+                this.getMonopoly().tirerUneCarte(carteChance);
         }
 
 
