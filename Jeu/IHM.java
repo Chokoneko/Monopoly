@@ -114,7 +114,28 @@ public class IHM {
     }
     
     public void messageAfficherGroupe(Groupe g){
-        System.out.println(" Groupe " + g.);
+        System.out.println(" Groupe: " + g.getCouleur().toString() + "   Nombre de propriété: " + g.getProprietes().size());
+    }
+    
+    /* TODO
+    public Groupe messageDemandeChoixGroupe(){
+        System.out.println(" Saississez le nom du groupe voulu.");
+        Groupe groupe;
+        Scanner sc = new Scanner(System.in);
+        groupe = Groupe.  sc.nextLine();
+    }
+    */
+    
+    public void messageAfficherProp(ProprieteAConstruire prop){
+        System.out.println(" Propriété: " + prop.getNom() + "    Nombre de maison: " + prop.getNbMaisons() + "    Nombre d'hotel " +prop.getNbHotel());
+    }
+    
+    public void messagePasDeGroupeEntier(){
+        System.out.println(" Vous ne possédez pas de groupe de terrain complet vous ne pouvez donc pas construire.");
+    }
+    
+    public void messagePasGroupeConstructible(){
+        System.out.println(" Vous ne possédez pas de groupe constructible et vous ne pouvez donc pas construire.");
     }
 
 }

@@ -149,5 +149,9 @@ public class ProprieteAConstruire extends CarreauPropriete {
     public int calculLoyerEffectif(int nombreMaison){
         return (this.getLoyerMaison()[nombreMaison-1]);
     }
+    
+    public void incrementerNbMaison(){
+        this.nbMaisons = this.nbMaisons+1;
+    }
 
 }

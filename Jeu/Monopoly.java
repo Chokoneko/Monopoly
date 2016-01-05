@@ -454,6 +454,22 @@ public class Monopoly {
         this.nbHotelsRestant = newNb;
     }
     
+    public void messageAfficherGroupe(Groupe g){
+        this.getIhm().messageAfficherGroupe(g);
+    }
+    
+    public void messageAfficherProp(ProprieteAConstruire prop){
+        this.getIhm().messageAfficherProp(prop);
+    }
+    
+    public void messagePasDeGroupeEntier(){
+        this.getIhm().messagePasDeGroupeEntier();
+    }
+    
+    public void messagePasGroupeConstructible(){
+        this.getIhm().messagePasGroupeConstructible();
+    }
+    
     
 
 

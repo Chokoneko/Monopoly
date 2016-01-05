@@ -35,7 +35,7 @@ public class Groupe {
     /**
      * @return the couleur
      */
-    private CouleurPropriete getCouleur() {
+    public CouleurPropriete getCouleur() {
         return couleur;
     }
 
@@ -49,7 +49,7 @@ public class Groupe {
     /**
      * @return the prixAchatMaison
      */
-    private int getPrixAchatMaison() {
+    public int getPrixAchatMaison() {
         return prixAchatMaison;
     }
 
@@ -63,7 +63,7 @@ public class Groupe {
     /**
      * @return the prixAchatHotel
      */
-    private int getPrixAchatHotel() {
+    public int getPrixAchatHotel() {
         return prixAchatHotel;
     }
 
@@ -73,5 +73,7 @@ public class Groupe {
     private void setPrixAchatHotel(int newPrixAchatHotel) {
         this.prixAchatHotel = newPrixAchatHotel;
     }
+    
+
 
 }

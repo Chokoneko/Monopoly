@@ -81,7 +81,7 @@ public abstract class Carreau {
                     }
                     
                     Groupe groupe;
-                    groupe = this.getMonopoly().messageSaisieGroupe;
+                    groupe = this.getMonopoly().messageDemandeChoixGroupe;
                     
                     HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
                     collecProp = groupe.getCasesConstructibles;
@@ -89,33 +89,32 @@ public abstract class Carreau {
                     if (collecProp != null){
                         
                         for (ProprieteAConstruire prop : collecProp){
-                            this.getMonopoly().messageAfficherProp;                          
+                            this.getMonopoly().messageAfficherProp(prop);                          
                         }
                         
                         ProprieteAConstruire prop;
-                        prop = this.getMonopoly().demandeChoixProp;
+                        prop = this.getMonopoly().messageDemandeChoixProp;
                         
-                        int nbMaison;
+                        int nbMaison, prix;
                         nbMaison = prop.getNbMaisons();
                         
+                        Groupe gr;
+                        gr = prop.getGroupe();
+                                
                         if (nbMaison == 4){
                             prop.incrementerNbMaison();
                             this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()+4);
-                            this.getMonopoly().setNbHotelsRestant(this.getMonopoly().getNbHotelsRestant()-1);                          
+                            this.getMonopoly().setNbHotelsRestant(this.getMonopoly().getNbHotelsRestant()-1);
+                            prix = gr.getPrixAchatHotel();
                         }
                         else {
                             prop.incrementerNbMaison();
-                            this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()-1);                          
+                            this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()-1); 
+                            prix = gr.getPrixAchatMaison();
                         }
-                        
-                        int prix;
-                        prix = prop.getPrixAchat();
-                        
+                  
                         joueur.setCash(joueur.getCash()-prix);
-                        
-                        
-                        
-                        
+                       
                     }
                     else {
                         this.getMonopoly().messagePasPropConstructible();
