@@ -28,6 +28,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
 		// TODO - implement ProprieteAConstruire.getGroupe
 		throw new UnsupportedOperationException();
 	}
+        
 
 	/**
 	 * 

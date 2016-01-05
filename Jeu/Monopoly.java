@@ -259,9 +259,8 @@ public class Monopoly {
 	 * @param nomC
 	 * @param prixA
 	 */
-	public boolean messageDemandeAchat(String nomC, int prixA) {
-		// TODO - créer la méthode dans l'ihm
-		throw new UnsupportedOperationException();
+	public boolean messageDemandeAchat(CarreauPropriete carreau) {
+		this.getIhm()
 	}
 
     /**

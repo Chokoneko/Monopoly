@@ -68,16 +68,25 @@ public class IHM {
 	 * @param nom
 	 * @param prixAchat
 	 */
-//	public boolean messageDemandeAchat(CarreauPropriete carreauP, int prixAchat) { // TODO le groupe/gare/compagnie
-//		System.out.print("La propriété "+carreauP.getNom()+" appartient au groupe ");
-//                if (carreauP){
-//                    
-//                }
-//                System.out.print();                
-//                System.out.println(" et vaut"+carreauP.getPrixAchat()+"gils.");//TODO Integer ou int ?
-//                System.out.println("Voulez vous l'acheter ?");
-//		throw new UnsupportedOperationException();
-//	}
+	public boolean messageDemandeAchat(CarreauPropriete carreauP) { 
+            System.out.print("La propriété s'appelle "+carreauP.getNom());
+             if (carreauP instanceof ProprieteAConstruire){
+                 System.out.println(" et appartient au groupe " + (ProprieteAConstruire)carreauP.getGroupe() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
+             }
+             else {
+                 System.out.println(".");
+             }
+                      
+            System.out.println("Elle vaut"+ String.valueOf(carreauP.getPrixAchat())+"gils.");//TODO Integer ou int ?
+            System.out.println("Voulez vous l'acheter ?");
+            
+            boolean rep;
+            Scanner sc = new Scanner(System.in);
+            rep = sc.nextBoolean();
+            
+            return rep;
+
+	}
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
             
             System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
