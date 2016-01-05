@@ -1,5 +1,7 @@
 package Jeu;
 
+import java.util.HashSet;
+
 public abstract class Carreau {
 
 	private Monopoly monopoly;
@@ -55,11 +57,23 @@ public abstract class Carreau {
         nbHotelDispo = this.getMonopoly().getNbHotelsRestant();
         
         if (nbMaisonDispo + nbHotelDispo > 0){
+            HashSet<Groupe> collecGroupeEntié;
+            collecGroupeEntié = 
+            
+            if (collecGroupeEntié != null){
+                
+                for (Groupe g: collecGroupeEntié){
+                    
+                }
+                
+            }
+            else {
+                this.getMonopoly().messagePasDeGroupeEntier;
+            }
             
         }
         else {
-            this.getMonopoly().messagePlusImmobilier();
-                    
+            this.getMonopoly().messagePlusImmobilier();                   
         }
         
         
