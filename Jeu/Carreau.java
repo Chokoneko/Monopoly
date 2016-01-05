@@ -51,7 +51,7 @@ public abstract class Carreau {
     
     public abstract void action(Joueur j);
     
-    public void construire(){
+    public void construire(Joueur joueur){
         int nbMaisonDispo, nbHotelDispo;
         nbMaisonDispo = this.getMonopoly().getNbMaisonsRestant();
         nbHotelDispo = this.getMonopoly().getNbHotelsRestant();
@@ -77,14 +77,50 @@ public abstract class Carreau {
                 if (listeGroupeConstructible != null){
                     
                     for (Groupe g: listeGroupeConstructible){
-                        this.getMonopoly().messageAfficherGroupe;
+                        this.getMonopoly().messageAfficherGroupe(g);
                     }
                     
                     Groupe groupe;
                     groupe = this.getMonopoly().messageSaisieGroupe;
                     
                     HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
+                    collecProp = groupe.getCasesConstructibles;
                     
+                    if (collecProp != null){
+                        
+                        for (ProprieteAConstruire prop : collecProp){
+                            this.getMonopoly().messageAfficherProp;                          
+                        }
+                        
+                        ProprieteAConstruire prop;
+                        prop = this.getMonopoly().demandeChoixProp;
+                        
+                        int nbMaison;
+                        nbMaison = prop.getNbMaisons();
+                        
+                        if (nbMaison == 4){
+                            prop.incrementerNbMaison();
+                            this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()+4);
+                            this.getMonopoly().setNbHotelsRestant(this.getMonopoly().getNbHotelsRestant()-1);                          
+                        }
+                        else {
+                            prop.incrementerNbMaison();
+                            this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()-1);                          
+                        }
+                        
+                        int prix;
+                        prix = prop.getPrixAchat();
+                        
+                        joueur.setCash(joueur.getCash()-prix);
+                        
+                        
+                        
+                        
+                    }
+                    else {
+                        this.getMonopoly().messagePasPropConstructible();
+                    }
+                            
                     
                 }
                 else {
@@ -94,7 +130,7 @@ public abstract class Carreau {
                 
             }
             else {
-                this.getMonopoly().messagePasDeGroupeEntier;
+                this.getMonopoly().messagePasDeGroupeEntier();
             }
             
         }

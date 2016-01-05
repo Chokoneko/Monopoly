@@ -112,5 +112,9 @@ public class IHM {
     public void messagePlusImmobilier(){
         System.out.println(" Aucune possibilitée de construction ce tour-ci car il ne reste ni hotel ni maison à la banque.");
     }
+    
+    public void messageAfficherGroupe(Groupe g){
+        System.out.println(" Groupe " + g.);
+    }
 
 }

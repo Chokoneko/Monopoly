@@ -446,6 +446,14 @@ public class Monopoly {
         this.getIhm().messagePlusImmobilier();
     }
     
+    public void setNbMaisonsRestant(int newNb){
+        this.nbMaisonsRestant = newNb    ;   
+    }
+    
+    public void setNbHotelsRestant(int newNb){
+        this.nbHotelsRestant = newNb;
+    }
+    
     
 
 
