@@ -96,13 +96,26 @@ public class IHM {
 	}
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ //TODO SYLVAIN ON LUTILISAIT POUR SA PROPRIETE
             
+            HashSet<CarreauPropriete> listeProp = new HashSet<CarreauPropriete>();
+            
+            for (ProprieteAConstruire prop : joueur.getProprietesAConstruire()){
+                listeProp.add(prop);
+            }
+            for (Compagnie comp : joueur.getCompagnies()){
+                listeProp.add(comp);
+            }
+            for (Gare gare : joueur.getGares()){
+                listeProp.add(gare);
+            }
+            
+            
             System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
-            if (joueur.getProprietes()==null){
+            if (listeProp==null){
                 System.out.println("Ce joueur ne possède aucunes terres");
             }
             else{
                 System.out.println("Ce joueur ne possède les terres suivantes :");
-                for (CarreauPropriete carreauPropriete : joueur.getProprietes()){
+                for (CarreauPropriete carreauPropriete : listeProp){
                     System.out.println(carreauPropriete.getNom());
                 }                    
             }            

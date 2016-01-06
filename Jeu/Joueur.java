@@ -211,7 +211,7 @@ public class Joueur {
     /**
      * @return the compagnies
      */
-    private HashSet<Compagnie> getCompagnies() {
+    public HashSet<Compagnie> getCompagnies() {
         return compagnies;
     }
 
@@ -225,7 +225,7 @@ public class Joueur {
     /**
      * @return the gares
      */
-    private HashSet<Gare> getGares() {
+    public HashSet<Gare> getGares() {
         return gares;
     }
 
