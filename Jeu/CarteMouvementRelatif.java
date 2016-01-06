@@ -23,6 +23,7 @@ public class CarteMouvementRelatif extends CarteMouvement{
 
     @Override
     public void actionCarte() {
+        
         if (this.PasseParDepart(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero(),this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero()+this.getNombre())){
             this.getMonopoly().passerParDepart(); 
         }
