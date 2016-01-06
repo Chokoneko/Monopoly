@@ -477,6 +477,13 @@ public class Monopoly {
         this.getIhm().messagePasGroupeConstructible();
     }
 
+    public Groupe messageDemandeChoixGroupe(){
+        return this.getIhm().messageDemandeChoixGroupe();
+    }
+    public ProprieteAConstruire messageDemandeChoixProp(){
+        return this.getIhm().messageDemandeChoixProp();
+    }
+    
     /**
      * @return the carteCaisseCommunaute
      */

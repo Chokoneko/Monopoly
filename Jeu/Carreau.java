@@ -81,7 +81,7 @@ public abstract class Carreau {
                     }
                     
                     Groupe groupe;
-                    groupe = this.getMonopoly().messageDemandeChoixGroupe;
+                    groupe = this.getMonopoly().messageDemandeChoixGroupe();//TODO  finir l'ihm voir benj
                     
                     HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
                     collecProp = joueur.getCasesConstructibles(groupe);
@@ -93,7 +93,7 @@ public abstract class Carreau {
                         }
                         
                         ProprieteAConstruire prop;
-                        prop = this.getMonopoly().messageDemandeChoixProp;
+                        prop = this.getMonopoly().messageDemandeChoixProp();//TODO  finir l'ihm voir benj
                         
                         int nbMaison, prix;
                         nbMaison = prop.getNbMaisons();
@@ -117,7 +117,7 @@ public abstract class Carreau {
                        
                     }
                     else {
-                        this.getMonopoly().messagePasPropConstructible();
+                        this.getMonopoly().messagePasPropConstructible(); //TODO
                     }
                             
                     
