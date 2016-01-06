@@ -46,7 +46,11 @@ public class IHM {
             
         }
         
+         public void messageFaillite(){
+             System.out.println("Game Over "+this.getMonopoly().getJoueurCourant().getNomJoueur());            
+         }
         
+         
         public void messageTropDeJoueurs(){
             System.out.println("Vous ne pouvez pas ajouter plus de 6 joueurs");                        
         }
