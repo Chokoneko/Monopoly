@@ -247,6 +247,7 @@ public class Monopoly {
         
         
         public void ordreJoueurs() {
+            this.getIhm().messageDeterminationOrdre();
             int score, scoreMax = 0;
             int indiceJMax = 0;
             for (int i=0 ; i < this.getJoueurs().size() ; i++){
