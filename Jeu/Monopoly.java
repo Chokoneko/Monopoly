@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import static java.util.Collections.shuffle;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -28,11 +29,22 @@ public class Monopoly {
             carreaux = new HashMap();
             joueurs = new ArrayList<>() ;
             ihm = new IHM();
+            carteCaisseCommunaute = new LinkedList<>();
+            carteChance = new LinkedList<>() ;
+            
             
 		buildGamePlateau(dataFilename);
+                
                 buildGameCards(dataCards1, carteCaisseCommunaute);
                 buildGameCards(dataCards2, carteChance);
-                this.inscrireJoueurs();               
+                shuffle(carteCaisseCommunaute);
+                shuffle(carteChance);
+                this.inscrireJoueurs();
+                
+                for (Carte carte : carteCaisseCommunaute){
+                    System.out.println(carte.getTexte());
+                }
+                
 	}
         
 	
@@ -132,7 +144,7 @@ public class Monopoly {
 			for(int i=0; i<data.size(); ++i){
 				String carteType = data.get(i)[0];       
 				if(carteType.compareTo("CL") == 0){                                 // Carte liberer de prison
-                                    System.out.println(data.get(i)[3]);
+                                    System.out.println(data.get(i)[2]);
                                     CarteLiberePrison CLP = new CarteLiberePrison(this,data.get(i)[2],Integer.valueOf(data.get(i)[1]));
                                     paquetCarte.add(CLP);
                                 }
@@ -152,7 +164,7 @@ public class Monopoly {
                                         paquetCarte.add(Prison);
 				}
 				else if(carteType.compareTo("MA") == 0){                            // Carte deplacement Absolu
-					System.out.println(data.get(i)[3]);
+					System.out.println(data.get(i)[4]);
                                         CarteMouvementAbsolu DA = new CarteMouvementAbsolu(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),data.get(i)[3].compareTo("->") == 0);
                                         paquetCarte.add(DA);
                                 }
