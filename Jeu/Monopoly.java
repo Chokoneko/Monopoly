@@ -226,7 +226,7 @@ public class Monopoly {
                        
         }
         public boolean partieContinue (){
-            return true; //TODO
+            return this.getJoueurs().size()>=2; //TODO verifier si ça suffir, jai mis un peu au pif
         }
         public void JouerJeu(){
             this.ordreJoueurs();
