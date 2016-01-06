@@ -293,25 +293,25 @@ public class Monopoly {
 
         
         public void tirerUneCarte(LinkedList<Carte> paquetCartes){
-            if (paquetCartes == carteCaisseCommunaute){
-                if (carteCaisseCommunaute.getLast().getNumero()==1){
-                    carteCaisseCommunaute.getLast().actionCarte();
-                    carteCaisseCommunaute.removeLast();
+            if (paquetCartes == getCarteCaisseCommunaute()){
+                if (getCarteCaisseCommunaute().getLast().getNumero()==1){
+                    getCarteCaisseCommunaute().getLast().actionCarte();
+                    getCarteCaisseCommunaute().removeLast();
                 }
                 else { 
-                    carteCaisseCommunaute.getLast().actionCarte();
-                    carteCaisseCommunaute.push(carteCaisseCommunaute.getLast());
-                    carteCaisseCommunaute.removeLast();
+                    getCarteCaisseCommunaute().getLast().actionCarte();
+                    getCarteCaisseCommunaute().push(getCarteCaisseCommunaute().getLast());
+                    getCarteCaisseCommunaute().removeLast();
                 }
             } else 
-                if (carteChance.getLast().getNumero()==1){
-                    carteChance.getLast().actionCarte();
-                    carteChance.removeLast();
+                if (getCarteChance().getLast().getNumero()==1){
+                    getCarteChance().getLast().actionCarte();
+                    getCarteChance().removeLast();
                 }
                 else {
-                    carteChance.getLast().actionCarte();
-                    carteChance.push(carteChance.getLast());
-                    carteChance.removeLast();
+                    getCarteChance().getLast().actionCarte();
+                    getCarteChance().push(getCarteChance().getLast());
+                    getCarteChance().removeLast();
             }
         }
         
@@ -468,6 +468,20 @@ public class Monopoly {
     
     public void messagePasGroupeConstructible(){
         this.getIhm().messagePasGroupeConstructible();
+    }
+
+    /**
+     * @return the carteCaisseCommunaute
+     */
+    public LinkedList<Carte> getCarteCaisseCommunaute() {
+        return carteCaisseCommunaute;
+    }
+
+    /**
+     * @return the carteChance
+     */
+    public LinkedList<Carte> getCarteChance() {
+        return carteChance;
     }
     
     
