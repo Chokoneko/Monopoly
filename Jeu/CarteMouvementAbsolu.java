@@ -25,7 +25,7 @@ public class CarteMouvementAbsolu extends CarteMouvement {
     @Override
     public void actionCarte() {
         if (this.isMarcheAvant()&&this.PasseParDepart(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero(), this.getDestination().getNumero())){
-            //this.getMonopoly().passerParDepart(); //TODO reactiver quand fct creer
+            this.getMonopoly().passerParDepart();
         }
         this.getMonopoly().getJoueurCourant().setPositionCourante(destination);
     }
