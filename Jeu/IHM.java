@@ -111,12 +111,21 @@ public class IHM {
 
         
         
-      public ProprieteAConstruire messageDemandeChoixProp(){
-//             System.out.println("Sur quel propriété voulez vous construire ?");
-//             //this.saisieRep()
-//            
-          return null;
-      }// TODO benj je pige pas comment tu veux faire
+       public ProprieteAConstruire messageDemandeChoixProp(){
+            System.out.println("Sur quel propriété voulez vous construire (Saisir le numéro ? ");
+            int prop;
+            Scanner sc = new Scanner(System.in);
+            prop = sc.nextInt();
+            
+            ProprieteAConstruire rep = null;
+            for (ProprieteAConstruire p : this.getMonopoly().getJoueurCourant().getProprietesAConstruire()){
+                if (prop == p.getNumero()){
+                    rep = p;
+                }
+            }
+                  
+          return rep;
+      } 
         
         
     /**
