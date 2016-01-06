@@ -284,6 +284,9 @@ public class Monopoly {
             positionJoueur = this.lancerDesAvancer();
             
             positionJoueur.action(j);
+            
+            this.getIhm().messageFinTour();
+                    
         }
 
         public void passerParDepart () {
@@ -510,12 +513,8 @@ public class Monopoly {
         this.getIhm().messageAfficherProp(prop);
     }
     
-    public void messagePasDeGroupeEntier(){
-        this.getIhm().messagePasDeGroupeEntier();
-    }
-    
-    public void messagePasGroupeConstructible(){
-        this.getIhm().messagePasGroupeConstructible();
+    public void messagePasConstruction(){
+        this.getIhm().messagePasConstruction();
     }
 
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){

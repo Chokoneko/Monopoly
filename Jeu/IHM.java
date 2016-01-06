@@ -59,7 +59,7 @@ public class IHM {
         }
          
         public void messageAfficherLancerDesJoueur(Joueur joueur, Integer score){
-            System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() );                        
+            System.out.println("Le joueur "+joueur.getNomJoueur()+" à fait un score de "+ score.toString() +"." );                        
         }
         
         public void messageRefusAchat(Joueur joueur, CarreauPropriete carreau){
@@ -67,8 +67,8 @@ public class IHM {
         }
          
         public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,Integer score){
-            this.messageAfficherLancerDesJoueur(joueurCourant, score);
-            System.out.println("Il est maintenant sur la case "+ carreauCourant.getNomCarreau());                       
+            System.out.println("Joueur " + joueurCourant.getNomJoueur() +" :");
+            System.out.println("Vous avez fais un score de " +score + " et vous êtes maintenant sur la case " +carreauCourant.getNomCarreau() + ".");           
         }
 	/**
 	 * 
@@ -76,7 +76,6 @@ public class IHM {
 	 * @param prixAchat
 	 */
 	public boolean messageDemandeAchat(CarreauPropriete carreauP) { 
-            System.out.print("La propriété s'appelle "+carreauP.getNom());
 //             if (carreauP instanceof ProprieteAConstruire){
 //                 System.out.println(" et appartient au groupe " + (ProprieteAConstruire)carreauP.getGroupe() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
 //             }
@@ -84,14 +83,20 @@ public class IHM {
 //                 System.out.println(".");
 //             }
                       
-            System.out.println("Elle vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
-            System.out.println("Voulez vous l'acheter ? (true or false)");
+            System.out.println("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
+            System.out.print("Voulez vous l'acheter (y/n) ?  ");
             
-            boolean rep;
             Scanner sc = new Scanner(System.in);
-            rep = sc.nextBoolean();
+            String rep;
+            rep = "default";
+            while (!rep.equals("y") && !rep.equals("n")){
+                rep = sc.nextLine();
+                if (!rep.equals("y") && !rep.equals("n")){
+                    System.out.println("Mauvaise saisie, veuiller recommencer..");
+                }            
+            }
+            return rep.equals("y");
             
-            return rep;
 
 	}
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
@@ -187,12 +192,8 @@ public class IHM {
         System.out.println("Nombre de maison: " + prop.getNbMaisons() + "    Nombre d'hotel " +prop.getNbHotel());
     }
     
-    public void messagePasDeGroupeEntier(){
-        System.out.println(" Vous ne possédez pas de groupe de terrain complet vous ne pouvez donc pas construire.");
-    }
-    
-    public void messagePasGroupeConstructible(){
-        System.out.println(" Vous ne possédez pas de groupe constructible et vous ne pouvez donc pas construire.");
+    public void messagePasConstruction(){
+        System.out.println("Construction: Pas de possibilité.\n");
     }
 
     void messagePassageDepart() {
@@ -219,5 +220,13 @@ public class IHM {
     
     public void messageJoueurCommence(Joueur joueur){
         System.out.println("Le joueur " +joueur.getNomJoueur() + " a fait le plus haut score et va donc commencer.\n");
+    }
+    
+    public void messageFinTour(){
+        System.out.println("Fin du tour, appuyer sur entrée pour continuer.");
+        String fin;
+        Scanner sc = new Scanner(System.in);
+        fin = sc.nextLine();
+        
     }
 }

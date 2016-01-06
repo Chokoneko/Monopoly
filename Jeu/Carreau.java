@@ -61,7 +61,7 @@ public abstract class Carreau {
             HashSet<Groupe> collecGroupeEntier;
             collecGroupeEntier = this.getMonopoly().getJoueurCourant().groupesPossedesEntiers();
             
-            if (collecGroupeEntier != null){
+            if (!collecGroupeEntier.isEmpty()){
                 
                 for (Groupe g: collecGroupeEntier){
                     
@@ -129,13 +129,13 @@ public abstract class Carreau {
                     
                 }
                 else {
-                    this.getMonopoly().messagePasGroupeConstructible();
+                    this.getMonopoly().messagePasConstruction();
                 }
                 
                 
             }
             else {
-                this.getMonopoly().messagePasDeGroupeEntier();
+                this.getMonopoly().messagePasConstruction();
             }
             
         }
