@@ -54,7 +54,12 @@ public class Joueur {
                     this.cash = newCash;
                 }
         }
-        
+        public void reinitStats(){
+                for (int i = 0; i < this.getNbCompagnie(); i++){
+                    compagnies.
+                }compagnies.clear();
+                    
+        } 
 	/**
 	 * 
 	 * @param g
@@ -144,9 +149,7 @@ public class Joueur {
             }
             return casesConstructibles ;
         }
-        public void reinitStats(){
-            
-        }        
+               
         
 	/**
 	 * 
