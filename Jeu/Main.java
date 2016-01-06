@@ -15,6 +15,8 @@ public class Main {
                 shuffle(m.getCartesChance());
                 m.inscrireJoueurs();
                 
+                m.JouerJeu();
+
 	}
 
 }
