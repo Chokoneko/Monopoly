@@ -39,6 +39,7 @@ public class CarteArgentRelatifPossessions extends CarteArgent {
 
     @Override
     public void actionCarte() {
+        this.getMonopoly().getIhm().messageAfficherCarte(this);
         int montantTotal=0 ;
         for (ProprieteAConstruire pAC : this.getMonopoly().getJoueurCourant().getProprietesAConstruire()){
             montantTotal=montantTotal+(pAC.getNbHotel()*this.getMontantHotel())+(pAC.getNbMaisons()*this.getMontantMaison());

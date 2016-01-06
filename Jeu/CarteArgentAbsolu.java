@@ -23,6 +23,7 @@ public class CarteArgentAbsolu extends CarteArgent {
 
     @Override
     public void actionCarte() {
+        this.getMonopoly().getIhm().messageAfficherCarte(this);
         this.getMonopoly().getJoueurCourant().setCash(this.getMonopoly().getJoueurCourant().getCash()+this.getMontant());
     }
 

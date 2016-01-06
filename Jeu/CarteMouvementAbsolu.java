@@ -24,6 +24,7 @@ public class CarteMouvementAbsolu extends CarteMouvement {
 
     @Override
     public void actionCarte() {
+        this.getMonopoly().getIhm().messageAfficherCarte(this);
         if (this.isMarcheAvant()&&this.PasseParDepart(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero(), this.getDestination().getNumero())){
             this.getMonopoly().passerParDepart();
         }

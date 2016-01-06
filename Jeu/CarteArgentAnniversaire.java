@@ -22,6 +22,7 @@ public class CarteArgentAnniversaire extends CarteArgent {
 
     @Override
     public void actionCarte() {
+        this.getMonopoly().getIhm().messageAfficherCarte(this);
         this.getMonopoly().getJoueurCourant().setCash(this.getMonopoly().getJoueurCourant().getCash()+this.getMonopoly().getJoueurs().size()*10);
         for(Joueur joueur : this.getMonopoly().getJoueurs()){
             joueur.setCash(joueur.getCash()-10);
