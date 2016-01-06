@@ -298,6 +298,10 @@ public class Monopoly {
            
 
             Joueur jC = this.getJoueurCourant();
+            
+            for (Joueur joueur : this.getJoueurs()){
+               this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
+            }
 
             if (de1 == de2) {
                 jC.incrementerNbDouble();                
@@ -322,10 +326,7 @@ public class Monopoly {
                         
             this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1+de2);
             
-                        
-            for (Joueur joueur : this.getJoueurs()){
-               this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
-            }
+                       
             
             return (this.getJoueurCourant().getPositionCourante());
             
