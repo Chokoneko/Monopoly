@@ -231,7 +231,7 @@ public class Monopoly {
                        
         }
         public boolean partieContinue (){
-            return this.getJoueurs().size()>=2; //TODO verifier si ça suffir, jai mis un peu au pif
+            return this.getJoueurs().size()>=2; //TODO verifier si ça suffit, jai mis un peu au pif
         }
         public void JouerJeu(){
             this.ordreJoueurs();
@@ -255,8 +255,9 @@ public class Monopoly {
                 }
             }
            ArrayList<Joueur> listeSwitch = this.getJoueurs();
+           
            this.getJoueurs().removeAll(joueurs);
-           for (int i=indiceJMax; i<this.getJoueurs().size();i++){
+           for (int i=indiceJMax; i<listeSwitch.size();i++){
                this.getJoueurs().add(listeSwitch.get(i));
            }
            for (int i=0; i<indiceJMax;i++){
@@ -347,8 +348,9 @@ public class Monopoly {
         
         public void faillite(Joueur j){
             j.reinitStats();
-            this.getIhm().messageFaillite();  
             joueurs.remove(j);
+            this.getIhm().messageFaillite;
+            
         }
 
 	/**
@@ -501,8 +503,8 @@ public class Monopoly {
         this.getIhm().messagePasGroupeConstructible();
     }
 
-    public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
-        return this.getIhm().messageDemandeChoixGroupe(liste);
+    public Groupe messageDemandeChoixGroupe(){
+        return this.getIhm().messageDemandeChoixGroupe();
     }
     public ProprieteAConstruire messageDemandeChoixProp(){
         return this.getIhm().messageDemandeChoixProp();
