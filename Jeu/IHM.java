@@ -207,12 +207,16 @@ public class IHM {
     }
     
     public void messageDebutPartie(){
-        System.out.println("\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("Bonjour et bienvenue dans ce super Monopoly ! \nCopyRight Perez Stocker Rousseau Couiller.");
         System.out.println("\nInscription des joueurs:");
     }
     
     public void messageDeterminationOrdre(){
-        System.out.println("\nNous allons maintenant déterminer quel joueur commencera à jouer par un lancé de dé. \nLe score correspond à la somme de vos deux dés");
+        System.out.println("\n\n\nNous allons maintenant déterminer quel joueur commencera à jouer par un lancé de dé. \nLe score correspond à la somme de vos deux dés.");
+    }
+    
+    public void messageJoueurCommence(Joueur joueur){
+        System.out.println("Le joueur " +joueur.getNomJoueur() + " a fait le plus haut score et va donc commencer.");
     }
 }

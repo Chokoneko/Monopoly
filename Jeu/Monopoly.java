@@ -258,7 +258,7 @@ public class Monopoly {
                     indiceJMax=i;
                 }
             }
-
+            
            
            ArrayList<Joueur> listeSwitch = new ArrayList<>();
            
@@ -271,6 +271,8 @@ public class Monopoly {
            }
            this.getJoueurs().clear();
            this.setJoueurs(listeSwitch) ;
+           
+           this.getIhm().messageJoueurCommence(this.getJoueurs().get(0));
         }
         
 	/**
