@@ -31,11 +31,11 @@ public class CarreauArgent extends CarreauAction {
         position = this.getNumero();
         
         if (position == 5){
-            System.out.println("Vous êtes tombé sur la case Impôts sur le revenu ! Vous devez payer "+ montant +" gils.");
+            System.out.println("Vous êtes tombé sur la case Impôts sur le revenu ! Vous devez payer "+ this.getMontant() +" gils.");
             cash = j.getCash();
             j.setCash(cash + montant);
         }else{
-            System.out.println("Vous êtes tombé sur la case Taxes de Luxe ! Vous devez payer "+ montant +" gils.");
+            System.out.println("Vous êtes tombé sur la case Taxes de Luxe ! Vous devez payer "+ this.getMontant() +" gils.");
             cash = j.getCash();
             j.setCash(cash + montant);
         }
