@@ -311,7 +311,13 @@ public class Monopoly {
                 jC.incrementerNbTourPrison();
             }
             else {
-                jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+                if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
+                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
+                }
+                else {
+                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+ 
+                }
             }
                         
             this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1+de2);

@@ -45,21 +45,21 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	public int caculLoyerEffectif() {
             
             int loyer;
-            boolean test = false;
+            boolean possedeToutGroupe = false;
             
             HashSet<ProprieteAConstruire> prop;
             int c = 0;
-            for (ProprieteAConstruire  pr : this.getProprietaire().getProprietesAConstruire()){
-                if (pr.getGroupe() == this.getGroupe()){
+            for (ProprieteAConstruire  pAC : this.getProprietaire().getProprietesAConstruire()){
+                if (pAC.getGroupe() == this.getGroupe()){
                     c = c+1;
                 }
             }
             
             if (c == this.getGroupe().getProprietes().size()){
-               test = true;
+               possedeToutGroupe = true;
             }
             
-            if ( (this.getNbMaisons() + this.getNbHotel() == 0) && !test){
+            if ( (this.getNbMaisons() + this.getNbHotel() == 0) && !possedeToutGroupe){
                 return (this.getLoyerMaison()[0] * 2);
             }
             else {

@@ -16,6 +16,7 @@ public class Main {
                 m.inscrireJoueurs();
                 
                 m.JouerJeu();
+                
 
 	}
         
