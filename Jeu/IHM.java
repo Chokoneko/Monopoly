@@ -85,7 +85,7 @@ public class IHM {
 //             }
                       
             System.out.println("Elle vaut"+ String.valueOf(carreauP.getPrixAchat())+"gils.");
-            System.out.println("Voulez vous l'acheter ?");
+            System.out.println("Voulez vous l'acheter ? (true or false)");
             
             boolean rep;
             Scanner sc = new Scanner(System.in);
