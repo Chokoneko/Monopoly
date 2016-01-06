@@ -61,10 +61,6 @@ public class IHMG {
 		      PopUpMessage("Payez votre loyer","Vous devez payer "+prix.toString()+" gils au joueur "+ proprietaire.getNomJoueur()+". Il vous restera "+cashRestant.toString()+" gils." );
 	}
 
-	public boolean saisieRep() {
-		// TODO - implement IHM.saisieRep
-		throw new UnsupportedOperationException();
-	}
 
         public String messageDemanderNom (){
             PopUpMessage("Nom","Entrer votre nom");

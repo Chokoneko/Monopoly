@@ -5,13 +5,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Joueur {
-//TODO choisir type collec (hashSet par default - corps des methode a modifier)
 	private Monopoly monopoly;
 	private HashSet <Compagnie> compagnies;
 	private HashSet<Gare> gares;
 	private Carreau positionCourante;
 	private HashSet <ProprieteAConstruire> proprietesAConstruire;
-        private HashSet <CarreauPropriete> proprietes;
 	private String nomJoueur;
 	private int cash;
 	private int nbDouble;
@@ -67,12 +65,7 @@ public class Joueur {
                 
                 for (ProprieteAConstruire pac : this.getProprietesAConstruire()){
                         pac.setProprietaire(null);
-                }proprietesAConstruire.clear();
-                
-                for (CarreauPropriete cp : this.getProprietes()){
-                        cp.setProprietaire(this);
-                }proprietes.clear();
-                
+                }proprietesAConstruire.clear();                             
                 for (CarteLiberePrison clp : this.getCartesLiberePrison()){
                         clp.setProprietaire(null);
                 }cartesLiberePrison.clear();
@@ -82,8 +75,7 @@ public class Joueur {
 	 * @param g
 	 */
 	public void addGare(Gare newGare) {
-		// TODO - implement Joueur.addGare
-		throw new UnsupportedOperationException();
+                this.getGares().add(newGare);
 	}
 
 	/**
@@ -111,8 +103,7 @@ public class Joueur {
 	}
 
 	public HashSet<ProprieteAConstruire> getProprietesAConstruire() {
-		// TODO - implement Joueur.getProprietesAConstruire / modifier "collection"
-		throw new UnsupportedOperationException();
+		return this.proprietesAConstruire;
 	}
 
         public HashSet<Groupe> groupesPossedesEntiers(){
@@ -173,14 +164,9 @@ public class Joueur {
 	 * @param c
 	 */
 	public void addCompagnie(Compagnie newCompagnie) {
-		// TODO - implement Joueur.addCompagnie
-		throw new UnsupportedOperationException();
+		this.getCompagnies().add(newCompagnie);
 	}
         
-        public void addPropriete(CarreauPropriete newCarreauPropriete){
-                //TODO - implement Joueur.addPropriete
-                throw new UnsupportedOperationException();
-        }
         
       
 	/**
@@ -188,8 +174,7 @@ public class Joueur {
 	 * @param pAC
 	 */
 	public void addProprieteAConstruire(ProprieteAConstruire newProprieteAConstruire) {
-		// TODO - implement Joueur.addPropri�t�AConstruire
-		throw new UnsupportedOperationException();
+		this.getProprietesAConstruire().add(newProprieteAConstruire);
 	}
 
 	public int getNbGare() {
@@ -291,22 +276,7 @@ public class Joueur {
      */
     private void setNbTourPrison(int newNbTourPrison) {
         this.nbTourPrison = newNbTourPrison;
-    }
-    
-    /* TODO
-    public groupePossédéEntier(){
-    }
-    
-    public addCarteLibereDePrison(){
-    }
-    */
-
-    /**
-     * @return the proprietes
-     */
-    public HashSet<CarreauPropriete> getProprietes() {
-        return proprietes;
-    }
+    }   
 
     /**
      * @return the CartesLiberePrison

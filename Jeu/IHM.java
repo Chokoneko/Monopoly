@@ -84,7 +84,7 @@ public class IHM {
                  System.out.println(".");
              }
                       
-            System.out.println("Elle vaut"+ String.valueOf(carreauP.getPrixAchat())+"gils.");//TODO Integer ou int ?
+            System.out.println("Elle vaut"+ String.valueOf(carreauP.getPrixAchat())+"gils.");
             System.out.println("Voulez vous l'acheter ?");
             
             boolean rep;

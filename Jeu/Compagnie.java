@@ -15,11 +15,10 @@ public class Compagnie extends CarreauPropriete {
 	 * (d1 + d2) * mod
 	 * @param d1
 	 * @param d2
-	 * @param mod c'est quoi ça déjà ? TODO le rennomer comme il faut 
-         *          --> c'est le modulo qui dépend du nombre de compagnie que le joueur possède. (1 compagnie -> mod=4 / 2 compagnies -> mod=10)
+	 * @param mod         
 	 */
-	public int calculPrixLoyerCompagnie(int d1, int d2, int mod) {
-            return (d1 +d2) * mod;
+	public int calculPrixLoyerCompagnie(int de1, int de2, int mod) {
+            return (de1 +de2) * mod;
 	}
         
     /**
