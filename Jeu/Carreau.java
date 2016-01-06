@@ -55,19 +55,19 @@ public abstract class Carreau {
         int nbMaisonDispo, nbHotelDispo;
         nbMaisonDispo = this.getMonopoly().getNbMaisonsRestant();
         nbHotelDispo = this.getMonopoly().getNbHotelsRestant();
-        
+         HashSet<Groupe> listeGroupeConstructible = new HashSet<Groupe>();
         if (nbMaisonDispo + nbHotelDispo > 0){
-            HashSet<Groupe> collecGroupeEntié;
-            collecGroupeEntié = this.getMonopoly().getNumeroJoueurCourant().groupePossedeEntie();
+            HashSet<Groupe> collecGroupeEntier;
+            collecGroupeEntier = this.getMonopoly().getJoueurCourant().groupesPossedesEntiers();
             
-            if (collecGroupeEntié != null){
+            if (collecGroupeEntier != null){
                 
-                for (Groupe g: collecGroupeEntié){
+                for (Groupe g: collecGroupeEntier){
                     
                     boolean groupeCons;
-                    groupeCons = g.groupeConstructible();
+                    groupeCons = joueur.groupeConstructible(g);
                     
-                    HashSet<Groupe> listeGroupeConstructible = new HashSet<Groupe>();
+                   
                     
                     if (groupeCons){
                         listeGroupeConstructible.add(g);
@@ -84,7 +84,7 @@ public abstract class Carreau {
                     groupe = this.getMonopoly().messageDemandeChoixGroupe;
                     
                     HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
-                    collecProp = groupe.getCasesConstructibles;
+                    collecProp = joueur.getCasesConstructibles(groupe);
                     
                     if (collecProp != null){
                         

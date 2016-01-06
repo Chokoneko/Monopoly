@@ -19,9 +19,9 @@ public class IHM {
 		System.out.println("Vous devez payer "+prix.toString()+" gils au joueur "+ proprietaire.getNomJoueur()+". Il vous restera "+cashRestant.toString()+" gils." );
 	}
 
-	public boolean saisieRep() {
-		// TODO - implement IHM.saisieRep
-		throw new UnsupportedOperationException();
+	public String saisieRep() {
+		Scanner sc = new Scanner(System.in);
+                return sc.nextLine();
 	}
 
         public String messageDemanderNom (){
@@ -101,8 +101,25 @@ public class IHM {
             }            
         }
 
+       
+      public Groupe messageDemandeChoixGroupe(){
+//             System.out.println("Sur quel groupe voulez vous construire ? (entrer la couleur)");
+//             //this.saisieRep()
+//            
+          return null;
+      }// TODO benj je pige pas comment tu veux faire
+        
+        
+      public ProprieteAConstruire messageDemandeChoixProp(){
+//             System.out.println("Sur quel propriété voulez vous construire ?");
+//             //this.saisieRep()
+//            
+          return null;
+      }// TODO benj je pige pas comment tu veux faire
+        
         
     /**
+     * 
      * @return the monopoly
      */
     private Monopoly getMonopoly() {
