@@ -16,12 +16,13 @@ public class Joueur {
 	private int cash;
 	private int nbDouble;
 	private int nbTourPrison;
-        private HashSet<CarteLiberePrison> CartesLiberePrison ;
+        private HashSet<CarteLiberePrison> cartesLiberePrison ;
 
         public Joueur(Monopoly newMonopoly,String newNomJoueur){
             this.setMonopoly(newMonopoly);
             compagnies = new HashSet<>();
             gares = new HashSet<>();
+            cartesLiberePrison = new HashSet<>();
             positionCourante = newMonopoly.getCarreau(1);
             proprietesAConstruire = new HashSet<>();
             this.setNomJoueur(newNomJoueur);
@@ -55,10 +56,26 @@ public class Joueur {
                 }
         }
         public void reinitStats(){
-                for (int i = 0; i < this.getNbCompagnie(); i++){
-                    compagnies.
+            
+                for (Compagnie comp : this.getCompagnies()){
+                        comp.setProprietaire(null);
                 }compagnies.clear();
-                    
+            
+                for (Gare gare : this.getGares()){
+                        gare.setProprietaire(null);
+                }gares.clear();
+                
+                for (ProprieteAConstruire pac : this.getProprietesAConstruire()){
+                        pac.setProprietaire(null);
+                }proprietesAConstruire.clear();
+                
+                for (CarreauPropriete cp : this.getProprietes()){
+                        cp.setProprietaire(this);
+                }proprietes.clear();
+                
+                for (CarteLiberePrison clp : this.getCartesLiberePrison()){
+                        clp.setProprietaire(null);
+                }cartesLiberePrison.clear();
         } 
 	/**
 	 * 
@@ -295,7 +312,7 @@ public class Joueur {
      * @return the CartesLiberePrison
      */
     public HashSet<CarteLiberePrison> getCartesLiberePrison() {
-        return CartesLiberePrison;
+        return cartesLiberePrison;
     }
 
     /**
