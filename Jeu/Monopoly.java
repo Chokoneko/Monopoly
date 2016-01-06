@@ -254,15 +254,19 @@ public class Monopoly {
                     indiceJMax=i;
                 }
             }
-           ArrayList<Joueur> listeSwitch = this.getJoueurs();
+
            
-           this.getJoueurs().removeAll(joueurs);
-           for (int i=indiceJMax; i<listeSwitch.size();i++){
-               this.getJoueurs().add(listeSwitch.get(i));
+           ArrayList<Joueur> listeSwitch = new ArrayList<>();
+           
+           
+           for (int i=indiceJMax; i<this.getJoueurs().size();i++){
+               listeSwitch.add(this.getJoueurs().get(i));
            }
            for (int i=0; i<indiceJMax;i++){
-               this.getJoueurs().add(listeSwitch.get(i));
+               listeSwitch.add(this.getJoueurs().get(i));
            }
+           this.getJoueurs().clear();
+           this.setJoueurs(listeSwitch) ;
         }
         
 	/**
@@ -427,6 +431,13 @@ public class Monopoly {
      */
     public ArrayList<Joueur> getJoueurs() {
         return joueurs;
+    }
+    
+    /**
+     * 
+     */
+    public void setJoueurs(ArrayList<Joueur> njoueurs) {
+        joueurs=njoueurs;
     }
 
     /**
