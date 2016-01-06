@@ -2,6 +2,7 @@ package Jeu;
 
 
 import Jeu.Monopoly;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class IHM {
@@ -105,13 +106,7 @@ public class IHM {
             }            
         }
 
-       
-      public Groupe messageDemandeChoixGroupe(){
-//             System.out.println("Sur quel groupe voulez vous construire ? (entrer la couleur)");
-//             //this.saisieRep()
-//            
-          return null;
-      }// TODO benj je pige pas comment tu veux faire
+
         
         
       public ProprieteAConstruire messageDemandeChoixProp(){
@@ -138,17 +133,31 @@ public class IHM {
         System.out.println(" Groupe: " + g.getCouleur().toString() + "   Nombre de propriété: " + g.getProprietes().size());
     }
     
-    /* TODO
-    public Groupe messageDemandeChoixGroupe(){
-        System.out.println(" Saississez le nom du groupe voulu.");
-        Groupe groupe;
+    
+    public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
+        System.out.println(" Saississez le nom du groupe voulu (la couleur).");
+        String groupe;
         Scanner sc = new Scanner(System.in);
-        groupe = Groupe.  sc.nextLine();
+        groupe = sc.nextLine(); 
+        
+        CouleurPropriete coul;
+        coul = CouleurPropriete.valueOf(groupe);
+        
+        Groupe rep = null;
+        for (Groupe g: liste){
+            if (g.getCouleur() == coul){
+                rep = g;
+            }            
+        }
+        
+        return rep;
+        
     }
-    */
+    
     
     public void messageAfficherProp(ProprieteAConstruire prop){
-        System.out.println(" Propriété: " + prop.getNom() + "    Nombre de maison: " + prop.getNbMaisons() + "    Nombre d'hotel " +prop.getNbHotel());
+        System.out.println("Propriété: " + prop.getNom() + "    Numéro: " +prop.getNumero()) ;
+        System.out.println("Nombre de maison: " + prop.getNbMaisons() + "    Nombre d'hotel " +prop.getNbHotel());
     }
     
     public void messagePasDeGroupeEntier(){

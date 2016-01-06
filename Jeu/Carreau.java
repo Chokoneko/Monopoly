@@ -80,8 +80,14 @@ public abstract class Carreau {
                         this.getMonopoly().messageAfficherGroupe(g);
                     }
                     
+                    HashSet<Groupe> liste = new HashSet<Groupe>();
+                    for (ProprieteAConstruire prop: joueur.getProprietesAConstruire()){
+                        if (!liste.contains(prop.getGroupe())){
+                            liste.add(prop.getGroupe());
+                        }
+                    }                  
                     Groupe groupe;
-                    groupe = this.getMonopoly().messageDemandeChoixGroupe();//TODO  finir l'ihm voir benj
+                    groupe = this.getMonopoly().messageDemandeChoixGroupe(liste);
                     
                     HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
                     collecProp = joueur.getCasesConstructibles(groupe);
