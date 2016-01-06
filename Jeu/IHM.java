@@ -155,4 +155,8 @@ public class IHM {
         System.out.println(" Vous ne possédez pas de groupe constructible et vous ne pouvez donc pas construire.");
     }
 
+    void messagePassageDepart() {
+        System.out.println(this.getMonopoly().getJoueurCourant().getNomJoueur() + "passe par la case départ et gagne 200 gils");
+    }
+
 }
