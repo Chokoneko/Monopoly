@@ -95,7 +95,7 @@ public class Monopoly {
                                         
 				}
 				else if(caseType.compareTo("CA") == 0){
-					System.out.println("Case Argent :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+					System.out.println("Case Argent :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1] +"montant : "+data.get(i)[3]);
                                         CarreauArgent cA = new CarreauArgent(this,
                                                                              Integer.parseInt(data.get(i)[1]),
                                                                              data.get(i)[2],
@@ -292,6 +292,7 @@ public class Monopoly {
 	private Carreau lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
+           
 
             Joueur jC = this.getJoueurCourant();
 
