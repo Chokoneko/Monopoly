@@ -205,4 +205,9 @@ public class IHM {
     public void messageCarteChance(){
         System.out.println("Vous êtes tombé sur la case Chance ! Vous tirez une carte Chance !");
     }
+    
+    public void messageDebutPartie(){
+        System.out.println("\n\n\n\n\n\n\n");
+        System.out.println(" Bonjour et bienvenue dans ce super Monopoly ! Nous allons proceder à l'inscription des joueurs.");
+    }
 }

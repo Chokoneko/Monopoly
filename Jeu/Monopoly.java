@@ -206,7 +206,7 @@ public class Monopoly {
         public void inscrireJoueurs (){
             //Demander les noms de J1 et J2
             
-            
+            this.getIhm().messageDebutPartie();
             String nom1 = this.getIhm().messageDemanderNom() ;
             this.getJoueurs().add(new Joueur(this,nom1));
             String nom2 = this.getIhm().messageDemanderNom() ;
