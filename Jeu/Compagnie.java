@@ -22,7 +22,11 @@ public class Compagnie extends CarreauPropriete {
             return (d1 +d2) * mod;
 	}
         
-    @Override //TODO  faire la fonction
+    /**
+     *
+     * @param joueur
+     */
+    @Override 
     public void acheterPropriété(Joueur joueur) {
            
         int cashJoueur;
