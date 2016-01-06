@@ -110,11 +110,11 @@ public class IHM {
             
             
             System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
-            if (listeProp==null){
+            if (listeProp.isEmpty()){
                 System.out.println("Ce joueur ne possède aucunes terres");
             }
             else{
-                System.out.println("Ce joueur ne possède les terres suivantes :");
+                System.out.println("Ce joueur possède les terres suivantes :");
                 for (CarreauPropriete carreauPropriete : listeProp){
                     System.out.println(carreauPropriete.getNom());
                 }                    
