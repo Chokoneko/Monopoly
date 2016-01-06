@@ -236,8 +236,11 @@ public class Monopoly {
         public void JouerJeu(){
             this.ordreJoueurs();
             while (this.partieContinue()){
+                this.setNumeroJoueurCourant(0);
                 for (Joueur j : this.getJoueurs()){
+                    
                     this.jouerUnCoup(j);
+                    this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()+1);
                 }
             }
         }
@@ -289,8 +292,9 @@ public class Monopoly {
 	private Carreau lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
+
             Joueur jC = this.getJoueurCourant();
-            //this.getIhm().messageAfficherLancerDesJoueur(jC, de1+de2);
+
             if (de1 == de2) {
                 jC.incrementerNbDouble();                
             } 
