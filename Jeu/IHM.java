@@ -108,17 +108,18 @@ public class IHM {
                 listeProp.add(gare);
             }
             
-            
-            System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
+            System.out.println("Informations sur le joueur " + joueur.getNomJoueur() +" :");
+            System.out.println("Position: "+ carreau.getNomCarreau()+" Argent: "+Integer.valueOf(joueur.getCash())+"gils");
             if (listeProp.isEmpty()){
-                System.out.println("Ce joueur ne possède aucunes terres");
+                System.out.println("Terrains: Aucuns");
             }
             else{
-                System.out.println("Ce joueur possède les terres suivantes :");
+                System.out.println("Terrains: ");
                 for (CarreauPropriete carreauPropriete : listeProp){
-                    System.out.println(carreauPropriete.getNom());
-                }                    
-            }            
+                    System.out.println("- " + carreauPropriete.getNom());
+                }          
+            } 
+            System.out.println("");
         }
 
 
@@ -213,10 +214,10 @@ public class IHM {
     }
     
     public void messageDeterminationOrdre(){
-        System.out.println("\n\n\nNous allons maintenant déterminer quel joueur commencera à jouer par un lancé de dé. \nLe score correspond à la somme de vos deux dés.");
+        System.out.println("\nNous allons maintenant déterminer quel joueur commencera à jouer par un lancé de dé. \nLe score correspond à la somme de vos deux dés.");
     }
     
     public void messageJoueurCommence(Joueur joueur){
-        System.out.println("Le joueur " +joueur.getNomJoueur() + " a fait le plus haut score et va donc commencer.");
+        System.out.println("Le joueur " +joueur.getNomJoueur() + " a fait le plus haut score et va donc commencer.\n");
     }
 }
