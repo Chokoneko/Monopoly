@@ -33,6 +33,7 @@ public class Monopoly {
                 buildGameCards(dataCards1, carteCaisseCommunaute);
                 buildGameCards(dataCards2, carteChance);
                 this.inscrireJoueurs();
+                
 	}
         
 	
@@ -224,19 +225,38 @@ public class Monopoly {
             
                        
         }
+        public boolean partieContinue (){
+            return true; //TODO
+        }
+        public void JouerJeu(){
+            this.ordreJoueurs();
+            while (this.partieContinue()){
+                for (Joueur j : this.getJoueurs()){
+                    this.jouerUnCoup(j);
+                }
+            }
+        }
         
-        public Joueur premierJoueur() {
+        
+        public void ordreJoueurs() {
             int score, scoreMax = 0;
-            Joueur joueurMax=this.getJoueurs().get(0);
+            int indiceJMax = 0;
             for (int i=0 ; i < this.getJoueurs().size() ; i++){
                 score = this.jetDe() + this.jetDe();
                 this.getIhm().messageAfficherLancerDesJoueur(this.getJoueurs().get(i),score);
                 if (score > scoreMax){
                     scoreMax = score;
-                    joueurMax = this.getJoueurs().get(i);
-                }               
+                    indiceJMax=i;
+                }
             }
-            return joueurMax;//TODO 
+           ArrayList<Joueur> listeSwitch = this.getJoueurs();
+           this.getJoueurs().removeAll(joueurs);
+           for (int i=indiceJMax; i<this.getJoueurs().size();i++){
+               this.getJoueurs().add(listeSwitch.get(i));
+           }
+           for (int i=0; i<indiceJMax;i++){
+               this.getJoueurs().add(listeSwitch.get(i));
+           }
         }
         
 	/**
