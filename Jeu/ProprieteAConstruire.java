@@ -3,12 +3,13 @@ package Jeu;
 
 import Jeu.CarreauPropriete;
 import Jeu.Monopoly;
+import java.util.HashSet;
 
 public class ProprieteAConstruire extends CarreauPropriete {
 
 	private Groupe groupePropriete;
 	private int nbMaisons;
-	private int[] loyerMaison = new int[5];
+	private int[] loyerMaison = new int[6];
 
         public ProprieteAConstruire (Monopoly newMonopoly,int newNumero, String newNomCarreau, int newPrixAchat,int[] tableLoyer,Groupe newGroupe){
             super(newMonopoly,newNumero,newNomCarreau,newPrixAchat);
@@ -41,8 +42,30 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	 * 
 	 * @param nbM
 	 */
-	public int caculLoyerEffectif(int nbMaisons) {
-            return this.calculLoyerEffectif(nbMaisons-1);
+	public int caculLoyerEffectif() {
+            
+            int loyer;
+            boolean test = false;
+            
+            HashSet<ProprieteAConstruire> prop;
+            int c = 0;
+            for (ProprieteAConstruire  pr : this.getProprietaire().getProprietesAConstruire()){
+                if (pr.getGroupe() == this.getGroupe()){
+                    c = c+1;
+                }
+            }
+            
+            if (c == this.getGroupe().getProprietes().size()){
+               test = true;
+            }
+            
+            if ( (this.getNbMaisons() + this.getNbHotel() == 0) && !test){
+                return (this.getLoyerMaison()[0] * 2);
+            }
+            else {
+                return (this.getLoyerMaison()[this.getNbMaisons()]);
+            }
+        
 	}
 
     /**
@@ -129,7 +152,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
         nombreMaison = this.getNbMaisons();
         
         int loyerEffectif;
-        loyerEffectif = this.getLoyerMaison()[nombreMaison-1];
+        loyerEffectif = this.caculLoyerEffectif();
         
         int cashJoueurCourant;
         cashJoueurCourant = this.getMonopoly().getJoueurCourant().getCash();
