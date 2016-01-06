@@ -94,7 +94,7 @@ public class IHM {
             return rep;
 
 	}
-        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){
+        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ //TODO SYLVAIN ON LUTILISAIT POUR SA PROPRIETE
             
             System.out.println("Le joueur "+joueur.getNomJoueur()+" est sur la case "+ carreau.getNomCarreau()+" il possède "+Integer.valueOf(joueur.getCash())+" gils");
             if (joueur.getProprietes()==null){

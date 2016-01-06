@@ -349,7 +349,7 @@ public class Monopoly {
         public void faillite(Joueur j){
             j.reinitStats();
             joueurs.remove(j);
-            this.getIhm().messageFaillite;
+            this.getIhm().messageFaillite();
             
         }
 
@@ -503,8 +503,8 @@ public class Monopoly {
         this.getIhm().messagePasGroupeConstructible();
     }
 
-    public Groupe messageDemandeChoixGroupe(){
-        return this.getIhm().messageDemandeChoixGroupe();
+    public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
+        return this.getIhm().messageDemandeChoixGroupe(liste);
     }
     public ProprieteAConstruire messageDemandeChoixProp(){
         return this.getIhm().messageDemandeChoixProp();
