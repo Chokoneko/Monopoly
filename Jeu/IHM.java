@@ -156,7 +156,9 @@ public class IHM {
     public void messageAfficherGroupe(Groupe g){
         System.out.println(" Groupe: " + g.getCouleur().toString() + "   Nombre de propriété: " + g.getProprietes().size());
     }
-    
+    public void messageAfficherCarte (Carte carte){
+        System.out.println(carte.getTexte());
+    }
     
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
         System.out.println(" Saississez le nom du groupe voulu (la couleur).");
