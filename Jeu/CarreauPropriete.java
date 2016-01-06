@@ -23,13 +23,11 @@ public abstract class CarreauPropriete extends Carreau {
 	}
 
 	public Monopoly getMonopoly() {
-		// TODO - implement CarreauPropriete.getMonopoly
-		throw new UnsupportedOperationException();
+		return super.getMonopoly();
 	}
 
 	public String getNom() {
-		// TODO - implement CarreauPropriete.getNom
-		throw new UnsupportedOperationException();
+		return super.getNomCarreau();
 	}
 
 	/**
