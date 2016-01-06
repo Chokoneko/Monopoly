@@ -94,7 +94,7 @@ public class IHM {
             return rep;
 
 	}
-        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ //TODO SYLVAIN ON LUTILISAIT POUR SA PROPRIETE
+        public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
             
             HashSet<CarreauPropriete> listeProp = new HashSet<CarreauPropriete>();
             

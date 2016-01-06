@@ -42,8 +42,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	 * @param nbM
 	 */
 	public int caculLoyerEffectif(int nbMaisons) {
-		// TODO - implement ProprieteAConstruire.caculLoyerEffectif
-		throw new UnsupportedOperationException();
+            return this.calculLoyerEffectif(nbMaisons-1);
 	}
 
     /**

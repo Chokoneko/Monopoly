@@ -231,7 +231,7 @@ public class Monopoly {
                        
         }
         public boolean partieContinue (){
-            return this.getJoueurs().size()>=2; //TODO verifier si ça suffit, jai mis un peu au pif
+            return this.getJoueurs().size()>=2; 
         }
         public void JouerJeu(){
             this.ordreJoueurs();
@@ -427,13 +427,6 @@ public class Monopoly {
      */
     public ArrayList<Joueur> getJoueurs() {
         return joueurs;
-    }
-
-    /**
-     * @param joueurs the joueurs to set // todo necesaire ? plutot un add nn ?
-     */
-    public void setJoueurs(ArrayList<Joueur> joueurs) {
-        this.joueurs = joueurs;
     }
 
     /**
