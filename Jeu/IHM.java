@@ -84,7 +84,7 @@ public class IHM {
 //                 System.out.println(".");
 //             }
                       
-            System.out.println("Elle vaut"+ String.valueOf(carreauP.getPrixAchat())+"gils.");
+            System.out.println("Elle vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
             System.out.println("Voulez vous l'acheter ? (true or false)");
             
             boolean rep;
@@ -195,5 +195,12 @@ public class IHM {
     void messagePassageDepart() {
         System.out.println(this.getMonopoly().getJoueurCourant().getNomJoueur() + "passe par la case départ et gagne 200 gils");
     }
-
+    
+    public void messageCarteCommunautaire(){
+        System.out.println("Vous êtes tombé sur la case Caisse Communautaire ! Vous tirez une carte communautaire !");
+    }
+    
+    public void messageCarteChance(){
+        System.out.println("Vous êtes tombé sur la case Chance ! Vous tirez une carte Chance !");
+    }
 }
