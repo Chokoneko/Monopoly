@@ -33,8 +33,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	}
 
 	public Groupe getGroupe() {
-		// TODO - implement ProprieteAConstruire.getGroupe
-		throw new UnsupportedOperationException();
+		return (this.groupePropriete);
 	}
         
 
