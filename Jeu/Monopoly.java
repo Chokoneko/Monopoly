@@ -32,8 +32,7 @@ public class Monopoly {
 		buildGamePlateau(dataFilename);
                 buildGameCards(dataCards1, carteCaisseCommunaute);
                 buildGameCards(dataCards2, carteChance);
-                this.inscrireJoueurs();
-                
+                this.inscrireJoueurs();               
 	}
         
 	
@@ -198,7 +197,7 @@ public class Monopoly {
 		return data;
 	}
         
-        //pouet
+
         public void inscrireJoueurs (){
             //Demander les noms de J1 et J2
             
@@ -209,7 +208,8 @@ public class Monopoly {
             this.getJoueurs().add(new Joueur(this,nom2));
             
             boolean continuer  = this.getIhm().messageAjouterJoueur() ;
-             // boucle rajout des joueurs
+            
+            // boucle rajout des joueurs
             while (continuer && this.getJoueurs().size()<6) {
                 String nom = this.getIhm().messageDemanderNom() ;
                 this.getJoueurs().add(new Joueur(this,nom));
@@ -272,30 +272,30 @@ public class Monopoly {
 
         public void passerParDepart () {
             this.getJoueurCourant().setCash(this.getJoueurCourant().getCash()+200);
-            //this.getIhm().messagePassageDepart(); //TODO le coder dans l'ihm
+            this.getIhm().messagePassageDepart();
         }
         
         
 	private Carreau lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
-            //TODO  declarer un joueur en local 
+            Joueur jC = this.getJoueurCourant();
             
             if (de1 == de2) {
-                this.getJoueurCourant().incrementerNbDouble();
+                jC.incrementerNbDouble();
                 
             } 
             else {
-                this.getJoueurCourant().reinitialiserNbDouble();
+                jC.reinitialiserNbDouble();
             }
             
             
-            if (this.getJoueurCourant().getNbDouble() == 3) {
-                this.getJoueurCourant().setPositionCourante(this.getCarreau(11));
-                this.getJoueurCourant().incrementerNbTourPrison();
+            if (jC.getNbDouble() == 3) {
+                jC.setPositionCourante(this.getCarreau(11));
+                jC.incrementerNbTourPrison();
             }
             else {
-                this.getJoueurCourant().setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+                jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
             }
             
             
