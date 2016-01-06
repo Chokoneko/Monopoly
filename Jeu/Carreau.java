@@ -52,6 +52,7 @@ public abstract class Carreau {
     public abstract void action(Joueur j);
     
     public void construire(Joueur joueur){
+        
         int nbMaisonDispo, nbHotelDispo;
         nbMaisonDispo = this.getMonopoly().getNbMaisonsRestant();
         nbHotelDispo = this.getMonopoly().getNbHotelsRestant();
@@ -74,14 +75,16 @@ public abstract class Carreau {
                     }
                 }
                 
-                if (listeGroupeConstructible != null){
-                    
+                if (!listeGroupeConstructible.isEmpty()){
+                    System.out.println("tettdg");
                     for (Groupe g: listeGroupeConstructible){
+                        System.out.println("test");
                         this.getMonopoly().messageAfficherGroupe(g);
                     }
                     
                     HashSet<Groupe> liste = new HashSet<Groupe>();
                     for (ProprieteAConstruire prop: joueur.getProprietesAConstruire()){
+                        System.out.println("ohoh");
                         if (!liste.contains(prop.getGroupe())){
                             liste.add(prop.getGroupe());
                         }
