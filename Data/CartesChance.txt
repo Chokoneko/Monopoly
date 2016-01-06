@@ -6,11 +6,11 @@ ARP,5,-25,-100,Faites des réparations dans toutes vos maisons : versez pour cha
 CA,6,-20,Amende pour ivresse : 20 gils
 MA,7,1,->,Avancez jusqu'à la case Départ
 Prison,8,11,Allez en prison. avancez tout droit en prison. Ne passez pas par la case Départ. Ne recevez pas 200 gils.
-MA,9,25,->,Rendez-vous à l'avenue Henri-Martin. Si vous passez par la case Départ, recevez 200 gils
-MA,10,16,->,Allez à la gare de Lyon. Si vous passez par la case Déprat, recevez 200 gils.
+MA,9,25,->,Rendez-vous à l'avenue Henri-Martin. Si vous passez par la case Départ recevez 200 gils
+MA,10,16,->,Allez à la gare de Lyon. Si vous passez par la case Départ recevez 200 gils.
 CA,11,-150,Payez vos frais de scolarité : 150 gils
 CA,12,+100,Vous avez gagné le prix de mots croisés. Recevez 100 gils
 CA,13,+50,La Banque vous verse un dividende de 50 gils
 MA,14,40,->,Rendez-vous rue de la Paix.
 CA,15,-150,Votre immeuble et votre prêt rapportent. Vous devez toucher 150 gils
-MA,16,2,->,Accédez au Boulevard de la Villette. Si vous passez par la case Départ, recevez 200 gils
+MA,16,2,->,Accédez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200 gils

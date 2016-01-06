@@ -16,8 +16,8 @@ public class Monopoly {
 
 	private IHM ihm;
 	private HashMap<Integer,Carreau> carreaux;
-        private LinkedList<Carte> carteCaisseCommunaute;
-        private LinkedList<Carte> carteChance;
+        private LinkedList<Carte> cartesCaisseCommunaute;
+        private LinkedList<Carte> cartesChance;
         private ArrayList<Joueur> joueurs;
 	private int nbMaisonsRestant = 32;
 	private int nbHotelsRestant = 12;
@@ -29,21 +29,14 @@ public class Monopoly {
             carreaux = new HashMap();
             joueurs = new ArrayList<>() ;
             ihm = new IHM();
-            carteCaisseCommunaute = new LinkedList<>();
-            carteChance = new LinkedList<>() ;
+            cartesCaisseCommunaute = new LinkedList<>();
+            cartesChance = new LinkedList<>() ;
             
             
 		buildGamePlateau(dataFilename);
                 
-                buildGameCards(dataCards1, carteCaisseCommunaute);
-                buildGameCards(dataCards2, carteChance);
-                shuffle(carteCaisseCommunaute);
-                shuffle(carteChance);
-                this.inscrireJoueurs();
-                
-                for (Carte carte : carteCaisseCommunaute){
-                    System.out.println(carte.getTexte());
-                }
+                buildGameCards(dataCards1, cartesCaisseCommunaute);
+                buildGameCards(dataCards2, cartesChance);
                 
 	}
         
@@ -325,25 +318,25 @@ public class Monopoly {
 
         
         public void tirerUneCarte(LinkedList<Carte> paquetCartes){
-            if (paquetCartes == getCarteCaisseCommunaute()){
-                if (getCarteCaisseCommunaute().getLast().getNumero()==1){
-                    getCarteCaisseCommunaute().getLast().actionCarte();
-                    getCarteCaisseCommunaute().removeLast();
+            if (paquetCartes == getCartesCaisseCommunaute()){
+                if (getCartesCaisseCommunaute().getLast().getNumero()==1){
+                    getCartesCaisseCommunaute().getLast().actionCarte();
+                    getCartesCaisseCommunaute().removeLast();
                 }
                 else { 
-                    getCarteCaisseCommunaute().getLast().actionCarte();
-                    getCarteCaisseCommunaute().push(getCarteCaisseCommunaute().getLast());
-                    getCarteCaisseCommunaute().removeLast();
+                    getCartesCaisseCommunaute().getLast().actionCarte();
+                    getCartesCaisseCommunaute().push(getCartesCaisseCommunaute().getLast());
+                    getCartesCaisseCommunaute().removeLast();
                 }
             } else 
-                if (getCarteChance().getLast().getNumero()==1){
-                    getCarteChance().getLast().actionCarte();
-                    getCarteChance().removeLast();
+                if (getCartesChance().getLast().getNumero()==1){
+                    getCartesChance().getLast().actionCarte();
+                    getCartesChance().removeLast();
                 }
                 else {
-                    getCarteChance().getLast().actionCarte();
-                    getCarteChance().push(getCarteChance().getLast());
-                    getCarteChance().removeLast();
+                    getCartesChance().getLast().actionCarte();
+                    getCartesChance().push(getCartesChance().getLast());
+                    getCartesChance().removeLast();
             }
         }
         
@@ -519,15 +512,15 @@ public class Monopoly {
     /**
      * @return the carteCaisseCommunaute
      */
-    public LinkedList<Carte> getCarteCaisseCommunaute() {
-        return carteCaisseCommunaute;
+    public LinkedList<Carte> getCartesCaisseCommunaute() {
+        return cartesCaisseCommunaute;
     }
 
     /**
      * @return the carteChance
      */
-    public LinkedList<Carte> getCarteChance() {
-        return carteChance;
+    public LinkedList<Carte> getCartesChance() {
+        return cartesChance;
     }
     
     
