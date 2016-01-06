@@ -319,6 +319,13 @@ public class Monopoly {
             Random randomJD = new Random();
             return randomJD.nextInt(6)+1;
 	}
+        
+        public void faillite(Joueur j){
+            j.reinitStats();
+            joueurs.remove(j);
+            this.getIhm().messageFaillite;
+            
+        }
 
 	/**
 	 * 

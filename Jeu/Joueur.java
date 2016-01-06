@@ -47,9 +47,13 @@ public class Joueur {
 	 * 
 	 * @param newCash
 	 */
-	public void setCash(int newCash) {
-		this.cash = newCash; // TODO  verifier l'argent du joueur et le mettre en game over
-	}
+	public void setCash(int newCash){
+                if (newCash <= 0){
+                    this.getMonopoly().faillite(this);
+                }else{
+                    this.cash = newCash;
+                }
+        }
         
 	/**
 	 * 
@@ -140,7 +144,10 @@ public class Joueur {
             }
             return casesConstructibles ;
         }
-                
+        public void reinitStats(){
+            
+        }        
+        
 	/**
 	 * 
 	 * @param c
