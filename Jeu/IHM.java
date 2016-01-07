@@ -204,7 +204,7 @@ public class IHM {
     }
 
     void messagePassageDepart(Joueur j) {
-        System.out.println(j.getNomJoueur() + "passe par la case départ et gagne 200 gils");
+        System.out.println(j.getNomJoueur() + " passe par la case départ et gagne 200 gils");
     }
     
     public void messageCarteCommunautaire(){
