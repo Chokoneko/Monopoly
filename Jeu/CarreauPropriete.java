@@ -61,7 +61,10 @@ public abstract class CarreauPropriete extends Carreau {
                     this.acheterPropriété(joueur);
                     
                 }
-                this.construire(joueur);
+                boolean continueConstruire = true;
+                while (continueConstruire){
+                    this.construire(joueur);
+                }
 	}
 
 	public abstract int calculLoyer();

@@ -553,6 +553,10 @@ public class Monopoly {
         return cartesChance;
     }
     
+    public boolean messageDemandeReconstruire(){
+        this.getIhm().
+    }
+    
     
 
 
