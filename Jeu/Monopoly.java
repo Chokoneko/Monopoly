@@ -25,7 +25,9 @@ public class Monopoly {
 	private int de2;
         private int numeroJoueurCourant ;
         private boolean modeDemo ; 
-
+        private ArrayList<String[]> dataDemo;
+        
+        
         public Monopoly(String dataFilename, String dataCards1, String dataCards2){
             carreaux = new HashMap();
             joueurs = new ArrayList<>() ;
@@ -38,9 +40,25 @@ public class Monopoly {
                 
                 buildGameCards(dataCards1, cartesCaisseCommunaute);
                 buildGameCards(dataCards2, cartesChance);
-                
+                buildDemo();
+
+
 	}
         
+        private void buildDemo(){
+             
+            try {
+            dataDemo = readDataFile("src/Data/Demo.txt", ",");
+            
+            
+            }
+            catch(FileNotFoundException e){
+		System.err.println("[buildGameCards()] : File is not found!");
+            }
+            catch(IOException e){
+		System.err.println("[buildGameCard()] : Error while reading file!");
+            }
+        }
 	
 	private void buildGamePlateau(String dataFilename)  
 	{
@@ -379,20 +397,12 @@ public class Monopoly {
 //            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
 //            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
             
-            try {
-            ArrayList<String[]> data = readDataFile("src/Data/Demo.txt", ",");
-            de1 = Integer.valueOf(data.get(0)[0]);
-            data.remove(0);
-            de2 = Integer.valueOf(data.get(0)[0]);
-            data.remove(0);
+            de1 = Integer.valueOf(dataDemo.get(0)[0]);
+            dataDemo.remove(0);
+            de2 = Integer.valueOf(dataDemo.get(0)[0]);
+            dataDemo.remove(0);
+
             
-            }
-            catch(FileNotFoundException e){
-		System.err.println("[buildGameCards()] : File is not found!");
-            }
-            catch(IOException e){
-		System.err.println("[buildGameCard()] : Error while reading file!");
-            }
              
             
       
