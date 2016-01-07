@@ -311,7 +311,7 @@ public class IHM {
     }
     
     public void messageCaseArgentPaie(CarreauArgent carreau){
-        System.out.println("Vous devez payer "+ carreau.getMontant() +" gils.");
+        System.out.println("Vous devez payer "+ carreau.getMontant() +" gils. Il vous reste " + String.valueOf(this.getMonopoly().getJoueurCourant().getCash()));
     }
     
     public void messageCaseArgentRien(){

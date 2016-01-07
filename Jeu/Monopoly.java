@@ -407,13 +407,15 @@ public class Monopoly {
              
             
       
-                boolean rejoue;
+
                 Joueur jC = this.getJoueurCourant();
-
+                
+                boolean rejoue;
                 for (Joueur joueur : this.getJoueurs()){
-                   this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
+                    this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
+                   
                 }
-
+                    
                 if (de1 == de2) {
                     jC.incrementerNbDouble();
                     rejoue = true;
