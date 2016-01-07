@@ -170,9 +170,14 @@ public class IHM {
     
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
         System.out.print(" Saississez le nom du groupe voulu (la couleur):  ");
-        String groupe;
+        String groupe = "default";
         Scanner sc = new Scanner(System.in);
-        groupe = sc.nextLine(); 
+        while (CouleurPropriete.valueOf(groupe) == null){
+            groupe = sc.nextLine(); 
+            if (CouleurPropriete.valueOf(groupe) == null){
+                System.out.println("Mauvaise saisie, recommencez?");
+            }
+        }
         
         CouleurPropriete coul;
         coul = CouleurPropriete.valueOf(groupe);
