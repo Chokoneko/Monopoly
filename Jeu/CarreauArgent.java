@@ -31,12 +31,12 @@ public class CarreauArgent extends CarreauAction {
         position = this.getNumero();
         
         if (position == 5 || position == 39){
-            System.out.println("Vous êtes tombé sur la case " + this.getNomCarreau() + " Vous devez payer "+ this.getMontant() +" gils.");
+            System.out.println("Vous devez payer "+ this.getMontant() +" gils.");
             cash = j.getCash();
             j.setCash(cash + montant);
         }
         else{
-            System.out.println("Vous êtes tombé sur la case " + this.getNomCarreau() + ". Aucune action");
+            System.out.println("Aucune action possible.");
         }
         
         boolean continueConstruire = true;

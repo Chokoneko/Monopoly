@@ -375,25 +375,9 @@ public class Monopoly {
 //          de1 = this.jetDe(); pour jeu normal
 //          de2 = this.jetDe(); pour jeu normal
             
-//            System.out.println("Jets dés : ");                 //pour le scenario
-//            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-//            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-            
-            try {
-            ArrayList<String[]> data = readDataFile("src/Data/Demo.txt", ",");
-            de1 = Integer.valueOf(data.get(0)[0]);
-            data.remove(0);
-            de2 = Integer.valueOf(data.get(0)[0]);
-            data.remove(0);
-            
-            }
-            catch(FileNotFoundException e){
-		System.err.println("[buildGameCards()] : File is not found!");
-            }
-            catch(IOException e){
-		System.err.println("[buildGameCard()] : Error while reading file!");
-            }
-             
+            System.out.println("Jets dés : ");                 //pour le scenario
+            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
             
            
                 boolean rejoue;
@@ -416,6 +400,7 @@ public class Monopoly {
                     jC.setPositionCourante(this.getCarreau(11));
                     jC.incrementerNbTourPrison();
                     jC.reinitialiserNbDouble(); 
+                    this.getIhm().messageAllerPrison(jC, de1, de2);
                 }
                 else {
                     if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
@@ -425,14 +410,8 @@ public class Monopoly {
                         jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
 
                     }
-                }
-
-                this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1,de2);
-            
-           
-
-                       
-            
+                    this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1,de2);
+                }          
             return (rejoue);
             
 	}

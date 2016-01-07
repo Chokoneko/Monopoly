@@ -79,9 +79,6 @@ public class IHM {
              if (carreauP instanceof ProprieteAConstruire){
                  System.out.println("Elle appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
              }
-             else {
-                System.out.println(".");
-             }
                       
             System.out.println("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
             System.out.print("Voulez vous l'acheter (y/n) ?  ");
@@ -224,6 +221,7 @@ public class IHM {
     
     public void messageJoueurCommence(Joueur joueur){
         System.out.println("Le joueur " +joueur.getNomJoueur() + " a fait le plus haut score et va donc commencer.\n");
+        System.out.println("------------------------------------------------------\n");
     }
     
     public void messageFinTour(){
@@ -303,5 +301,11 @@ public class IHM {
     public void messageDoublePrison(Joueur j){
         System.out.println("Vous avez fais un double et sortez de la prison! ");
         System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
+    }
+    
+    public void messageAllerPrison(Joueur joueurCourant, int de1, int de2){
+        System.out.println("Joueur " + joueurCourant.getNomJoueur() +" :");
+        System.out.println("Vous avez fait un 3ème double (" + String.valueOf(de1) + " et " + String.valueOf(de2) + ") !");
+        System.out.println("Vous êtes envoyé directement en prison.");
     }
 }
