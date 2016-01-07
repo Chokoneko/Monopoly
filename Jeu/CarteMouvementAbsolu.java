@@ -29,6 +29,7 @@ public class CarteMouvementAbsolu extends CarteMouvement {
             this.getMonopoly().passerParDepart();
         }
         this.getMonopoly().getJoueurCourant().setPositionCourante(destination);
+        this.getMonopoly().getJoueurCourant().getPositionCourante().action(this.getMonopoly().getJoueurCourant());
     }
 
     /**
