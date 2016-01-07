@@ -321,7 +321,7 @@ public class Monopoly {
             boolean continueConstruire = true;
                 while (continueConstruire){
                 continueConstruire = this.getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()).construire(j);
-            }           
+            }        
             
             
             return rejoue;
