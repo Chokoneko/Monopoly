@@ -19,5 +19,10 @@ public class CarreauTirage extends CarreauAction {
                 this.getMonopoly().getIhm().messageCarteChance();
                 this.getMonopoly().tirerUneCarte(this.getMonopoly().getCartesChance());
         }
+     
+        boolean continueConstruire = true;
+        while (continueConstruire){
+            continueConstruire = this.construire(j);
+        }
     }
 }

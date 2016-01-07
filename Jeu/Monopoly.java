@@ -291,6 +291,7 @@ public class Monopoly {
             positionJoueur = this.lancerDesAvancer();
             
             positionJoueur.action(j);
+            boolean continueConstruire = true;
             
             this.getIhm().messageFinTour();
                     

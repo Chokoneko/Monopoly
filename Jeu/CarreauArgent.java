@@ -38,5 +38,10 @@ public class CarreauArgent extends CarreauAction {
         else{
             System.out.println("Vous êtes tombé sur la case " + this.getNomCarreau() + ". Aucune action");
         }
+        
+        boolean continueConstruire = true;
+        while (continueConstruire){
+            continueConstruire = this.construire(j);
+        }
     }
 }
