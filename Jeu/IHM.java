@@ -35,7 +35,7 @@ public class IHM {
             String rep ;
             rep = "default";
             while (!rep.equals("y") && !rep.equals("n")){
-                System.out.println("Voulez vous ajouter un autre joueur ? (y/n)");
+                System.out.print("Voulez vous ajouter un autre joueur ? (y/n)");
                 Scanner sc = new Scanner(System.in);
                 rep = sc.nextLine();
                 if (!rep.equals("y") && !rep.equals("n")){
