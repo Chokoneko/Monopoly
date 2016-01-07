@@ -1,6 +1,7 @@
 package Jeu;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -14,13 +15,13 @@ public class Joueur {
 	private int cash;
 	private int nbDouble;
 	private int nbTourPrison;
-        private HashSet<CarteLiberePrison> cartesLiberePrison ;
+        private ArrayList<CarteLiberePrison> cartesLiberePrison ;
 
         public Joueur(Monopoly newMonopoly,String newNomJoueur){
             this.setMonopoly(newMonopoly);
             compagnies = new HashSet<>();
             gares = new HashSet<>();
-            cartesLiberePrison = new HashSet<>();
+            cartesLiberePrison = new ArrayList<>();
             positionCourante = newMonopoly.getCarreau(1);
             proprietesAConstruire = new HashSet<>();
             this.setNomJoueur(newNomJoueur);
@@ -281,7 +282,7 @@ public class Joueur {
     /**
      * @return the CartesLiberePrison
      */
-    public HashSet<CarteLiberePrison> getCartesLiberePrison() {
+    public ArrayList<CarteLiberePrison> getCartesLiberePrison() {
         return cartesLiberePrison;
     }
 
@@ -291,4 +292,10 @@ public class Joueur {
     public void addCartesLiberePrison(CarteLiberePrison CarteLiberePrison) {
         this.getCartesLiberePrison().add(CarteLiberePrison);
     }
+    
+    private void utiliserCartePrison(){
+        this.getCartesLiberePrison().remove(0);
+        this.setNbTourPrison(0);            
+    }
+    
 }
