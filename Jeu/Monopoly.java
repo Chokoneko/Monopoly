@@ -238,7 +238,10 @@ public class Monopoly {
             while (this.partieContinue()){
                 this.setNumeroJoueurCourant(0);
                 for (Joueur j : this.getJoueurs()){
-                    this.jouerUnCoup(j);  
+                    boolean continueJouer = true;
+                    while (continueJouer){
+                        continueJouer = this.jouerUnCoup(j);
+                    }
                     this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()+1);
                 }
             }
@@ -278,24 +281,35 @@ public class Monopoly {
 	 * 
 	 * @param j
 	 */
-	public void jouerUnCoup(Joueur j) {
+	public boolean jouerUnCoup(Joueur j) {
             Carreau positionJoueur;
+            boolean rejoue;
             if (j.getNbTourPrison() == 0){
-                positionJoueur = this.lancerDesAvancer();
+                rejoue = this.lancerDesAvancer();
             }
             else {
-                positionJoueur = this.lancerDesPrison();
+                rejoue = this.lancerDesPrison();
             }
+            positionJoueur = this.getJoueurCourant().getPositionCourante();
             positionJoueur.action(j);
             boolean continueConstruire = true;
             
             this.getIhm().messageFinTour();
+            
+            return rejoue;
                     
         }
         
-        public Carreau lancerDesPrison(){
-            de1 = this.jetDe();
-            de2 = this.jetDe();
+        public boolean lancerDesPrison(){
+//          de1 = this.jetDe(); pour jeu normal
+//          de2 = this.jetDe(); pour jeu normal
+            
+            System.out.println("Jets dés : ");                 //pour le scenario
+            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+            
+            
+            boolean rejoue;
             
             for (Joueur joueur : this.getJoueurs()){
                 this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
@@ -307,6 +321,9 @@ public class Monopoly {
             
             if (de1 == de2){
                 this.getJoueurCourant().setNbTourPrison(0);
+                this.getJoueurCourant().incrementerNbDouble();
+                rejoue = true;
+                
                 if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
                     jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
                 }
@@ -319,6 +336,7 @@ public class Monopoly {
                     
             }
             else {
+                rejoue = false;
                 if (jC.getNbTourPrison() == 3 ){
                     jC.setCash(jC.getCash()-50);  
                     
@@ -336,7 +354,7 @@ public class Monopoly {
                 }
             }
             
-            return (this.getJoueurCourant().getPositionCourante());  
+            return (rejoue);  
         }
 
         public void passerParDepart () {
@@ -345,12 +363,16 @@ public class Monopoly {
         }
         
         
-	private Carreau lancerDesAvancer() {
-            de1 = this.jetDe();
-            de2 = this.jetDe();
+	private boolean lancerDesAvancer() {
+//          de1 = this.jetDe(); pour jeu normal
+//          de2 = this.jetDe(); pour jeu normal
+            
+            System.out.println("Jets dés : ");                 //pour le scenario
+            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
             
            
-
+                boolean rejoue;
                 Joueur jC = this.getJoueurCourant();
 
                 for (Joueur joueur : this.getJoueurs()){
@@ -358,10 +380,12 @@ public class Monopoly {
                 }
 
                 if (de1 == de2) {
-                    jC.incrementerNbDouble();                
+                    jC.incrementerNbDouble();
+                    rejoue = true;
                 } 
                 else {
                     jC.reinitialiserNbDouble();
+                    rejoue = false;
                 }            
 
                 if (jC.getNbDouble() == 3) {
@@ -385,14 +409,20 @@ public class Monopoly {
 
                        
             
-            return (this.getJoueurCourant().getPositionCourante());
+            return (rejoue);
             
 	}
 
         
         public void tirerUneCarte(LinkedList<Carte> paquetCartes){
+            
+            
+                
             if (paquetCartes == getCartesCaisseCommunaute()){
-                if (getCartesCaisseCommunaute().getLast().getNumero()==1){
+                System.out.println("Numero carte ? "); // pour le scenario
+                getCartesCaisseCommunaute().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
+                // ci dessous pour le vrai jeu
+                /*if (getCartesCaisseCommunaute().getLast().getNumero()==1){
                     getCartesCaisseCommunaute().getLast().actionCarte();
                     getCartesCaisseCommunaute().removeLast();
                 }
@@ -400,9 +430,12 @@ public class Monopoly {
                     getCartesCaisseCommunaute().getLast().actionCarte();
                     getCartesCaisseCommunaute().push(getCartesCaisseCommunaute().getLast());
                     getCartesCaisseCommunaute().removeLast();
-                }
-            } else 
-                if (getCartesChance().getLast().getNumero()==1){
+                }*/
+            } else {
+                System.out.println("Numero carte ? "); // pour le scenario
+                getCartesCaisseCommunaute().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
+                // pour le vrai jeu
+                /*if (getCartesChance().getLast().getNumero()==1){
                     getCartesChance().getLast().actionCarte();
                     getCartesChance().removeLast();
                 }
@@ -410,8 +443,10 @@ public class Monopoly {
                     getCartesChance().getLast().actionCarte();
                     getCartesChance().push(getCartesChance().getLast());
                     getCartesChance().removeLast();
-            }
+                }*/
+            }    
         }
+            
         
 	public int jetDe() {
             Random randomJD = new Random();

@@ -33,6 +33,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
         }
 	}
 
+        @Override
 	public Groupe getGroupe() {
 		return (this.groupePropriete);
 	}

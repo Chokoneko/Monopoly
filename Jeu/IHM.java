@@ -76,12 +76,12 @@ public class IHM {
 	 * @param prixAchat
 	 */
 	public boolean messageDemandeAchat(CarreauPropriete carreauP) { 
-//             if (carreauP instanceof ProprieteAConstruire){
-//                 System.out.println(" et appartient au groupe " + (ProprieteAConstruire)carreauP.getGroupe() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
-//             }
-//             else {
-//                 System.out.println(".");
-//             }
+             if (carreauP instanceof ProprieteAConstruire){
+                 System.out.println(" et appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
+             }
+             else {
+                System.out.println(".");
+             }
                       
             System.out.println("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
             System.out.print("Voulez vous l'acheter (y/n) ?  ");

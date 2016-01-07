@@ -86,4 +86,9 @@ public class Compagnie extends CarreauPropriete {
         return loyer ;
     }
 
+    @Override //le caste ne fonctionnant pas, obligé de faire sa pour gerer l'affichage des groupe quand on tombe sur une propriété
+    public Groupe getGroupe() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

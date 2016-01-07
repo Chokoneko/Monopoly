@@ -168,9 +168,10 @@ public abstract class Carreau {
             continueConstruire = false;
         }
         
-        return continueConstruire;
+        return continueConstruire;     
         
         
     }
+    
 
 }

@@ -91,5 +91,7 @@ public abstract class CarreauPropriete extends Carreau {
     }
     
     public abstract void acheterPropriété(Joueur j);
+    
+    public abstract Groupe getGroupe();
 
 }
