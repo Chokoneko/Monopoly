@@ -99,7 +99,7 @@ public class IHM {
 	}
         
         public void messageConfirmeAchat(Joueur j){
-                System.out.println("Propriété achetée. Il vous reste " +String.valueOf(j.getCash()) + "gils.");
+                System.out.println("\nPropriété achetée. Il vous reste " +String.valueOf(j.getCash()) + "gils.");
         }
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
             
@@ -133,7 +133,7 @@ public class IHM {
         
         
        public ProprieteAConstruire messageDemandeChoixProp(Joueur j){
-            System.out.println("Sur quel propriété voulez vous construire (Saisir le numéro) ? ");
+            System.out.print("Sur quel propriété voulez vous construire (Saisir le numéro) ?  ");
             int prop;
             Scanner sc = new Scanner(System.in);
             prop = sc.nextInt();
@@ -161,15 +161,18 @@ public class IHM {
         System.out.println("Construction: Aucune possibilitée. Plus d'immobilier à la banque.");
     }
     
-    public void messageAfficherGroupe(Groupe g){
-        System.out.println(" Groupe: " + g.getCouleur().toString() + "   Nombre de propriété: " + g.getProprietes().size());
+    public void messageAfficherGroupe(HashSet<Groupe> liste){
+        System.out.println("\nVos groupes constructibles: ");
+        for (Groupe groupe : liste){
+            System.out.println("Groupe: " + groupe.getCouleur().toString() + "   Nombre de propriété: " + groupe.getProprietes().size());
+        }
     }
     public void messageAfficherCarte (Carte carte){
         System.out.println(carte.getTexte());
     }
     
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
-        System.out.print(" Saississez le nom du groupe voulu (la couleur):  ");
+        System.out.print("Saississez le nom du groupe voulu (la couleur):  ");
         String groupe;
         Scanner sc = new Scanner(System.in);
         //while (CouleurPropriete.valueOf(groupe) == null){
@@ -194,13 +197,17 @@ public class IHM {
     }
     
     
-    public void messageAfficherProp(ProprieteAConstruire prop){
-        System.out.println("Propriété: " + prop.getNom() + "    Numéro: " +prop.getNumero()) ;
-        System.out.println("Nombre de maison: " + prop.getNbMaisons() + "    Nombre d'hotel " +prop.getNbHotel());
+    public void messageAfficherProp(HashSet<ProprieteAConstruire> liste){
+        System.out.println("\nVos propriétés:");
+        for (ProprieteAConstruire prop : liste){
+            System.out.print("Propriété: " + prop.getNom() + "    Numéro: " +prop.getNumero()) ;
+            System.out.println("    Nombre de maison: " + prop.getNbMaisons() + "    Nombre d'hotel: " +prop.getNbHotel());
+        }
+        System.out.print("");
     }
     
     public void messagePasConstruction(){
-        System.out.println("pas de groupe entier.\n");
+        System.out.println("Construction: Pas de possibibilité.\n");
     }
 
     void messagePassageDepart(Joueur j) {
@@ -239,7 +246,8 @@ public class IHM {
         
     }
     
-    public boolean messageDemandeReconstruire(){
+    public boolean messageDemandeReconstruire(Joueur j){
+        System.out.println("Construction bien effectuée. Il vous reste " + String.valueOf(j.getCash()) +"gils.");
         System.out.print("Voulez vous faire une autre construction ? (y/n)  ");
         
         Scanner sc = new Scanner(System.in);
@@ -252,6 +260,7 @@ public class IHM {
             System.out.println("Mauvaise saisie, veuiller recommencer..");
             }            
         }
+        System.out.println("");
         return rep.equals("y");
     }
     
@@ -273,7 +282,7 @@ public class IHM {
     }
     
     public boolean messageDemandeContinuerConstruire(){
-        System.out.print(" Voulez vous toujours construire ? (y/n)  ");
+        System.out.print("\nVoulez vous toujours construire ? (y/n)  ");
         
         Scanner sc = new Scanner(System.in);
         String rep;

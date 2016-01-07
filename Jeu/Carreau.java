@@ -82,9 +82,9 @@ public abstract class Carreau {
                     
                     if (veuxAcheter){
                     
-                        for (Groupe g: listeGroupeConstructible){
-                            this.getMonopoly().messageAfficherGroupe(g);
-                        }
+
+                        this.getMonopoly().messageAfficherGroupe(listeGroupeConstructible);
+
                         
                         boolean surAcheter = this.getMonopoly().messageDemandeContinuerAcheter();
                         
@@ -103,11 +103,8 @@ public abstract class Carreau {
                             HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
                             collecProp = joueur.getCasesConstructibles(groupe);
 
+                            this.getMonopoly().messageAfficherProp(collecProp);                          
 
-
-                            for (ProprieteAConstruire prop : collecProp){
-                                this.getMonopoly().messageAfficherProp(prop);                          
-                            }
                             
                             surAcheter = this.getMonopoly().messageDemandeContinuerAcheter();
 
@@ -137,22 +134,22 @@ public abstract class Carreau {
 
                                 joueur.setCash(joueur.getCash()-prix);
 
-                                continueConstruire = this.getMonopoly().messageDemandeReconstruire();
+                                continueConstruire = this.getMonopoly().messageDemandeReconstruire(joueur);
                             }
                         }                        
                         else {
-                            continueConstruire = this.getMonopoly().messageDemandeReconstruire();
+                            continueConstruire = this.getMonopoly().messageDemandeReconstruire(joueur);
                         }
                     }
                     else {
-                        continueConstruire = this.getMonopoly().messageDemandeReconstruire();
+                        continueConstruire = this.getMonopoly().messageDemandeReconstruire(joueur);
                     }
                        
                             
                     
                 }
                 else {
-                    this.getMonopoly().messagePlusImmobilier();
+                    this.getMonopoly().messagePasConstruction();
                     continueConstruire = false;
                 }
                 

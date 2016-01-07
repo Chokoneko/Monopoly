@@ -641,11 +641,11 @@ public class Monopoly {
         this.nbHotelsRestant = newNb;
     }
     
-    public void messageAfficherGroupe(Groupe g){
-        this.getIhm().messageAfficherGroupe(g);
+    public void messageAfficherGroupe(HashSet<Groupe> liste){
+        this.getIhm().messageAfficherGroupe(liste);
     }
     
-    public void messageAfficherProp(ProprieteAConstruire prop){
+    public void messageAfficherProp(HashSet<ProprieteAConstruire> prop){
         this.getIhm().messageAfficherProp(prop);
     }
     
@@ -674,8 +674,8 @@ public class Monopoly {
         return cartesChance;
     }
     
-    public boolean messageDemandeReconstruire(){
-        return (this.getIhm().messageDemandeReconstruire());
+    public boolean messageDemandeReconstruire(Joueur j){
+        return (this.getIhm().messageDemandeReconstruire(j));
     }
     
     public boolean messageDemandeVouloirAcheter(){

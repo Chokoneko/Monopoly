@@ -43,6 +43,8 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	/**
 	 * 
 	 * @param nbM
+         * 
+     * @return 
 	 */
 	public int caculLoyerEffectif() {
             
@@ -61,7 +63,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
                possedeToutGroupe = true;
             }
             
-            if ( (this.getNbMaisons() + this.getNbHotel() == 0) && !possedeToutGroupe){
+            if ( (this.getNbMaisons() + this.getNbHotel() == 0) && possedeToutGroupe){
                 return (this.getLoyerMaison()[0] * 2);
             }
             else {
