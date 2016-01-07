@@ -303,6 +303,8 @@ public class Monopoly {
             
             Joueur jC = this.getJoueurCourant();
             
+            this.getIhm().messageInfoPrison(jC, de1, de2);      
+            
             if (de1 == de2){
                 this.getJoueurCourant().setNbTourPrison(0);
                 if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
@@ -312,6 +314,7 @@ public class Monopoly {
                     jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
 
                 }
+                
                     
             }
             else {
