@@ -77,7 +77,7 @@ public class IHM {
 	 */
 	public boolean messageDemandeAchat(CarreauPropriete carreauP) { 
              if (carreauP instanceof ProprieteAConstruire){
-                 System.out.println(" et appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
+                 System.out.println("Elle appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
              }
              else {
                 System.out.println(".");
@@ -231,6 +231,7 @@ public class IHM {
         String fin;
         Scanner sc = new Scanner(System.in);
         fin = sc.nextLine();
+        System.out.println("------------------------------------------------------\n");
         
     }
     

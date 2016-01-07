@@ -242,6 +242,7 @@ public class Monopoly {
                     while (continueJouer){
                         continueJouer = this.jouerUnCoup(j);
                     }
+                    this.getIhm().messageFinTour();
                     this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()+1);
                 }
             }
@@ -292,9 +293,7 @@ public class Monopoly {
             }
             positionJoueur = this.getJoueurCourant().getPositionCourante();
             positionJoueur.action(j);
-            boolean continueConstruire = true;
-            
-            this.getIhm().messageFinTour();
+            boolean continueConstruire = true;            
             
             return rejoue;
                     
