@@ -99,6 +99,10 @@ public class IHM {
             
 
 	}
+        
+        public void messageConfirmeAchat(){
+                System.out.println("Propriété achetée.");
+        }
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
             
             HashSet<CarreauPropriete> listeProp = new HashSet<CarreauPropriete>();
@@ -114,7 +118,7 @@ public class IHM {
             }
             
             System.out.println("Informations sur le joueur " + joueur.getNomJoueur() +" :");
-            System.out.println("Position: "+ carreau.getNomCarreau()+" Argent: "+Integer.valueOf(joueur.getCash())+"gils");
+            System.out.println("Position: "+ carreau.getNomCarreau()+" Argent: "+Integer.valueOf(joueur.getCash())+" gils");
             if (listeProp.isEmpty()){
                 System.out.println("Terrains: Aucuns");
             }
