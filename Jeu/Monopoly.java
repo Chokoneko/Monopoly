@@ -31,7 +31,7 @@ public class Monopoly {
         
         public Monopoly(String dataFilename, String dataCards1, String dataCards2){
             carreaux = new HashMap();
-            joueurs = new ArrayList<>() ;
+            joueurs = new ArrayList<Joueur>() ;
             ihm = new IHM(this);
             cartesCaisseCommunaute = new LinkedList<>();
             cartesChance = new LinkedList<>() ;
@@ -257,15 +257,19 @@ public class Monopoly {
             this.ordreJoueurs();
             while (this.partieContinue()){
                 this.setNumeroJoueurCourant(0);
-                for (Joueur j : this.getJoueurs()){
+                for (int i = 0; i<this.getJoueurs().size() && this.partieContinue(); i++){
                     boolean continueJouer = true;
                     while (continueJouer){
-                        continueJouer = this.jouerUnCoup(j);
+                        continueJouer = this.jouerUnCoup(this.getJoueurs().get(i));
                     }
                     this.getIhm().messageFinTour();
                     this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()+1);
                 }
             }
+            this.getIhm().messageVictoire(this.getJoueurs().get(0).getNomJoueur());
+            
+            
+            
         }
         
         
@@ -318,9 +322,11 @@ public class Monopoly {
             }
             positionJoueur = this.getJoueurCourant().getPositionCourante();
             positionJoueur.action(j);
-            boolean continueConstruire = true;
-                while (continueConstruire){
-                continueConstruire = this.getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()).construire(j);
+            if (this.getJoueurs().size() >= 2){
+                boolean continueConstruire = true;
+                    while (continueConstruire){
+                    continueConstruire = this.getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()).construire(j);
+                    }
             }        
             
             
@@ -502,9 +508,10 @@ public class Monopoly {
         
         public void faillite(Joueur j){
             j.reinitStats();
+            
             joueurs.remove(j);
             this.getIhm().messageFaillite(j);
-            
+                      
         }
 
 	/**

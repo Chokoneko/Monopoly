@@ -360,4 +360,9 @@ public class IHM {
     public void messageNouvellePosition(Carreau carreau){
         System.out.println("Vous êtes maintenant sur la case " +carreau.getNomCarreau());
     }
+    
+    public void messageVictoire(String nom){
+        System.out.println("Le joueur " +nom +" à gagné !!!\nFin de la partie." );
+    }
+
 }
