@@ -375,11 +375,27 @@ public class Monopoly {
 //          de1 = this.jetDe(); pour jeu normal
 //          de2 = this.jetDe(); pour jeu normal
             
-            System.out.println("Jets dés : ");                 //pour le scenario
-            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+//            System.out.println("Jets dés : ");                 //pour le scenario
+//            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+//            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
             
-           
+            try {
+            ArrayList<String[]> data = readDataFile("src/Data/Demo.txt", ",");
+            de1 = Integer.valueOf(data.get(0)[0]);
+            data.remove(0);
+            de2 = Integer.valueOf(data.get(0)[0]);
+            data.remove(0);
+            
+            }
+            catch(FileNotFoundException e){
+		System.err.println("[buildGameCards()] : File is not found!");
+            }
+            catch(IOException e){
+		System.err.println("[buildGameCard()] : Error while reading file!");
+            }
+             
+            
+      
                 boolean rejoue;
                 Joueur jC = this.getJoueurCourant();
 
