@@ -224,13 +224,6 @@ public class Joueur {
     }
 
     /**
-     * @param proprietesAConstruire the proprietesAConstruire to set
-     */
-    private void setProprietesAConstruire(ProprieteAConstruire newProprietesAConstruire) {
-        this.proprietesAConstruire.add(newProprietesAConstruire);
-    }
-
-    /**
      * @param nomJoueur the nomJoueur to set
      */
     private void setNomJoueur(String newNomJoueur) {
