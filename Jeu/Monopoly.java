@@ -314,13 +314,13 @@ public class Monopoly {
                     jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
 
                 }
+                this.getIhm().messageDoublePrison(jC);
                 
                     
             }
             else {
                 if (jC.getNbTourPrison() == 3 ){
-                    jC.setCash(jC.getCash()-50);
-                    this.getIhm().messagePrisonPaye();
+                    jC.setCash(jC.getCash()-50);  
                     
                     if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
                         jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
@@ -328,9 +328,11 @@ public class Monopoly {
                     else {
                         jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
                     }
+                    this.getIhm().messagePrisonPaye(jC);
                 }
                 else {
                     jC.incrementerNbTourPrison();
+                    this.getIhm().messageRestePrison();
                 }
             }
             

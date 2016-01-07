@@ -66,7 +66,7 @@ public class IHM {
             System.out.println("Vous avez essayer d'acheter le carreau " +carreau.getNomCarreau() + " cependant il vous manque " + String.valueOf(carreau.getPrixAchat()-joueur.getCash()) +" pour réaliser cet achat");
         }
          
-        public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,Integer de1 , Integer de2){
+        public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,int de1 , int de2){
             System.out.println("Joueur " + joueurCourant.getNomJoueur() +" :");
             System.out.println("Vous avez fais "+ de1 + " et "+ de2 + " et vous êtes maintenant sur la case " +carreauCourant.getNomCarreau() + ".");           
         }
@@ -289,7 +289,18 @@ public class IHM {
        System.out.println("Résultats des dés: " + String.valueOf(de1 + " et " + String.valueOf(de2)));
     }
     
-    public void messagePrisonPaye(){
-        System.out.println(" Vous ");
+    public void messagePrisonPaye(Joueur j){
+        System.out.println("Toujours pas de double");
+        System.out.println("Vous avez purgé votre peine et payer 50gils");
+        System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
+    }
+    
+    public void messageRestePrison(){
+        System.out.println("Toujours pas de double.\nVous restez en prison.");
+    }
+    
+    public void messageDoublePrison(Joueur j){
+        System.out.println("Vous avez fais un double et sortez de la prison! ");
+        System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
     }
 }
