@@ -12,7 +12,7 @@ public class CarreauArgent extends CarreauAction {
     /**
      * @return the montant
      */
-    private int getMontant() {
+    public int getMontant() {
         return montant;
     }
 
@@ -31,12 +31,12 @@ public class CarreauArgent extends CarreauAction {
         position = this.getNumero();
         
         if (position == 5 || position == 39){
-            System.out.println("Vous devez payer "+ this.getMontant() +" gils.");
+            this.getMonopoly().messageCaseArgentPaie(this);
             cash = j.getCash();
             j.setCash(cash + montant);
         }
         else{
-            System.out.println("Aucune action possible.");
+            this.getMonopoly().messageCaseArgentRien();
         }
         
         boolean continueConstruire = true;

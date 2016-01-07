@@ -675,6 +675,14 @@ public class Monopoly {
         this.modeDemo = modeDemo;
     }
     
+    public void messageCaseArgentPaie(CarreauArgent carreau){
+        this.getIhm().messageCaseArgentPaie(carreau);
+    }
+    
+    public void messageCaseArgentRien(){
+        this.getIhm().messageCaseArgentRien();
+    }
+    
 
 
 }

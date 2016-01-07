@@ -308,4 +308,12 @@ public class IHM {
         System.out.println("Vous avez fait un 3ème double (" + String.valueOf(de1) + " et " + String.valueOf(de2) + ") !");
         System.out.println("Vous êtes envoyé directement en prison.");
     }
+    
+    public void messageCaseArgentPaie(CarreauArgent carreau){
+        System.out.println("Vous devez payer "+ carreau.getMontant() +" gils.");
+    }
+    
+    public void messageCaseArgentRien(){
+        System.out.println("Aucune action possible.");
+    }
 }
