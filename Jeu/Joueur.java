@@ -273,9 +273,15 @@ public class Joueur {
     }
     
     private void utiliserCartePrison(){
+        
+        if(this.getCartesLiberePrison().get(0).getNumero()==0){
+            this.getMonopoly().getCartesChance().push(this.getCartesLiberePrison().get(0));
+        }
+        else{
+            this.getMonopoly().getCartesCaisseCommunaute().push(this.getCartesLiberePrison().get(0));
+        }
         this.getCartesLiberePrison().remove(0);
         this.setNbTourPrison(0);
-        
     }
     
 }
