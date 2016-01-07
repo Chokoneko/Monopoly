@@ -17,9 +17,9 @@ public class Main {
 //                    System.out.println("\033[41m"+"This text is red.");
                 m.inscrireJoueurs();
                 
-                m.JouerJeu();
-                
-
+                 
+        
+        
 	}
         
 
