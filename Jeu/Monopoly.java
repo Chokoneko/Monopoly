@@ -503,7 +503,7 @@ public class Monopoly {
         public void faillite(Joueur j){
             j.reinitStats();
             joueurs.remove(j);
-            this.getIhm().messageFaillite();
+            this.getIhm().messageFaillite(j);
             
         }
 

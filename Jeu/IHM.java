@@ -47,8 +47,8 @@ public class IHM {
             
         }
         
-        public void messageFaillite(){
-             System.out.println("Vous n'avez plus d'argent "+this.getMonopoly().getJoueurCourant().getNomJoueur() +". Vous êtes éliminé . ");
+        public void messageFaillite(Joueur j){
+             System.out.println("Vous n'avez plus d'argent "+j.getNomJoueur() +". Vous êtes éliminé . ");
              System.out.println("Tout vos bien ont été saisi et sont de nouveau disponible à l'achat.");
              System.out.println("Il ne reste plus que "+ this.getMonopoly().getJoueurs().size() + " joueur dans la partie !");
          }
