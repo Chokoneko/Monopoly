@@ -112,6 +112,7 @@ public abstract class Carreau {
                             surAcheter = this.getMonopoly().messageDemandeContinuerAcheter();
 
                             if (surAcheter){
+                                
 
                                 ProprieteAConstruire prop;
                                 prop = this.getMonopoly().messageDemandeChoixProp();

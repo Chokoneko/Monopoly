@@ -175,7 +175,7 @@ public class IHM {
         while (CouleurPropriete.valueOf(groupe) == null){
             groupe = sc.nextLine(); 
             if (CouleurPropriete.valueOf(groupe) == null){
-                System.out.println("Mauvaise saisie, recommencez?");
+                System.out.println("Mauvaise saisie, recommencez.");
             }
         }
         
