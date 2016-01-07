@@ -17,7 +17,7 @@ public class IHM {
 	 * @param cashRestant
 	 */
 	public void messageApresLoyer(Joueur proprietaire, Integer prix, Integer cashRestant) {
-		System.out.println("Vous devez payer "+"\033[33m"+prix.toString()+" gils au joueur "+ proprietaire.getNomJoueur()+". Il vous restera "+"\033[33m"+cashRestant.toString()+" gils." );
+		System.out.println("Vous devez payer "+prix.toString()+" gils au joueur "+ proprietaire.getNomJoueur()+". Il vous restera "+cashRestant.toString()+" gils." );
 	}
 
 	public String saisieRep() {
@@ -80,8 +80,8 @@ public class IHM {
                  System.out.println("Elle appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
              }
             
-            System.out.print("La propriété vaut "+"\033[33m"+ String.valueOf(carreauP.getPrixAchat())+" gils.");
-            System.out.println(" Vous disposez de "+"\033[33m"+ String.valueOf(joueur.getCash())+" gils.");
+            System.out.print("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
+            System.out.println(" Vous disposez de "+ String.valueOf(joueur.getCash())+" gils.");
             System.out.print("Voulez vous l'acheter (y/n) ?  ");
             
             Scanner sc = new Scanner(System.in);
@@ -99,7 +99,7 @@ public class IHM {
 	}
         
         public void messageConfirmeAchat(Joueur j){
-                System.out.println("Propriété achetée. Il vous reste " + "\033[33m"+String.valueOf(j.getCash()) + "gils.");
+                System.out.println("Propriété achetée. Il vous reste " +String.valueOf(j.getCash()) + "gils.");
         }
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
             
@@ -116,7 +116,7 @@ public class IHM {
             }
             
             System.out.println("Informations sur le joueur " + joueur.getNomJoueur() +" :");
-            System.out.println("Position: "+ carreau.getNomCarreau()+"     Argent: "+"\033[33m"+Integer.valueOf(joueur.getCash())+" gils");
+            System.out.println("Position: "+ carreau.getNomCarreau()+"     Argent: "+Integer.valueOf(joueur.getCash())+" gils");
             if (listeProp.isEmpty()){
                 System.out.println("Terrains: Aucuns");
             }
@@ -204,7 +204,7 @@ public class IHM {
     }
 
     void messagePassageDepart() {
-        System.out.println(this.getMonopoly().getJoueurCourant().getNomJoueur() + "passe par la case départ et gagne \033[33m 200 gils");
+        System.out.println(this.getMonopoly().getJoueurCourant().getNomJoueur() + "passe par la case départ et gagne 200 gils");
     }
     
     public void messageCarteCommunautaire(){
@@ -296,7 +296,7 @@ public class IHM {
     
     public void messagePrisonPaye(Joueur j){
         System.out.println("Toujours pas de double");
-        System.out.println("Vous avez purgé votre peine et payer \033[33m 50 gils");
+        System.out.println("Vous avez purgé votre peine et payer 50 gils");
         System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
     }
     
@@ -316,7 +316,7 @@ public class IHM {
     }
     
     public void messageCaseArgentPaie(CarreauArgent carreau){
-        System.out.println("Vous devez payer "+ "\033[33m"+carreau.getMontant() +" gils. Il vous reste " + String.valueOf(this.getMonopoly().getJoueurCourant().getCash()));
+        System.out.println("Vous devez payer "+carreau.getMontant() +" gils. Il vous reste " + String.valueOf(this.getMonopoly().getJoueurCourant().getCash()));
     }
     
     public void messageCaseArgentRien(){
