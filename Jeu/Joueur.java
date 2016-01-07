@@ -274,7 +274,7 @@ public class Joueur {
     /**
      * @param nbTourPrison the nbTourPrison to set
      */
-    private void setNbTourPrison(int newNbTourPrison) {
+    public void setNbTourPrison(int newNbTourPrison) {
         this.nbTourPrison = newNbTourPrison;
     }   
 

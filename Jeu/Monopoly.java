@@ -238,15 +238,7 @@ public class Monopoly {
             while (this.partieContinue()){
                 this.setNumeroJoueurCourant(0);
                 for (Joueur j : this.getJoueurs()){
-                    
-                    if (this.getJoueurCourant().getNbTourPrison() == 0){                   
-                        this.jouerUnCoup(j);
-                    }
-                    else {
-                        this.jouerUnCoupPrison(j);
-                    }
-                    
-                    
+                    this.jouerUnCoup(j);  
                     this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()+1);
                 }
             }
@@ -288,8 +280,12 @@ public class Monopoly {
 	 */
 	public void jouerUnCoup(Joueur j) {
             Carreau positionJoueur;
-            positionJoueur = this.lancerDesAvancer();
-            
+            if (j.getNbTourPrison() == 0){
+                positionJoueur = this.lancerDesAvancer();
+            }
+            else {
+                positionJoueur = this.lancerDesPrison();
+            }
             positionJoueur.action(j);
             boolean continueConstruire = true;
             
@@ -297,12 +293,45 @@ public class Monopoly {
                     
         }
         
-        public void jouerUnCoupPrison(Joueur j){
+        public Carreau lancerDesPrison(){
+            de1 = this.jetDe();
+            de2 = this.jetDe();
             
-            int nbPrison = this.getJoueurCourant().getNbTourPrison();
+            for (Joueur joueur : this.getJoueurs()){
+                this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
+            }
             
+            Joueur jC = this.getJoueurCourant();
             
+            if (de1 == de2){
+                this.getJoueurCourant().setNbTourPrison(0);
+                if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
+                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
+                }
+                else {
+                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+
+                }
+                    
+            }
+            else {
+                if (jC.getNbTourPrison() == 3 ){
+                    jC.setCash(jC.getCash()-50);
+                    this.getIhm().messagePrisonPaye();
+                    
+                    if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
+                        jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
+                    }
+                    else {
+                        jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+                    }
+                }
+                else {
+                    jC.incrementerNbTourPrison();
+                }
+            }
             
+            return (this.getJoueurCourant().getPositionCourante());  
         }
 
         public void passerParDepart () {
@@ -314,37 +343,41 @@ public class Monopoly {
 	private Carreau lancerDesAvancer() {
             de1 = this.jetDe();
             de2 = this.jetDe();
+            
            
 
-            Joueur jC = this.getJoueurCourant();
-            
-            for (Joueur joueur : this.getJoueurs()){
-               this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
-            }
+                Joueur jC = this.getJoueurCourant();
 
-            if (de1 == de2) {
-                jC.incrementerNbDouble();                
-            } 
-            else {
-                jC.reinitialiserNbDouble();
-            }            
-            
-            if (jC.getNbDouble() == 3) {
-                jC.setPositionCourante(this.getCarreau(11));
-                jC.incrementerNbTourPrison();
-            }
-            else {
-                if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
-                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
+                for (Joueur joueur : this.getJoueurs()){
+                   this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
+                }
+
+                if (de1 == de2) {
+                    jC.incrementerNbDouble();                
+                } 
+                else {
+                    jC.reinitialiserNbDouble();
+                }            
+
+                if (jC.getNbDouble() == 3) {
+                    jC.setPositionCourante(this.getCarreau(11));
+                    jC.incrementerNbTourPrison();
+                    jC.reinitialiserNbDouble(); 
                 }
                 else {
-                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
- 
+                    if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
+                        jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
+                    }
+                    else {
+                        jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+
+                    }
                 }
-            }
-                        
-            this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1+de2);
+
+                this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1+de2);
             
+           
+
                        
             
             return (this.getJoueurCourant().getPositionCourante());

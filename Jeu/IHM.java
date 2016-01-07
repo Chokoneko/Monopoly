@@ -282,4 +282,8 @@ public class IHM {
         }
         return rep.equals("y");
     }
+    
+    public void messagePrisonPaye(){
+        System.out.println(" Vous ");
+    }
 }
