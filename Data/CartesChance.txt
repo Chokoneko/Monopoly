@@ -12,5 +12,5 @@ CA,11,-150,Payez vos frais de scolarité : 150 gils
 CA,12,+100,Vous avez gagné le prix de mots croisés. Recevez 100 gils
 CA,13,+50,La Banque vous verse un dividende de 50 gils
 MA,14,40,->,Rendez-vous rue de la Paix.
-CA,15,-150,Votre immeuble et votre prêt rapportent. Vous devez toucher 150 gils
+CA,15,+150,Votre immeuble et votre prêt rapportent. Vous devez toucher 150 gils
 MA,16,2,->,Accédez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200 gils
