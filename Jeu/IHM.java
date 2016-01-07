@@ -66,9 +66,9 @@ public class IHM {
             System.out.println("Vous avez essayer d'acheter le carreau " +carreau.getNomCarreau() + " cependant il vous manque " + String.valueOf(carreau.getPrixAchat()-joueur.getCash()) +" pour réaliser cet achat");
         }
          
-        public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,Integer score){
+        public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,Integer de1 , Integer de2){
             System.out.println("Joueur " + joueurCourant.getNomJoueur() +" :");
-            System.out.println("Vous avez fais un score de " +score + " et vous êtes maintenant sur la case " +carreauCourant.getNomCarreau() + ".");           
+            System.out.println("Vous avez fais "+ de1 + " et "+ de2 + " et vous êtes maintenant sur la case " +carreauCourant.getNomCarreau() + ".");           
         }
 	/**
 	 * 

@@ -374,7 +374,7 @@ public class Monopoly {
                     }
                 }
 
-                this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1+de2);
+                this.getIhm().messageAfficherInfoLancerDes(this.getJoueurCourant(),this.getCarreau(getJoueurCourant().getPositionCourante().getNumero()),de1,de2);
             
            
 
