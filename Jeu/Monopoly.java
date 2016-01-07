@@ -335,6 +335,8 @@ public class Monopoly {
             Joueur jC = this.getJoueurCourant();
             boolean rejoue = false;
             
+            this.getIhm().messageInfoPrison(jC);  
+            
             if (jC.getCartesLiberePrison().size() != 0){
                 boolean utilisation = this.getIhm().messageUtiliserLiberation(); 
                 
@@ -356,11 +358,7 @@ public class Monopoly {
                     this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
                 }
 
-
-
-                this.getIhm().messageInfoPrison(jC, de1, de2);   
-
-
+                this.getIhm().messageAfficherDes(de1, de2);
 
                 if (de1 == de2){
                     this.getJoueurCourant().setNbTourPrison(0);

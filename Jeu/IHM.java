@@ -288,10 +288,13 @@ public class IHM {
         return rep.equals("y");
     }
     
-    public void messageInfoPrison(Joueur j, int de1, int de2){
+    public void messageInfoPrison(Joueur j){
        System.out.println("Joueur " + j.getNomJoueur() + " :");
        System.out.println("Vous êtes en prison depuis " + j.getNbTourPrison() + " tours.");
-       System.out.println("Résultats des dés: " + String.valueOf(de1 + " et " + String.valueOf(de2)));
+    }
+    
+    public void messageAfficherDes(int de1, int de2){
+        System.out.println("Résultats des dés: " + String.valueOf(de1 + " et " + String.valueOf(de2)));
     }
     
     public void messagePrisonPaye(Joueur j){
