@@ -332,4 +332,8 @@ public class IHM {
         }
         return rep.equals("y");
     }
+    
+    public void messageLiberer(){
+        System.out.println("Vous avez utilisé votre carte, vous êtes donc liberé de prison.");
+    }
 }

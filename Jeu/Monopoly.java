@@ -331,12 +331,13 @@ public class Monopoly {
             Joueur jC = this.getJoueurCourant();
             boolean rejoue = false;
             
-            if (jC.getCartesLiberePrison().get(0) != null){
+            if (jC.getCartesLiberePrison().size() != 0){
                 boolean utilisation = this.getIhm().messageUtiliserLiberation(); 
                 
                 if (utilisation){
                     jC.utiliserCartePrison();
                     rejoue = true;
+                    this.getIhm().messageLiberer();
                 }
 
             }
