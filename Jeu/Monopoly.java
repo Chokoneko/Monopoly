@@ -526,9 +526,9 @@ public class Monopoly {
 	 * @param nomC
 	 * @param prixA
 	 */
-	public boolean messageDemandeAchat(CarreauPropriete carreau) {
+	public boolean messageDemandeAchat(CarreauPropriete carreau, Joueur joueur) {
             boolean rep;
-            rep = this.getIhm().messageDemandeAchat(carreau);
+            rep = this.getIhm().messageDemandeAchat(carreau, joueur);
             return rep;
 	}
 

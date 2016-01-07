@@ -36,7 +36,7 @@ public class Compagnie extends CarreauPropriete {
         
         if (cashJoueur > prixProp){
             boolean rep;
-            rep = this.getMonopoly().messageDemandeAchat(this);
+            rep = this.getMonopoly().messageDemandeAchat(this, joueur);
             
             if (rep) {
                 this.setProprietaire(joueur);

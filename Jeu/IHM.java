@@ -75,14 +75,13 @@ public class IHM {
 	 * @param nom
 	 * @param prixAchat
 	 */
-	public boolean messageDemandeAchat(CarreauPropriete carreauP) { 
+	public boolean messageDemandeAchat(CarreauPropriete carreauP, Joueur joueur) { 
              if (carreauP instanceof ProprieteAConstruire){
                  System.out.println("Elle appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
              }
-                      
+            
             System.out.println("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
-            //System.out.println("Vous disposez de "+ String.valueOf(this.getMonopoly().getJoueurCourant().getCash())+" gils.");
-            //System.out.print("Voulez vous l'acheter, il vous restera "+ String.valueOf(this.getMonopoly().getJoueurCourant().getCash()-carreauP.getPrixAchat())+"(y/n) ?  ");
+            System.out.println("Vous disposez de "+ String.valueOf(joueur.getCash())+" gils.");
             System.out.print("Voulez vous l'acheter (y/n) ?  ");
             
             Scanner sc = new Scanner(System.in);
