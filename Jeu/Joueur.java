@@ -267,7 +267,7 @@ public class Joueur {
     /**
      * @return the nbTourPrison
      */
-    private int getNbTourPrison() {
+    public int getNbTourPrison() {
         return nbTourPrison;
     }
 

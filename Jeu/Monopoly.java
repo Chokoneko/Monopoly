@@ -239,7 +239,14 @@ public class Monopoly {
                 this.setNumeroJoueurCourant(0);
                 for (Joueur j : this.getJoueurs()){
                     
-                    this.jouerUnCoup(j);
+                    if (this.getJoueurCourant().getNbTourPrison() == 0){                   
+                        this.jouerUnCoup(j);
+                    }
+                    else {
+                        this.jouerUnCoupPrison(j);
+                    }
+                    
+                    
                     this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()+1);
                 }
             }
@@ -287,6 +294,14 @@ public class Monopoly {
             
             this.getIhm().messageFinTour();
                     
+        }
+        
+        public void jouerUnCoupPrison(Joueur j){
+            
+            int nbPrison = this.getJoueurCourant().getNbTourPrison();
+            
+            
+            
         }
 
         public void passerParDepart () {
