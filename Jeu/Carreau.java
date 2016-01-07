@@ -115,7 +115,7 @@ public abstract class Carreau {
                                 
 
                                 ProprieteAConstruire prop;
-                                prop = this.getMonopoly().messageDemandeChoixProp();
+                                prop = this.getMonopoly().messageDemandeChoixProp(joueur);
 
                                 int nbMaison, prix;
                                 nbMaison = prop.getNbMaisons();

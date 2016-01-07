@@ -112,16 +112,19 @@ public class Joueur {
             HashMap<Groupe,Integer> liste = new HashMap () ;
             for (ProprieteAConstruire pAC : this.getProprietesAConstruire()){
                 if(!liste.containsKey(pAC.getGroupe())){
-                    liste.put(pAC.getGroupe(), 1);
+                    liste.put(pAC.getGroupe(),1);
+                    System.out.println("j'ajoute à la liste provisoire le groupe "+pAC.getGroupe().getCouleur().name());
                 }
                 else {
                     int nb = liste.get(pAC.getGroupe());
                     liste.remove(pAC.getGroupe());
                     liste.put(pAC.getGroupe(), nb+1);
+                    System.out.println("il y a actuellement "+Integer.valueOf(nb+1).toString()+" prop dans le groupe "+pAC.getGroupe().getCouleur().name());
                 }
             }
             for (Groupe groupe : liste.keySet()){
-                if (liste.get(groupe)==groupe.getProprietes().size()){
+                System.out.println(" pour le groupe "+groupe.getCouleur().name()+" il doit y avoir "+Integer.valueOf(groupe.getProprietes().size()).toString());
+                                if (liste.get(groupe)==groupe.getProprietes().size()){                    
                     gPE.add(groupe);
                 }
             }

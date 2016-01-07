@@ -28,7 +28,7 @@ public class Groupe {
     /**
      * @param proprietes the proprietes to set
      */
-    private void addPropriete(ProprieteAConstruire newProprieteAConstruire) {     
+    public void addPropriete(ProprieteAConstruire newProprieteAConstruire) {     
         this.getProprietes().add(newProprieteAConstruire);
     }
 

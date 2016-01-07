@@ -16,6 +16,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
             this.setNbMaisons(0);
             this.setLoyerMaison(tableLoyer);
             this.setGroupePropriete(newGroupe);
+            this.getGroupe().addPropriete(this);
            
             
         }

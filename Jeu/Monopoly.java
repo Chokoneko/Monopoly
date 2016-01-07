@@ -656,8 +656,8 @@ public class Monopoly {
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
         return this.getIhm().messageDemandeChoixGroupe(liste);
     }
-    public ProprieteAConstruire messageDemandeChoixProp(){
-        return this.getIhm().messageDemandeChoixProp();
+    public ProprieteAConstruire messageDemandeChoixProp(Joueur j){
+        return this.getIhm().messageDemandeChoixProp(j);
     }
     
     /**

@@ -132,14 +132,14 @@ public class IHM {
 
         
         
-       public ProprieteAConstruire messageDemandeChoixProp(){
-            System.out.println("Sur quel propriété voulez vous construire (Saisir le numéro ? ");
+       public ProprieteAConstruire messageDemandeChoixProp(Joueur j){
+            System.out.println("Sur quel propriété voulez vous construire (Saisir le numéro) ? ");
             int prop;
             Scanner sc = new Scanner(System.in);
             prop = sc.nextInt();
             
             ProprieteAConstruire rep = null;
-            for (ProprieteAConstruire p : this.getMonopoly().getJoueurCourant().getProprietesAConstruire()){
+            for (ProprieteAConstruire p : j.getProprietesAConstruire()){
                 if (prop == p.getNumero()){
                     rep = p;
                 }
@@ -170,14 +170,14 @@ public class IHM {
     
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
         System.out.print(" Saississez le nom du groupe voulu (la couleur):  ");
-        String groupe = "default";
+        String groupe;
         Scanner sc = new Scanner(System.in);
-        while (CouleurPropriete.valueOf(groupe) == null){
+        //while (CouleurPropriete.valueOf(groupe) == null){
             groupe = sc.nextLine(); 
-            if (CouleurPropriete.valueOf(groupe) == null){
-                System.out.println("Mauvaise saisie, recommencez.");
-            }
-        }
+            //if (CouleurPropriete.valueOf(groupe) == null){
+                //System.out.println("Mauvaise saisie, recommencez.");
+            //}
+        //}
         
         CouleurPropriete coul;
         coul = CouleurPropriete.valueOf(groupe);
