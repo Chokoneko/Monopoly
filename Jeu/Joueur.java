@@ -217,24 +217,10 @@ public class Joueur {
     }
 
     /**
-     * @param compagnies the compagnies to set
-     */
-    private void setCompagnies(Compagnie newCompagnies) {
-        this.compagnies.add(newCompagnies);
-    }
-
-    /**
      * @return the gares
      */
     public HashSet<Gare> getGares() {
         return gares;
-    }
-
-    /**
-     * @param gares the gares to set
-     */
-    private void setGares(Gare newGares) {
-        this.gares.add(newGares);
     }
 
     /**
@@ -295,7 +281,8 @@ public class Joueur {
     
     private void utiliserCartePrison(){
         this.getCartesLiberePrison().remove(0);
-        this.setNbTourPrison(0);            
+        this.setNbTourPrison(0);
+        
     }
     
 }
