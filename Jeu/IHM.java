@@ -35,7 +35,7 @@ public class IHM {
             String rep ;
             rep = "default";
             while (!rep.equals("y") && !rep.equals("n")){
-                System.out.print("Voulez vous ajouter un autre joueur ? (y/n)");
+                System.out.print("Voulez vous ajouter un autre joueur ? (y/n) ");
                 Scanner sc = new Scanner(System.in);
                 rep = sc.nextLine();
                 if (!rep.equals("y") && !rep.equals("n")){
@@ -68,7 +68,7 @@ public class IHM {
          
         public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,int de1 , int de2){
             System.out.println("Joueur " + joueurCourant.getNomJoueur() +" :");
-            System.out.println("Vous avez fais "+ de1 + " et "+ de2 + " et vous êtes maintenant sur la case " +carreauCourant.getNomCarreau() + ".");           
+            System.out.println("Vous avez fait "+ de1 + " et "+ de2 + " et vous êtes maintenant sur la case " +carreauCourant.getNomCarreau() + ".");           
         }
 	/**
 	 * 
@@ -81,6 +81,8 @@ public class IHM {
              }
                       
             System.out.println("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
+            //System.out.println("Vous disposez de "+ String.valueOf(this.getMonopoly().getJoueurCourant().getCash())+" gils.");
+            //System.out.print("Voulez vous l'acheter, il vous restera "+ String.valueOf(this.getMonopoly().getJoueurCourant().getCash()-carreauP.getPrixAchat())+"(y/n) ?  ");
             System.out.print("Voulez vous l'acheter (y/n) ?  ");
             
             Scanner sc = new Scanner(System.in);
@@ -299,7 +301,7 @@ public class IHM {
     }
     
     public void messageDoublePrison(Joueur j){
-        System.out.println("Vous avez fais un double et sortez de la prison! ");
+        System.out.println("Vous avez fait un double et sortez de la prison! ");
         System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
     }
     
