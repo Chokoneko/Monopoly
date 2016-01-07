@@ -347,7 +347,7 @@ public class Monopoly {
             
             if (de1 == de2){
                 this.getJoueurCourant().setNbTourPrison(0);
-                this.getJoueurCourant().incrementerNbDouble();
+                this.getJoueurCourant().incrementerNbDouble();               
                 rejoue = true;
                 
                 if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
@@ -423,6 +423,7 @@ public class Monopoly {
                 }            
 
                 if (jC.getNbDouble() == 3) {
+                    rejoue = false;
                     jC.setPositionCourante(this.getCarreau(11));
                     jC.incrementerNbTourPrison();
                     jC.reinitialiserNbDouble(); 
