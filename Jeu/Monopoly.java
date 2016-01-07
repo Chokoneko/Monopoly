@@ -399,7 +399,7 @@ public class Monopoly {
 
         public void passerParDepart () {
             this.getJoueurCourant().setCash(this.getJoueurCourant().getCash()+200);
-            this.getIhm().messagePassageDepart();
+            this.getIhm().messagePassageDepart(this.getJoueurCourant());
         }
         
         

@@ -203,8 +203,8 @@ public class IHM {
         System.out.println("Construction: Pas de possibilité.\n");
     }
 
-    void messagePassageDepart() {
-        System.out.println(this.getMonopoly().getJoueurCourant().getNomJoueur() + "passe par la case départ et gagne 200 gils");
+    void messagePassageDepart(Joueur j) {
+        System.out.println(j.getNomJoueur() + "passe par la case départ et gagne 200 gils");
     }
     
     public void messageCarteCommunautaire(){
