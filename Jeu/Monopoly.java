@@ -685,6 +685,10 @@ public class Monopoly {
         this.getIhm().messageCaseArgentRien();
     }
     
+    public void messageConfirmeAchat(Joueur j){
+        this.getIhm().messageConfirmeAchat(j);
+    }
+    
 
 
 }

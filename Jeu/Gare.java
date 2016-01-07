@@ -40,6 +40,7 @@ public class Gare extends CarreauPropriete {
                 int cashRestant;
                 cashRestant = joueur.calculCashRestant(cashJoueur, prixProp);
                 joueur.setCash(cashRestant);
+                this.getMonopoly().messageConfirmeAchat(joueur);
                         
             }
         }

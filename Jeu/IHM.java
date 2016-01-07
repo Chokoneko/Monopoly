@@ -80,8 +80,8 @@ public class IHM {
                  System.out.println("Elle appartient au groupe " + carreauP.getGroupe().getCouleur().toString() + " ."); //ERREUR NORMAL NE PAS TOUCHER 
              }
             
-            System.out.println("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
-            System.out.println("Vous disposez de "+ String.valueOf(joueur.getCash())+" gils.");
+            System.out.print("La propriété vaut "+ String.valueOf(carreauP.getPrixAchat())+" gils.");
+            System.out.println(" Vous disposez de "+ String.valueOf(joueur.getCash())+" gils.");
             System.out.print("Voulez vous l'acheter (y/n) ?  ");
             
             Scanner sc = new Scanner(System.in);
@@ -98,8 +98,8 @@ public class IHM {
 
 	}
         
-        public void messageConfirmeAchat(){
-                System.out.println("Propriété achetée.");
+        public void messageConfirmeAchat(Joueur j){
+                System.out.println("Propriété achetée. Il vous reste " + String.valueOf(j.getCash()) + "gils.");
         }
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
             
@@ -116,7 +116,7 @@ public class IHM {
             }
             
             System.out.println("Informations sur le joueur " + joueur.getNomJoueur() +" :");
-            System.out.println("Position: "+ carreau.getNomCarreau()+"   |   Argent: "+Integer.valueOf(joueur.getCash())+" gils");
+            System.out.println("Position: "+ carreau.getNomCarreau()+"     Argent: "+Integer.valueOf(joueur.getCash())+" gils");
             if (listeProp.isEmpty()){
                 System.out.println("Terrains: Aucuns");
             }

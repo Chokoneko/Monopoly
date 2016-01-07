@@ -45,6 +45,7 @@ public class Compagnie extends CarreauPropriete {
                 int cashRestant;
                 cashRestant = joueur.calculCashRestant(cashJoueur, prixProp);
                 joueur.setCash(cashRestant);
+                this.getMonopoly().messageConfirmeAchat(joueur);
                         
             }
         }

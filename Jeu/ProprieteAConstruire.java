@@ -137,7 +137,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
                 int cashRestant;
                 cashRestant = joueur.calculCashRestant(cashJoueur, prixProp);
                 joueur.setCash(cashRestant);
-                this.getMonopoly().getIhm().messageConfirmeAchat();
+                this.getMonopoly().getIhm().messageConfirmeAchat(joueur);
             }
         }
         else {
