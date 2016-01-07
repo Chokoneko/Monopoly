@@ -31,7 +31,7 @@ public class CarreauArgent extends CarreauAction {
         position = this.getNumero();
         
         if (position == 5 || position == 39){
-            this.getMonopoly().messageCaseArgentPaie(this);
+            this.getMonopoly().messageCaseArgentPaie(this, j);
             cash = j.getCash();
             j.setCash(cash + montant);
         }
@@ -39,9 +39,5 @@ public class CarreauArgent extends CarreauAction {
             this.getMonopoly().messageCaseArgentRien();
         }
         
-        boolean continueConstruire = true;
-        while (continueConstruire){
-            continueConstruire = this.construire(j);
-        }
     }
 }

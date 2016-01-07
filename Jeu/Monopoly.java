@@ -318,7 +318,11 @@ public class Monopoly {
             }
             positionJoueur = this.getJoueurCourant().getPositionCourante();
             positionJoueur.action(j);
-            boolean continueConstruire = true;            
+            boolean continueConstruire = true;
+                while (continueConstruire){
+                continueConstruire = this.getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()).construire(j);
+            }           
+            
             
             return rejoue;
                     
@@ -691,8 +695,8 @@ public class Monopoly {
         this.modeDemo = modeDemo;
     }
     
-    public void messageCaseArgentPaie(CarreauArgent carreau){
-        this.getIhm().messageCaseArgentPaie(carreau);
+    public void messageCaseArgentPaie(CarreauArgent carreau, Joueur j){
+        this.getIhm().messageCaseArgentPaie(carreau, j);
     }
     
     public void messageCaseArgentRien(){
@@ -703,6 +707,9 @@ public class Monopoly {
         this.getIhm().messageConfirmeAchat(j);
     }
     
+    public void messageNouvellePosition(Carreau carreau){
+        this.getIhm().messageNouvellePosition(carreau);
+    }
 
 
 }

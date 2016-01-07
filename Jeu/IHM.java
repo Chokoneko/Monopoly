@@ -315,8 +315,8 @@ public class IHM {
         System.out.println("Vous êtes envoyé directement en prison.");
     }
     
-    public void messageCaseArgentPaie(CarreauArgent carreau){
-        System.out.println("Vous devez payer "+carreau.getMontant() +" gils. Il vous reste " + String.valueOf(this.getMonopoly().getJoueurCourant().getCash()));
+    public void messageCaseArgentPaie(CarreauArgent carreau, Joueur j){
+        System.out.println("Vous devez payer "+carreau.getMontant() +" gils. Il vous reste " + String.valueOf(j.getCash()));
     }
     
     public void messageCaseArgentRien(){
@@ -340,5 +340,9 @@ public class IHM {
     
     public void messageLiberer(){
         System.out.println("Vous avez utilisé votre carte, vous êtes donc liberé de prison.");
+    }
+    
+    public void messageNouvellePosition(Carreau carreau){
+        System.out.println("Vous êtes maintenant sur la case " +carreau.getNomCarreau());
     }
 }

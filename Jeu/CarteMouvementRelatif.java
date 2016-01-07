@@ -24,7 +24,8 @@ public class CarteMouvementRelatif extends CarteMouvement{
     @Override
     public void actionCarte() {
         this.getMonopoly().getIhm().messageAfficherCarte(this);
-        this.getMonopoly().getJoueurCourant().setPositionCourante(this.getMonopoly().getCarreau(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero() + this.getNombre()));
+        this.getMonopoly().getJoueurCourant().setPositionCourante(this.getMonopoly().getCarreau(this.getMonopoly().getJoueurCourant().getPositionCourante().getNumero() + this.getNombre())); 
+        this.getMonopoly().messageNouvellePosition(this.getMonopoly().getJoueurCourant().getPositionCourante());
         this.getMonopoly().getJoueurCourant().getPositionCourante().action(this.getMonopoly().getJoueurCourant());
         
 
