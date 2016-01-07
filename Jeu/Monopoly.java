@@ -554,9 +554,16 @@ public class Monopoly {
     }
     
     public boolean messageDemandeReconstruire(){
-        this.getIhm().
+        return (this.getIhm().messageDemandeReconstruire());
     }
     
+    public boolean messageDemandeVouloirAcheter(){
+        return (this.getIhm().messageDemandeVouloirConstruire());
+    }
+    
+    public boolean messageDemandeContinuerAcheter(){
+        return (this.getIhm().messageDemandeContinuerConstruire());
+    }
     
 
 

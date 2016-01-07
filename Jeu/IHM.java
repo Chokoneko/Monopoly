@@ -171,7 +171,7 @@ public class IHM {
     }
     
     public Groupe messageDemandeChoixGroupe(HashSet<Groupe> liste){
-        System.out.println(" Saississez le nom du groupe voulu (la couleur).");
+        System.out.print(" Saississez le nom du groupe voulu (la couleur):  ");
         String groupe;
         Scanner sc = new Scanner(System.in);
         groupe = sc.nextLine(); 
@@ -234,4 +234,52 @@ public class IHM {
         
     }
     
+    public boolean messageDemandeReconstruire(){
+        System.out.print("Voulez vous faire une autre construction ? (y/n)  ");
+        
+        Scanner sc = new Scanner(System.in);
+        String rep;
+        rep = "default";
+        
+        while (!rep.equals("y") && !rep.equals("n")){
+            rep = sc.nextLine();
+            if (!rep.equals("y") && !rep.equals("n")){
+            System.out.println("Mauvaise saisie, veuiller recommencer..");
+            }            
+        }
+        return rep.equals("y");
+    }
+    
+    public boolean messageDemandeVouloirConstruire(){
+        System.out.println("Construction: Vous avez la possibilité");
+        System.out.print("Voulez vous construire ? (y/n)  ");
+        
+        Scanner sc = new Scanner(System.in);
+        String rep;
+        rep = "default";
+        
+        while (!rep.equals("y") && !rep.equals("n")){
+            rep = sc.nextLine();
+            if (!rep.equals("y") && !rep.equals("n")){
+            System.out.println("Mauvaise saisie, veuiller recommencer..");
+            }            
+        }
+        return rep.equals("y");
+    }
+    
+    public boolean messageDemandeContinuerConstruire(){
+        System.out.print(" Voulez vous toujours construire ? (y/n)  ");
+        
+                Scanner sc = new Scanner(System.in);
+        String rep;
+        rep = "default";
+        
+        while (!rep.equals("y") && !rep.equals("n")){
+            rep = sc.nextLine();
+            if (!rep.equals("y") && !rep.equals("n")){
+            System.out.println("Mauvaise saisie, veuiller recommencer..");
+            }            
+        }
+        return rep.equals("y");
+    }
 }

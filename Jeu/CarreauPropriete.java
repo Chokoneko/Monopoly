@@ -63,7 +63,7 @@ public abstract class CarreauPropriete extends Carreau {
                 }
                 boolean continueConstruire = true;
                 while (continueConstruire){
-                    this.construire(joueur);
+                    continueConstruire = this.construire(joueur);
                 }
 	}
 

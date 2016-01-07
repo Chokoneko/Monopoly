@@ -77,54 +77,75 @@ public abstract class Carreau {
                 }
                 
                 if (!listeGroupeConstructible.isEmpty()){
-                    for (Groupe g: listeGroupeConstructible){
-                        this.getMonopoly().messageAfficherGroupe(g);
-                    }
                     
-                    HashSet<Groupe> liste = new HashSet<Groupe>();
-                    for (ProprieteAConstruire prop: joueur.getProprietesAConstruire()){
-                        if (!liste.contains(prop.getGroupe())){
-                            liste.add(prop.getGroupe());
+                    boolean veuxAcheter = this.getMonopoly().messageDemandeVouloirAcheter();
+                    
+                    if (veuxAcheter){
+                    
+                        for (Groupe g: listeGroupeConstructible){
+                            this.getMonopoly().messageAfficherGroupe(g);
                         }
-                    }                  
-                    
-                    Groupe groupe;
-                    groupe = this.getMonopoly().messageDemandeChoixGroupe(liste);
-                    
-                    HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
-                    collecProp = joueur.getCasesConstructibles(groupe);
-                    
-                    
                         
-                    for (ProprieteAConstruire prop : collecProp){
-                        this.getMonopoly().messageAfficherProp(prop);                          
-                    }
+                        boolean surAcheter = this.getMonopoly().messageDemandeContinuerAcheter();
                         
-                    ProprieteAConstruire prop;
-                    prop = this.getMonopoly().messageDemandeChoixProp();
-                        
-                    int nbMaison, prix;
-                    nbMaison = prop.getNbMaisons();
-                        
-                    Groupe gr;
-                    gr = prop.getGroupe();
-                                
-                    if (nbMaison == 4){
-                        prop.incrementerNbMaison();
-                        this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()+4);
-                        this.getMonopoly().setNbHotelsRestant(this.getMonopoly().getNbHotelsRestant()-1);
-                        prix = gr.getPrixAchatHotel();
+                        if (surAcheter){
+
+                            HashSet<Groupe> liste = new HashSet<Groupe>();
+                            for (ProprieteAConstruire prop: joueur.getProprietesAConstruire()){
+                                if (!liste.contains(prop.getGroupe())){
+                                    liste.add(prop.getGroupe());
+                                }
+                            }                  
+
+                            Groupe groupe;
+                            groupe = this.getMonopoly().messageDemandeChoixGroupe(liste);
+
+                            HashSet<ProprieteAConstruire> collecProp = new HashSet<ProprieteAConstruire>();
+                            collecProp = joueur.getCasesConstructibles(groupe);
+
+
+
+                            for (ProprieteAConstruire prop : collecProp){
+                                this.getMonopoly().messageAfficherProp(prop);                          
+                            }
+                            
+                            surAcheter = this.getMonopoly().messageDemandeContinuerAcheter();
+
+                            if (surAcheter){
+
+                                ProprieteAConstruire prop;
+                                prop = this.getMonopoly().messageDemandeChoixProp();
+
+                                int nbMaison, prix;
+                                nbMaison = prop.getNbMaisons();
+
+                                Groupe gr;
+                                gr = prop.getGroupe();
+
+                                if (nbMaison == 4){
+                                    prop.incrementerNbMaison();
+                                    this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()+4);
+                                    this.getMonopoly().setNbHotelsRestant(this.getMonopoly().getNbHotelsRestant()-1);
+                                    prix = gr.getPrixAchatHotel();
+                                }
+                                else {
+                                    prop.incrementerNbMaison();
+                                    this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()-1); 
+                                    prix = gr.getPrixAchatMaison();
+                                }
+
+                                joueur.setCash(joueur.getCash()-prix);
+
+                                continueConstruire = this.getMonopoly().messageDemandeReconstruire();
+                            }
+                        }                        
+                        else {
+                            continueConstruire = this.getMonopoly().messageDemandeReconstruire();
+                        }
                     }
                     else {
-                        prop.incrementerNbMaison();
-                        this.getMonopoly().setNbMaisonsRestant(this.getMonopoly().getNbMaisonsRestant()-1); 
-                        prix = gr.getPrixAchatMaison();
+                        continueConstruire = this.getMonopoly().messageDemandeReconstruire();
                     }
-                  
-                    joueur.setCash(joueur.getCash()-prix);
-                    
-                    continueConstruire = this.getMonopoly().getIhm().messageDemandeReconstruire;
-                        
                        
                             
                     
