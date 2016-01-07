@@ -200,7 +200,7 @@ public class IHM {
     }
     
     public void messagePasConstruction(){
-        System.out.println("Construction: Pas de possibilité.\n");
+        System.out.println("pas de groupe entier.\n");
     }
 
     void messagePassageDepart(Joueur j) {

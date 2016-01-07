@@ -152,7 +152,7 @@ public abstract class Carreau {
                     
                 }
                 else {
-                    this.getMonopoly().messagePasConstruction();
+                    this.getMonopoly().messagePlusImmobilier();
                     continueConstruire = false;
                 }
                 
