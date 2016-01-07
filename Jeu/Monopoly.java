@@ -80,7 +80,7 @@ public class Monopoly {
                                         else{
                                             g=listeGroupes.get(CouleurPropriete.valueOf(data.get(i)[3]));
                                         }
-                                        int tabLoyer[] = {Integer.parseInt(data.get(i)[4]),Integer.parseInt(data.get(i)[5]),Integer.parseInt(data.get(i)[6]),Integer.parseInt(data.get(i)[7]),Integer.parseInt(data.get(i)[8]),Integer.parseInt(data.get(i)[9])};
+                                        int tabLoyer[] = {Integer.parseInt(data.get(i)[5]),Integer.parseInt(data.get(i)[6]),Integer.parseInt(data.get(i)[7]),Integer.parseInt(data.get(i)[8]),Integer.parseInt(data.get(i)[9]),Integer.parseInt(data.get(i)[10])};
                                         ProprieteAConstruire pAC = new ProprieteAConstruire (this,//monop
                                                                                             Integer.parseInt(data.get(i)[1]),//num
                                                                                             data.get(i)[2],//nom
@@ -411,9 +411,8 @@ public class Monopoly {
 //            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
 //            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
             
-            de1 = Integer.valueOf(dataDemo.get(0)[0]);
-            dataDemo.remove(0);
-            de2 = Integer.valueOf(dataDemo.get(0)[0]);
+            de1 = Integer.valueOf(dataDemo.get(0)[0]);            
+            de2 = Integer.valueOf(dataDemo.get(0)[1]);
             dataDemo.remove(0);
 
             
