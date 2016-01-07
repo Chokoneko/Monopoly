@@ -478,7 +478,7 @@ public class Monopoly {
                 }*/
             } else {
                 System.out.println("Numero carte ? "); // pour le scenario
-                getCartesCaisseCommunaute().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
+                getCartesChance().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
                 // pour le vrai jeu
                 /*if (getCartesChance().getLast().getNumero()==1){
                     getCartesChance().getLast().actionCarte();
