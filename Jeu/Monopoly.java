@@ -32,7 +32,7 @@ public class Monopoly {
         public Monopoly(String dataFilename, String dataCards1, String dataCards2){
             carreaux = new HashMap();
             joueurs = new ArrayList<>() ;
-            ihm = new IHM();
+            ihm = new IHM(this);
             cartesCaisseCommunaute = new LinkedList<>();
             cartesChance = new LinkedList<>() ;
             

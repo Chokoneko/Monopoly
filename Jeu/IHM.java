@@ -9,6 +9,9 @@ public class IHM {
 
 	private Monopoly monopoly;
 
+        public IHM (Monopoly nmonopoly){
+            monopoly = nmonopoly;
+        }
         
 	/**
 	 * 
