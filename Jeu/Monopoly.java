@@ -328,67 +328,71 @@ public class Monopoly {
 //          de1 = this.jetDe(); pour jeu normal
 //          de2 = this.jetDe(); pour jeu normal
             
-            System.out.println("Jets dés : ");                 //pour le scenario
-            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-            
-            
-            
-            
-            
-            boolean rejoue;
-            
-            for (Joueur joueur : this.getJoueurs()){
-                this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
-            }
-            
             Joueur jC = this.getJoueurCourant();
-            
-            this.getIhm().messageInfoPrison(jC, de1, de2);   
+            boolean rejoue = false;
             
             if (jC.getCartesLiberePrison().get(0) != null){
                 boolean utilisation = this.getIhm().messageUtiliserLiberation(); 
                 
                 if (utilisation){
                     jC.utiliserCartePrison();
+                    rejoue = true;
                 }
-            }
-            
-            if (de1 == de2){
-                this.getJoueurCourant().setNbTourPrison(0);
-                this.getJoueurCourant().incrementerNbDouble();               
-                rejoue = true;
-                
-                if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
-                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
-                }
-                else {
-                    jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
 
-                }
-                this.getIhm().messageDoublePrison(jC);
-                
-                    
             }
             else {
-                rejoue = false;
-                if (jC.getNbTourPrison() == 3 ){
-                    jC.setCash(jC.getCash()-50);  
-                    
+                System.out.println("Jets dés : ");                 //pour le scenario
+                de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+                de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+
+
+
+                for (Joueur joueur : this.getJoueurs()){
+                    this.getIhm().messageInfosJoueurs(joueur,this.getCarreau(joueur.getPositionCourante().getNumero()));
+                }
+
+
+
+                this.getIhm().messageInfoPrison(jC, de1, de2);   
+
+
+
+                if (de1 == de2){
+                    this.getJoueurCourant().setNbTourPrison(0);
+                    this.getJoueurCourant().incrementerNbDouble();               
+                    rejoue = true;
+
                     if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
                         jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
                     }
                     else {
                         jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+
                     }
-                    this.getIhm().messagePrisonPaye(jC);
+                    this.getIhm().messageDoublePrison(jC);
+
+
                 }
                 else {
-                    jC.incrementerNbTourPrison();
-                    this.getIhm().messageRestePrison();
+                    rejoue = false;
+                    if (jC.getNbTourPrison() == 3 ){
+                        jC.setCash(jC.getCash()-50);  
+
+                        if (jC.getPositionCourante().getNumero()+de1+de2 > 40){
+                            jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2-40));
+                        }
+                        else {
+                            jC.setPositionCourante(getCarreau(this.getJoueurCourant().getPositionCourante().getNumero()+de1+de2));           
+                        }
+                        this.getIhm().messagePrisonPaye(jC);
+                    }
+                    else {
+                        jC.incrementerNbTourPrison();
+                        this.getIhm().messageRestePrison();
+                    }
                 }
             }
-            
+
             return (rejoue);  
         }
 
