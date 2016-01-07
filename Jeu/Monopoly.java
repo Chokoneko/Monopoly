@@ -344,7 +344,15 @@ public class Monopoly {
             
             Joueur jC = this.getJoueurCourant();
             
-            this.getIhm().messageInfoPrison(jC, de1, de2);      
+            this.getIhm().messageInfoPrison(jC, de1, de2);   
+            
+            if (jC.getCartesLiberePrison().get(0) != null){
+                boolean utilisation = this.getIhm().messageUtiliserLiberation(); 
+                
+                if (utilisation){
+                    jC.utiliserCartePrison();
+                }
+            }
             
             if (de1 == de2){
                 this.getJoueurCourant().setNbTourPrison(0);

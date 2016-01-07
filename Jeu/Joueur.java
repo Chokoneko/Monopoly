@@ -272,7 +272,7 @@ public class Joueur {
         this.getCartesLiberePrison().add(CarteLiberePrison);
     }
     
-    private void utiliserCartePrison(){
+    public void utiliserCartePrison(){
         
         if(this.getCartesLiberePrison().get(0).getNumero()==0){
             this.getMonopoly().getCartesChance().push(this.getCartesLiberePrison().get(0));

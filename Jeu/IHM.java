@@ -270,7 +270,7 @@ public class IHM {
     public boolean messageDemandeContinuerConstruire(){
         System.out.print(" Voulez vous toujours construire ? (y/n)  ");
         
-                Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String rep;
         rep = "default";
         
@@ -316,5 +316,20 @@ public class IHM {
     
     public void messageCaseArgentRien(){
         System.out.println("Aucune action possible.");
+    }
+    
+    public boolean messageUtiliserLiberation(){
+        System.out.println("Vous avez une carte libéré de prison. Voulez vous l'utiliser ? (y/n)");
+        Scanner sc = new Scanner(System.in);
+        String rep;
+        rep = "default";
+        
+        while (!rep.equals("y") && !rep.equals("n")){
+            rep = sc.nextLine();
+            if (!rep.equals("y") && !rep.equals("n")){
+            System.out.println("Mauvaise saisie, veuiller recommencer..");
+            }            
+        }
+        return rep.equals("y");
     }
 }
