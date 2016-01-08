@@ -20,7 +20,7 @@ public class Main {
                     System.out.println("Mauvaise saisie (y/n)");
                     rep= sc.nextLine();
                 }
-                if (rep == ("n")){
+                if (rep.equals("n")){
                     m.setModeDemo(false);
                     shuffle(m.getCartesCaisseCommunaute());
                     shuffle(m.getCartesChance());

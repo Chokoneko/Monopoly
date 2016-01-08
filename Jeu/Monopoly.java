@@ -71,7 +71,7 @@ public class Monopoly {
 			for(int i=0; i<data.size(); ++i){
 				String caseType = data.get(i)[0];       // type : P propriété, G gare, C Compagnie, CT case tirage, CA case Argent, CM case mouvement
 				if(caseType.compareTo("P") == 0){
-					System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+//					System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         Groupe g ; 
                                         if(listeGroupes.get(CouleurPropriete.valueOf(data.get(i)[3]))==null){
                                             g=new Groupe(CouleurPropriete.valueOf(data.get(i)[3]),Integer.parseInt(data.get(i)[10]),Integer.parseInt(data.get(i)[11]));
@@ -90,7 +90,7 @@ public class Monopoly {
                                        this.addCarreau(pAC);
                                 }
 				else if(caseType.compareTo("G") == 0){
-					System.out.println("Gare :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+//					System.out.println("Gare :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         Gare g = new Gare(this,
                                                           Integer.parseInt(data.get(i)[1]),
                                                           data.get(i)[2],
@@ -99,7 +99,7 @@ public class Monopoly {
                                         
 				}
 				else if(caseType.compareTo("C") == 0){
-					System.out.println("Compagnie :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+//					System.out.println("Compagnie :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         Compagnie comp = new Compagnie(this,
                                                                        Integer.parseInt(data.get(i)[1]),
                                                                        data.get(i)[2],
@@ -107,7 +107,7 @@ public class Monopoly {
                                         this.addCarreau(comp);
 				}
 				else if(caseType.compareTo("CT") == 0){
-					System.out.println("Case Tirage :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+//					System.out.println("Case Tirage :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         CarreauTirage cT = new CarreauTirage(this,
                                                                              Integer.parseInt(data.get(i)[1]),
                                                                              data.get(i)[2]);
@@ -115,7 +115,7 @@ public class Monopoly {
                                         
 				}
 				else if(caseType.compareTo("CA") == 0){
-					System.out.println("Case Argent :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1] +"montant : "+data.get(i)[3]);
+//					System.out.println("Case Argent :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1] +"montant : "+data.get(i)[3]);
                                         CarreauArgent cA = new CarreauArgent(this,
                                                                              Integer.parseInt(data.get(i)[1]),
                                                                              data.get(i)[2],
@@ -124,7 +124,7 @@ public class Monopoly {
                                         
 				}
 				else if(caseType.compareTo("CM") == 0){
-					System.out.println("Case Mouvement :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+//					System.out.println("Case Mouvement :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         CarreauMouvement cM = new CarreauMouvement(this,
                                                                                    Integer.parseInt(data.get(i)[1]),
                                                                                    data.get(i)[2]);
@@ -157,37 +157,37 @@ public class Monopoly {
 			for(int i=0; i<data.size(); ++i){
 				String carteType = data.get(i)[0];       
 				if(carteType.compareTo("CL") == 0){                                 // Carte liberer de prison
-                                    System.out.println(data.get(i)[2]);
+//                                    System.out.println(data.get(i)[2]);
                                     CarteLiberePrison CLP = new CarteLiberePrison(this,data.get(i)[2],Integer.valueOf(data.get(i)[1]));
                                     paquetCarte.add(CLP);
                                 }
 				else if(carteType.compareTo("CA") == 0){                            // Carte Argent
-					System.out.println(data.get(i)[3]);
+//					System.out.println(data.get(i)[3]);
                                         CarteArgentAbsolu CA = new CarteArgentAbsolu(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         paquetCarte.add(CA);
 				}
 				else if(carteType.compareTo("CAA") == 0){                           // Carte Argent Anniv
-					System.out.println(data.get(i)[3]);
+//					System.out.println(data.get(i)[3]);
                                         CarteArgentAnniversaire CAA = new CarteArgentAnniversaire(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         paquetCarte.add(CAA);
 				}
 				else if(carteType.compareTo("Prison") == 0){                        // Carte deplacement Prison
-					System.out.println(data.get(i)[3]);
+//					System.out.println(data.get(i)[3]);
                                         CarteAllerPrison Prison = new CarteAllerPrison(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])));
                                         paquetCarte.add(Prison);
 				}
 				else if(carteType.compareTo("MA") == 0){                            // Carte deplacement Absolu
-					System.out.println(data.get(i)[4]);
+//					System.out.println(data.get(i)[4]);
                                         CarteMouvementAbsolu DA = new CarteMouvementAbsolu(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),this.getCarreau(Integer.valueOf(data.get(i)[2])),data.get(i)[3].compareTo("->") == 0);
                                         paquetCarte.add(DA);
                                 }
 				else if(carteType.compareTo("MR") == 0){                           // Carte deplacement Relatif
-					System.out.println(data.get(i)[3]);
+//					System.out.println(data.get(i)[3]);
                                         CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         paquetCarte.add(DR);
 				}
                                 else if(carteType.compareTo("ARP") == 0){                         // Carte Argent Propriete
-					System.out.println(data.get(i)[4]);
+//					System.out.println(data.get(i)[4]);
                                         CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]),Integer.valueOf(data.get(i)[3]));
                                         paquetCarte.add(CARP);
 				}
@@ -480,32 +480,40 @@ public class Monopoly {
             
                 
             if (paquetCartes == getCartesCaisseCommunaute()){
-                System.out.println("Numero carte ? "); // pour le scenario
-                getCartesCaisseCommunaute().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
-                // ci dessous pour le vrai jeu
-                /*if (getCartesCaisseCommunaute().getLast().getNumero()==1){
-                    getCartesCaisseCommunaute().getLast().actionCarte();
-                    getCartesCaisseCommunaute().removeLast();
+                if (modeDemo){
+                    System.out.println("Numero carte ? ");                                                     // pour le scenario
+                    getCartesCaisseCommunaute().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
+                }else{
+                    // ci dessous pour le vrai jeu
+                    if (getCartesCaisseCommunaute().getLast().getNumero()==1){
+                        getCartesCaisseCommunaute().getLast().actionCarte();
+                        getCartesCaisseCommunaute().removeLast();
+                    }
+                    else { 
+                        getCartesCaisseCommunaute().getLast().actionCarte();
+                        getCartesCaisseCommunaute().push(getCartesCaisseCommunaute().getLast());
+                        getCartesCaisseCommunaute().removeLast();
+                    }
                 }
-                else { 
-                    getCartesCaisseCommunaute().getLast().actionCarte();
-                    getCartesCaisseCommunaute().push(getCartesCaisseCommunaute().getLast());
-                    getCartesCaisseCommunaute().removeLast();
-                }*/
-            } else {
-                System.out.println("Numero carte ? "); // pour le scenario
-                getCartesChance().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
-                // pour le vrai jeu
-                /*if (getCartesChance().getLast().getNumero()==1){
-                    getCartesChance().getLast().actionCarte();
-                    getCartesChance().removeLast();
-                }
-                else {
-                    getCartesChance().getLast().actionCarte();
-                    getCartesChance().push(getCartesChance().getLast());
-                    getCartesChance().removeLast();
-                }*/
-            }    
+                    
+                } else {
+                    if(modeDemo){                     
+                        System.out.println("Numero carte ? ");                                           // pour le scenario
+                        getCartesChance().get(Integer.valueOf(this.getIhm().saisieRep())).actionCarte(); // pour le scenario
+                    }else{
+                        // pour le vrai jeu
+                        if (getCartesChance().getLast().getNumero()==1){
+                            getCartesChance().getLast().actionCarte();
+                            getCartesChance().removeLast();
+                        }
+                        else {
+                            getCartesChance().getLast().actionCarte();
+                            getCartesChance().push(getCartesChance().getLast());
+                            getCartesChance().removeLast();
+                        }
+                    }
+                }        
+                
         }
             
         
