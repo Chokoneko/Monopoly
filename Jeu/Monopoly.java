@@ -186,7 +186,7 @@ public class Monopoly {
                                         CarteMouvementRelatif DR = new CarteMouvementRelatif(this,data.get(i)[3],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]));
                                         paquetCarte.add(DR);
 				}
-                                else if(carteType.compareTo("ARP") == 0){                         // Carte deplacement Relatif
+                                else if(carteType.compareTo("ARP") == 0){                         // Carte Argent Propriete
 					System.out.println(data.get(i)[4]);
                                         CarteArgentRelatifPossessions CARP = new CarteArgentRelatifPossessions(this,data.get(i)[4],Integer.valueOf(data.get(i)[1]),Integer.valueOf(data.get(i)[2]),Integer.valueOf(data.get(i)[3]));
                                         paquetCarte.add(CARP);
@@ -335,8 +335,7 @@ public class Monopoly {
         }
         
         public boolean lancerDesPrison(){
-//          de1 = this.jetDe(); pour jeu normal
-//          de2 = this.jetDe(); pour jeu normal
+
             
             Joueur jC = this.getJoueurCourant();
             boolean rejoue = false;
@@ -354,9 +353,17 @@ public class Monopoly {
 
             }
             else {
-                System.out.println("Jets dés : ");                 //pour le scenario
-                de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-                de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+                if(modeDemo){
+                    System.out.println("Jets dés : ");                 // pour le scenario
+                    de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+                    de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+
+                }
+                else{ 
+                    de1 = this.jetDe(); // pour jeu normal
+                    de2 = this.jetDe(); // pour jeu normal
+                }    
+               
 
 
 
@@ -412,17 +419,18 @@ public class Monopoly {
         
         
 	private boolean lancerDesAvancer() {
-//          de1 = this.jetDe(); pour jeu normal
-//          de2 = this.jetDe(); pour jeu normal
             
-//            System.out.println("Jets dés : ");                 //pour le scenario
-//            de1 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
-//            de2 = Integer.valueOf(this.getIhm().saisieRep());  // pour le scenario
+            
+            if(modeDemo){
             
             de1 = Integer.valueOf(dataDemo.get(0)[0]);            
             de2 = Integer.valueOf(dataDemo.get(0)[1]);
             dataDemo.remove(0);
-
+            }
+            else{ 
+            de1 = this.jetDe(); // pour jeu normal
+            de2 = this.jetDe(); // pour jeu normal
+            }        
             
              
             

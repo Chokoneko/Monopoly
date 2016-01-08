@@ -102,7 +102,7 @@ public class IHM {
 	}
         
         public void messageConfirmeAchat(Joueur j){
-                System.out.println("\nPropriété achetée. Il vous reste " +String.valueOf(j.getCash()) + "gils.");
+                System.out.println("\nPropriété achetée. Il vous reste " +String.valueOf(j.getCash()) + " gils.");
         }
         public void messageInfosJoueurs(Joueur joueur,Carreau carreau){ 
             
