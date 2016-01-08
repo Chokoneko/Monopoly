@@ -226,7 +226,13 @@ public class IHM {
     }
     
     public void messageDebutPartie(){
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n");
+        System.out.println("************************************************");
+        System.out.println("*                                              *");
+        System.out.println("*                 Monopoly                     *");
+        System.out.println("*                                              *");
+        System.out.println("************************************************");
+        System.out.println("\n\n\n\n\n\n");
         System.out.println("Bonjour et bienvenue dans ce super Monopoly ! \nCopyRight Perez Stocker Rousseau Couiller.");
         System.out.println("\nInscription des joueurs:");
     }
