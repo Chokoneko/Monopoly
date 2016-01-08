@@ -74,7 +74,7 @@ public class Monopoly {
 //					System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         Groupe g ; 
                                         if(listeGroupes.get(CouleurPropriete.valueOf(data.get(i)[3]))==null){
-                                            g=new Groupe(CouleurPropriete.valueOf(data.get(i)[3]),Integer.parseInt(data.get(i)[10]),Integer.parseInt(data.get(i)[11]));
+                                            g=new Groupe(CouleurPropriete.valueOf(data.get(i)[3]),Integer.parseInt(data.get(i)[11]),Integer.parseInt(data.get(i)[12]));
                                             listeGroupes.put(CouleurPropriete.valueOf(data.get(i)[3]),g);
                                          }
                                         else{
