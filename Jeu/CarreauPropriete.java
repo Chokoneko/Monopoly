@@ -49,7 +49,7 @@ public abstract class CarreauPropriete extends Carreau {
 	public void action(Joueur joueur) {
 		Joueur proprietaire = this.getProprietaire();
                 
-                if (proprietaire != null){
+                if (proprietaire != null && proprietaire!=joueur){
                     int loyer;
                     loyer = this.calculLoyer();
                     
