@@ -524,8 +524,9 @@ public class Monopoly {
         
         public void faillite(Joueur j){
             j.reinitStats();
-            
+            this.setNumeroJoueurCourant(this.getNumeroJoueurCourant()-1);
             joueurs.remove(j);
+            
             this.getIhm().messageFaillite(j);
                       
         }
