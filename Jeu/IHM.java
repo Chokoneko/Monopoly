@@ -126,7 +126,7 @@ public class IHM {
             else{
                 System.out.println("Terrains: ");
                 for (CarreauPropriete carreauPropriete : listeProp){
-                    System.out.println("- " + carreauPropriete.getNom()+"("+carreauPropriete.getGroupe().getCouleur().name()+")");
+                    System.out.println("- " + carreauPropriete.getNom());
                 }          
             } 
             System.out.println("");
