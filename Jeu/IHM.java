@@ -52,7 +52,7 @@ public class IHM {
         
         public void messageFaillite(Joueur j){
              System.out.println("Vous n'avez plus d'argent "+j.getNomJoueur() +". Vous êtes éliminé . ");
-             System.out.println("Tout vos bien ont été saisi et sont de nouveau disponible à l'achat.");
+             System.out.println("Tout vos biens ont été saisis et sont de nouveau disponibles à l'achat.");
              System.out.println("Il ne reste plus que "+ this.getMonopoly().getJoueurs().size() + " joueur dans la partie !");
          }
         
@@ -66,7 +66,7 @@ public class IHM {
         }
         
         public void messageRefusAchat(Joueur joueur, CarreauPropriete carreau){
-            System.out.println("Vous avez essayer d'acheter le carreau " +carreau.getNomCarreau() + " cependant il vous manque " + String.valueOf(carreau.getPrixAchat()-joueur.getCash()) +" pour réaliser cet achat");
+            System.out.println("Vous avez essayé d'acheter le carreau " +carreau.getNomCarreau() + " cependant il vous manque " + String.valueOf(carreau.getPrixAchat()-joueur.getCash()) +" pour réaliser cet achat");
         }
          
         public void messageAfficherInfoLancerDes(Joueur joueurCourant,Carreau carreauCourant,int de1 , int de2){
@@ -121,10 +121,10 @@ public class IHM {
             System.out.println("Informations sur le joueur " + joueur.getNomJoueur() +" :");
             System.out.println("Position: "+ carreau.getNomCarreau()+"     Argent: "+Integer.valueOf(joueur.getCash())+" gils");
             if (listeProp.isEmpty()){
-                System.out.println("Terrains: Aucuns");
+                System.out.println("Terrains: Aucun");
             }
             else{
-                System.out.println("Terrains: ");
+                System.out.println("Terrain(s): ");
                 for (CarreauPropriete carreauPropriete : listeProp){
                     System.out.println("- " + carreauPropriete.getNom());
                 }          
@@ -161,7 +161,7 @@ public class IHM {
     }
     
     public void messagePlusImmobilier(){
-        System.out.println("Construction: Aucune possibilitée. Plus d'immobilier à la banque.");
+        System.out.println("Construction: Aucune possibilité. Plus d'immobilier à la banque.");
     }
     
     public void messageAfficherGroupe(HashSet<Groupe> liste){
@@ -210,7 +210,7 @@ public class IHM {
     }
     
     public void messagePasConstruction(){
-        System.out.println("Construction: Pas de possibibilité.\n");
+        System.out.println("Construction: Pas de possibilité.\n");
     }
 
     void messagePassageDepart(Joueur j) {
@@ -308,7 +308,7 @@ public class IHM {
     
     public void messageInfoPrison(Joueur j){
        System.out.println("Joueur " + j.getNomJoueur() + " :");
-       System.out.println("Vous êtes en prison depuis " + j.getNbTourPrison() + " tours.");
+       System.out.println("Vous êtes en prison depuis " + j.getNbTourPrison() + " tour(s).");
     }
     
     public void messageAfficherDes(int de1, int de2){
@@ -317,7 +317,7 @@ public class IHM {
     
     public void messagePrisonPaye(Joueur j){
         System.out.println("Toujours pas de double");
-        System.out.println("Vous avez purgé votre peine et payer 50 gils");
+        System.out.println("Vous avez purgé votre peine et payé 50 gils");
         System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
     }
     
@@ -326,7 +326,7 @@ public class IHM {
     }
     
     public void messageDoublePrison(Joueur j){
-        System.out.println("Vous avez fait un double et sortez de la prison! ");
+        System.out.println("Vous avez fait un double et sortez de la prison ! ");
         System.out.println("Vous avancez et êtes maintenant sur la case " + j.getPositionCourante().getNomCarreau());
     }
     
